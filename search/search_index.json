@@ -1,0 +1,149 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Page hit count (since Jan. 2018): \n\n\n\n\n\n\n\n\nStatus\n\n\nStable\n\n\nLatest\n\n\nSource code\n\n\nSpark compatibility\n\n\n\n\n\n\n\n\n\n\nGeoSpark\n\n\n\n\n\n\n\n\nSpark 2.X, 1.X\n\n\n\n\n\n\nGeoSparkSQL\n\n\n\n\n\n\n\n\nSpark SQL 2.1, 2.2\n\n\n\n\n\n\nGeoSparkViz\n\n\n\n\n\n\n\n\nSpark 2.X, 1.X\n\n\n\n\n\n\n\n\nGeoSpark@Twitter\n||\nGeoSpark Discussion Board\n||\n\n\nGeoSpark is listed as \nInfrastructure Project\n on \nApache Spark Official Third Party Project Page\n\n\nGeoSpark is a cluster computing system for processing large-scale spatial data. GeoSpark extends Apache Spark with a set of out-of-the-box Spatial Resilient Distributed Datasets (SRDDs) that efficiently load, process, and analyze large-scale spatial data across machines. GeoSpark provides APIs for Apache Spark programmer to easily develop their spatial analysis programs with Spatial Resilient Distributed Datasets (SRDDs) which have in house support for geometrical and Spatial Queries (Range, K Nearest Neighbors, Join).\n\n\nGeoSpark artifacts are hosted in Maven Central: \nMaven Central Coordinates\n\n\nCompanies that are using GeoSpark (incomplete list)\n\n\n \n\n\nPlease make a Pull Request to add yourself!\n\n\nVersion release notes: \nclick here\n\n\nNews!\n\n\n\n\nWe just released a template project about how to \nuse GeoSpark in Spatial Data Mining\n: \n\n\nGeoSpark 1.0 is released. This release mainly includes a complete version of \nGeoSparkSQL\n. Documents are at \nGeoSpark Wiki\n. This module contains contributions from Jia Yu, Masha Basmanova, Mohamed Sarwat and Zongsi Zhang. Especially, we want to thank Masha for her great patch on designing spatial join strategy and optimization.(\nMaven coordinates\n)\n\n\nGeoSpark 0.9.1 is released (more details in \nRelease notes\n)\n\n\nWelcome GeoSpark new contributor, Masha Basmanova (@mbasmanova) from Facebook!\n\n\nWelcome GeoSpark new contributor, Zongsi Zhang (@zongsizhang) from Arizona State University!\n\n\n\n\nImportant features (\nmore\n)\n\n\nSpatial SQL on Spark\n\n\nGeoSparkSQL fully supports Apache Spark SQL. Features are as follows:\n\n\n\n\nSupports SQL/MM-Part3, Spatial SQL standard \n\n\nSupports Spark SQL statement.\n\n\nSupports Spark query optimizer: the beloved GeoSpark Spatial Join / predicate pushdown!\n\n\n\n\nSELECT superhero.name\nFROM city, superhero\nWHERE ST_Contains(city.geom, superhero.geom)\nAND city.name = 'Gotham';\n\n\n\n\nSpatial Resilient Distributed Datasets (SRDDs)\n\n\nSupported Special Spatial RDDs: PointRDD, RectangleRDD, PolygonRDD, LineStringRDD\n\n\nThe generic SpatialRDD supports all the following geometries (they can be mixed in a SpatialRDD):\n\n\nPoint, Polygon, Line string, Multi-point, Multi-polygon, Multi-line string, GeometryCollection, Circle\n\n\nSupported input data format\n\n\nNative input format support\n: \n\n\n\n\nCSV\n\n\nTSV\n\n\nWKT\n\n\nGeoJSON (single-line compact format)\n\n\nNASA Earth Data NetCDF/HDF\n\n\nESRI ShapeFile(.shp, .shx, .dbf)\n\n\n\n\nUser-supplied input format mapper\n: Any single-line input formats\n\n\nSpatial Partitioning\n\n\nSupported Spatial Partitioning techniques: Quad-Tree (recommend), KDB-Tree (recommend), R-Tree, Voronoi diagram, Uniform grids (Experimental), Hilbert Curve (Experimental)\n\n\nSpatial Index\n\n\nSupported Spatial Indexes: Quad-Tree and R-Tree. R-Tree supports Spatial K Nearest Neighbors query.\n\n\nGeometrical operation\n\n\nDatasetBoundary, Minimum Bounding Rectangle, Polygon Union\n\n\nSpatial Operation\n\n\nSpatial Range Query, Distance Join Query, Spatial Join Query, and Spatial K Nearest Neighbors Query.\n\n\nCoordinate Reference System (CRS) Transformation (aka. Coordinate projection)\n\n\nGeoSpark allows users to transform the original CRS (e.g., degree based coordinates such as EPSG:4326 and WGS84) to any other CRS (e.g., meter based coordinates such as EPSG:3857) so that it can accurately process both geographic data and geometrical data.\n\n\nGeoSpark Tutorial (\nmore\n)\n\n\nGeoSpark full tutorial is available at GeoSpark GitHub Wiki: \nGeoSpark GitHub Wiki\n\n\nGeoSpark Scala and Java template project is available here: \nTemplate Project\n\n\nGeoSpark Function Use Cases: \nScala Example\n, \nJava Example\n\n\nGeoSpark Visualization Extension (GeoSparkViz)\n\n\nGeoSparkViz is a large-scale in-memory geospatial visualization system.\n\n\nGeoSparkViz provides native support for general cartographic design by extending GeoSpark to process large-scale spatial data. It can visulize Spatial RDD and Spatial Queries and render super high resolution image in parallel.\n\n\nMore details are available here: \nGeoSpark Visualization Extension\n \n\n\nGeoSparkViz Gallery\n\n\n\n\nWatch High Resolution on a real map\n\n\n\n\n\n\nPublication\n\n\nJia Yu, Jinxuan Wu, Mohamed Sarwat. \n\"A Demonstration of GeoSpark: A Cluster Computing Framework for Processing Big Spatial Data\"\n. (demo paper) In Proceeding of IEEE International Conference on Data Engineering ICDE 2016, Helsinki, FI, May 2016\n\n\nJia Yu, Jinxuan Wu, Mohamed Sarwat. \n\"GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data\"\n. (short paper) In Proceeding of the ACM International Conference on Advances in Geographic Information Systems ACM SIGSPATIAL GIS 2015, Seattle, WA, USA November 2015\n\n\nStatement from our team\n\n\nBenchmark\n\n\nWe welcome people to use GeoSpark for benchmark purpose. To achieve the best performance or enjoy all features of GeoSpark, \n\n\n\n\nPlease always use the latest version or state the version used in your benchmark so that we can trace back to the issues.\n\n\nPlease consider using GeoSpark core instead of GeoSparkSQL. Due to the limitation of SparkSQL (for instance, not support clustered index), we are not able to expose all features to SparkSQL.\n\n\nPlease open GeoSpark kryo serializer to reduce the memory footprint.\n\n\n\n\nPaper citation\n\n\nCurrently, we have published two papers about GeoSpark. Only these two papers are associated with GeoSpark Development Team.\n\n\nContact\n\n\nQuestions\n\n\n\n\nGeoSpark@Twitter\n\n\nGeoSpark Discussion Board\n\n\n\n\nEmail us!\n\n\n\n\nContact\n\n\n\n\n\n\nJia Yu\n (Email: jiayu2@asu.edu)\n\n\n\n\n\n\nMohamed Sarwat\n (Email: msarwat@asu.edu)\n\n\n\n\n\n\nProject website\n\n\nPlease visit \nGeoSpark project wesbite\n for latest news and releases.\n\n\nData Systems Lab\n\n\nGeoSpark is one of the projects initiated by \nData Systems Lab\n at Arizona State University. The mission of Data Systems Lab is designing and developing experimental data management systems (e.g., database systems).", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#companies-that-are-using-geospark-incomplete-list", 
+            "text": "Please make a Pull Request to add yourself!", 
+            "title": "Companies that are using GeoSpark (incomplete list)"
+        }, 
+        {
+            "location": "/#version-release-notes-click-here", 
+            "text": "", 
+            "title": "Version release notes: click here"
+        }, 
+        {
+            "location": "/#news", 
+            "text": "We just released a template project about how to  use GeoSpark in Spatial Data Mining :   GeoSpark 1.0 is released. This release mainly includes a complete version of  GeoSparkSQL . Documents are at  GeoSpark Wiki . This module contains contributions from Jia Yu, Masha Basmanova, Mohamed Sarwat and Zongsi Zhang. Especially, we want to thank Masha for her great patch on designing spatial join strategy and optimization.( Maven coordinates )  GeoSpark 0.9.1 is released (more details in  Release notes )  Welcome GeoSpark new contributor, Masha Basmanova (@mbasmanova) from Facebook!  Welcome GeoSpark new contributor, Zongsi Zhang (@zongsizhang) from Arizona State University!", 
+            "title": "News!"
+        }, 
+        {
+            "location": "/#important-features-more", 
+            "text": "", 
+            "title": "Important features (more)"
+        }, 
+        {
+            "location": "/#spatial-sql-on-spark", 
+            "text": "GeoSparkSQL fully supports Apache Spark SQL. Features are as follows:   Supports SQL/MM-Part3, Spatial SQL standard   Supports Spark SQL statement.  Supports Spark query optimizer: the beloved GeoSpark Spatial Join / predicate pushdown!   SELECT superhero.name\nFROM city, superhero\nWHERE ST_Contains(city.geom, superhero.geom)\nAND city.name = 'Gotham';", 
+            "title": "Spatial SQL on Spark"
+        }, 
+        {
+            "location": "/#spatial-resilient-distributed-datasets-srdds", 
+            "text": "Supported Special Spatial RDDs: PointRDD, RectangleRDD, PolygonRDD, LineStringRDD  The generic SpatialRDD supports all the following geometries (they can be mixed in a SpatialRDD):  Point, Polygon, Line string, Multi-point, Multi-polygon, Multi-line string, GeometryCollection, Circle", 
+            "title": "Spatial Resilient Distributed Datasets (SRDDs)"
+        }, 
+        {
+            "location": "/#supported-input-data-format", 
+            "text": "Native input format support :    CSV  TSV  WKT  GeoJSON (single-line compact format)  NASA Earth Data NetCDF/HDF  ESRI ShapeFile(.shp, .shx, .dbf)   User-supplied input format mapper : Any single-line input formats", 
+            "title": "Supported input data format"
+        }, 
+        {
+            "location": "/#spatial-partitioning", 
+            "text": "Supported Spatial Partitioning techniques: Quad-Tree (recommend), KDB-Tree (recommend), R-Tree, Voronoi diagram, Uniform grids (Experimental), Hilbert Curve (Experimental)", 
+            "title": "Spatial Partitioning"
+        }, 
+        {
+            "location": "/#spatial-index", 
+            "text": "Supported Spatial Indexes: Quad-Tree and R-Tree. R-Tree supports Spatial K Nearest Neighbors query.", 
+            "title": "Spatial Index"
+        }, 
+        {
+            "location": "/#geometrical-operation", 
+            "text": "DatasetBoundary, Minimum Bounding Rectangle, Polygon Union", 
+            "title": "Geometrical operation"
+        }, 
+        {
+            "location": "/#spatial-operation", 
+            "text": "Spatial Range Query, Distance Join Query, Spatial Join Query, and Spatial K Nearest Neighbors Query.", 
+            "title": "Spatial Operation"
+        }, 
+        {
+            "location": "/#coordinate-reference-system-crs-transformation-aka-coordinate-projection", 
+            "text": "GeoSpark allows users to transform the original CRS (e.g., degree based coordinates such as EPSG:4326 and WGS84) to any other CRS (e.g., meter based coordinates such as EPSG:3857) so that it can accurately process both geographic data and geometrical data.", 
+            "title": "Coordinate Reference System (CRS) Transformation (aka. Coordinate projection)"
+        }, 
+        {
+            "location": "/#geospark-tutorial-more", 
+            "text": "GeoSpark full tutorial is available at GeoSpark GitHub Wiki:  GeoSpark GitHub Wiki  GeoSpark Scala and Java template project is available here:  Template Project  GeoSpark Function Use Cases:  Scala Example ,  Java Example", 
+            "title": "GeoSpark Tutorial (more)"
+        }, 
+        {
+            "location": "/#geospark-visualization-extension-geosparkviz", 
+            "text": "GeoSparkViz is a large-scale in-memory geospatial visualization system.  GeoSparkViz provides native support for general cartographic design by extending GeoSpark to process large-scale spatial data. It can visulize Spatial RDD and Spatial Queries and render super high resolution image in parallel.  More details are available here:  GeoSpark Visualization Extension", 
+            "title": "GeoSpark Visualization Extension (GeoSparkViz)"
+        }, 
+        {
+            "location": "/#geosparkviz-gallery", 
+            "text": "Watch High Resolution on a real map", 
+            "title": "GeoSparkViz Gallery"
+        }, 
+        {
+            "location": "/#publication", 
+            "text": "Jia Yu, Jinxuan Wu, Mohamed Sarwat.  \"A Demonstration of GeoSpark: A Cluster Computing Framework for Processing Big Spatial Data\" . (demo paper) In Proceeding of IEEE International Conference on Data Engineering ICDE 2016, Helsinki, FI, May 2016  Jia Yu, Jinxuan Wu, Mohamed Sarwat.  \"GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data\" . (short paper) In Proceeding of the ACM International Conference on Advances in Geographic Information Systems ACM SIGSPATIAL GIS 2015, Seattle, WA, USA November 2015", 
+            "title": "Publication"
+        }, 
+        {
+            "location": "/#statement-from-our-team", 
+            "text": "", 
+            "title": "Statement from our team"
+        }, 
+        {
+            "location": "/#benchmark", 
+            "text": "We welcome people to use GeoSpark for benchmark purpose. To achieve the best performance or enjoy all features of GeoSpark,    Please always use the latest version or state the version used in your benchmark so that we can trace back to the issues.  Please consider using GeoSpark core instead of GeoSparkSQL. Due to the limitation of SparkSQL (for instance, not support clustered index), we are not able to expose all features to SparkSQL.  Please open GeoSpark kryo serializer to reduce the memory footprint.", 
+            "title": "Benchmark"
+        }, 
+        {
+            "location": "/#paper-citation", 
+            "text": "Currently, we have published two papers about GeoSpark. Only these two papers are associated with GeoSpark Development Team.", 
+            "title": "Paper citation"
+        }, 
+        {
+            "location": "/#contact", 
+            "text": "", 
+            "title": "Contact"
+        }, 
+        {
+            "location": "/#questions", 
+            "text": "GeoSpark@Twitter  GeoSpark Discussion Board   Email us!", 
+            "title": "Questions"
+        }, 
+        {
+            "location": "/#contact_1", 
+            "text": "Jia Yu  (Email: jiayu2@asu.edu)    Mohamed Sarwat  (Email: msarwat@asu.edu)", 
+            "title": "Contact"
+        }, 
+        {
+            "location": "/#project-website", 
+            "text": "Please visit  GeoSpark project wesbite  for latest news and releases.", 
+            "title": "Project website"
+        }, 
+        {
+            "location": "/#data-systems-lab", 
+            "text": "GeoSpark is one of the projects initiated by  Data Systems Lab  at Arizona State University. The mission of Data Systems Lab is designing and developing experimental data management systems (e.g., database systems).", 
+            "title": "Data Systems Lab"
+        }, 
+        {
+            "location": "/about/", 
+            "text": "Admonita vento\n\n\nCondiderat Rhamnusia tuum quicquam\n\n\nLorem markdownum adunco, concidere cumque mutet \ncontingere\nfingi\n, arma ultima quique certo repellit si \narbor\ndabantur\n cernimus. Ignifero axis, tu tuae confundant dixit ne diemque rarior et\nfunale. Parentes silva responde pirithoi, undis, color fodiebant animos aram.\n\n\n\n\nFacto ire\n\n\nUrnis dictis fessa testa unda\n\n\nInspicitur pigra per iaciuntque capillos dedit\n\n\nNec annis Nycteida novus\n\n\nUtendum vertit et examina quam\n\n\nExaudi monstravit putando theatro crine\n\n\n\n\nIram corpore frequentat brevis, caput. Aves passi: pavet cape se \nvenerat\nterrena\n conviva praereptae.\n\n\nDolendi invia Cartheia alterius pedis\n\n\nEt cuncta pelle, quaerenti, ancipitemque sudor paruit, acutis senis, victa licet\ndesubito sequiturque. Moves cetera dum inque parabant dicimus petit lacrimaeque\nsanguine \niuncis\n. Equis unum filia praerupta a mundo\nmirantia contra, tum levant unde: alter diva triumphos aequare, sub et. Paene\npares exhalantur et attollere ferit.\n\n\nvar autoresponder_fddi = icannProxy(basicSaasQwerty);\nripcording_compression_state += 1;\nif (dhcp.token(kofficeUser)) {\n    kilobyte_party(wizard(rtePort, 5, trackballMips));\n    rate_bar(keylogger, trackbackBase);\n} else {\n    fsb = processor_smartphone_pcmcia * favorites;\n    printAlpha += nanometer_snow(metafile_driver_cpa(home, cluster_ivr_dimm,\n            71), pipelineFrozenDouble, hard_toolbar);\n}\nvar hardware_cut = trashOs;\nif (5 \n 4 / 77) {\n    platform(designSsidMemory * link_leaderboard, activex);\n} else {\n    intranet_samba = system;\n    external_panel_ip.error_vpn_tweak(linkedin_voip_sprite, control);\n    key_cpc(-2, file + delSupercomputerServer, file_server.scsi(\n            master_kilobit_firmware));\n}\n\n\n\nNec vocabis protinus inspiciunt casus funduntque haec. Oleniden faciemque\nMavortis in cupidine brevissimus vocari Iunonis puerilem Veneris Aethiopum,\n\ncecidere carcere\n erigitur.\n\n\nVidisti avis caput facta visa pressit spargimur noster saeva si nemus. Ferarum\nlonga quae solis collis facta tactusque mea tamen et enim \nCytherea\nadparet\n, nec videre at, et est.\nNullum Ille irasci illa potitur iuvenis mandata, cum \naera rutilis\nstravit\n? Caput quam ipsum ut metuens multo\nait. Accede discedite facta admirantibus.", 
+            "title": "About"
+        }, 
+        {
+            "location": "/about/#admonita-vento", 
+            "text": "", 
+            "title": "Admonita vento"
+        }, 
+        {
+            "location": "/about/#condiderat-rhamnusia-tuum-quicquam", 
+            "text": "Lorem markdownum adunco, concidere cumque mutet  contingere\nfingi , arma ultima quique certo repellit si  arbor\ndabantur  cernimus. Ignifero axis, tu tuae confundant dixit ne diemque rarior et\nfunale. Parentes silva responde pirithoi, undis, color fodiebant animos aram.   Facto ire  Urnis dictis fessa testa unda  Inspicitur pigra per iaciuntque capillos dedit  Nec annis Nycteida novus  Utendum vertit et examina quam  Exaudi monstravit putando theatro crine   Iram corpore frequentat brevis, caput. Aves passi: pavet cape se  venerat\nterrena  conviva praereptae.", 
+            "title": "Condiderat Rhamnusia tuum quicquam"
+        }, 
+        {
+            "location": "/about/#dolendi-invia-cartheia-alterius-pedis", 
+            "text": "Et cuncta pelle, quaerenti, ancipitemque sudor paruit, acutis senis, victa licet\ndesubito sequiturque. Moves cetera dum inque parabant dicimus petit lacrimaeque\nsanguine  iuncis . Equis unum filia praerupta a mundo\nmirantia contra, tum levant unde: alter diva triumphos aequare, sub et. Paene\npares exhalantur et attollere ferit.  var autoresponder_fddi = icannProxy(basicSaasQwerty);\nripcording_compression_state += 1;\nif (dhcp.token(kofficeUser)) {\n    kilobyte_party(wizard(rtePort, 5, trackballMips));\n    rate_bar(keylogger, trackbackBase);\n} else {\n    fsb = processor_smartphone_pcmcia * favorites;\n    printAlpha += nanometer_snow(metafile_driver_cpa(home, cluster_ivr_dimm,\n            71), pipelineFrozenDouble, hard_toolbar);\n}\nvar hardware_cut = trashOs;\nif (5   4 / 77) {\n    platform(designSsidMemory * link_leaderboard, activex);\n} else {\n    intranet_samba = system;\n    external_panel_ip.error_vpn_tweak(linkedin_voip_sprite, control);\n    key_cpc(-2, file + delSupercomputerServer, file_server.scsi(\n            master_kilobit_firmware));\n}  Nec vocabis protinus inspiciunt casus funduntque haec. Oleniden faciemque\nMavortis in cupidine brevissimus vocari Iunonis puerilem Veneris Aethiopum, cecidere carcere  erigitur.  Vidisti avis caput facta visa pressit spargimur noster saeva si nemus. Ferarum\nlonga quae solis collis facta tactusque mea tamen et enim  Cytherea\nadparet , nec videre at, et est.\nNullum Ille irasci illa potitur iuvenis mandata, cum  aera rutilis\nstravit ? Caput quam ipsum ut metuens multo\nait. Accede discedite facta admirantibus.", 
+            "title": "Dolendi invia Cartheia alterius pedis"
+        }
+    ]
+}
