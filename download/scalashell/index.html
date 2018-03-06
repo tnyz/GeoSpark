@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Spark Scala shell - GeoSpark Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Spark Scala shell";
+    var mkdocs_page_input_path = "download/scalashell.md";
+    var mkdocs_page_url = "/download/scalashell/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> GeoSpark Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">News</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../news/GeoSpark-All-Modules-Release-notes/">Release notes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../news/GeoSpark-All-Modules-Maven-Central-Coordinates/">Maven Centrl Coordinate</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Download</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../cluster/">Set up Spark cluser</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Spark Scala shell</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#spark-scala-shell">Spark Scala shell</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#download-geospark-jar-automatically">Download GeoSpark jar automatically</a></li>
+        
+            <li><a class="toctree-l4" href="#download-geospark-jar-manually">Download GeoSpark jar manually</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../project/">Self-contain project</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../compile/">Compile the source code</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../publication/">Publications</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../contact/">Contact</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">GeoSpark core</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/GeoSpark-Scala-and-Java-API/">Scala/Java doc</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">GeoSpark SQL</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/sql/GeoSparkSQL-Overview/">Overview</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/sql/GeoSparkSQL-Constructor/">Constructor</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/sql/GeoSparkSQL-Function/">Function</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/sql/GeoSparkSQL-Predicate/">Predicate</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/sql/GeoSparkSQL-AggregateFunction/">Aggregate Function</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/sql/GeoSparkSQL-Optimizer/">Optimizer</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/sql/GeoSparkSQL-Parameter/">Parameter</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">GeoSpark viz</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../api/Babylon-Scala-and-Java-API/">Scala/Java doc</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorial</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../tutorial/benchmark/">Benchmark</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../tutorial/Advanced-Tutorial-Tune-your-GeoSpark-Application/">Tune GeoSpark core</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../tutorial/GeoSpark-Runnable-DEMO/">Runnable demo</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">GeoSpark Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Download &raquo;</li>
+        
+      
+    
+    <li>Spark Scala shell</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="spark-scala-shell">Spark Scala shell</h1>
+<p>Spark distribution provides an interactive Scala shell that allows a user to execute Scala code in a terminal.</p>
+<p>This mode currently works with GeoSpark-core and GeoSparkViz. GeoSparkSQL cannot run under this mode. </p>
+<h2 id="download-geospark-jar-automatically">Download GeoSpark jar automatically</h2>
+<ol>
+<li>
+<p>Have your Spark cluster ready.</p>
+</li>
+<li>
+<p>Run Spark shell with <code>--Packages</code> option. This command will automatically download GeoSpark jars from Maven Central.
+  <code>./bin/spark-shell --packages org.datasyslab:geospark:GEOSPARK_VERSION</code></p>
+</li>
+<li>
+<p>Local mode
+  <code>./bin/spark-shell --packages org.datasyslab:geospark:1.1.0,org.datasyslab:geospark-viz:1.1.0</code></p>
+</li>
+<li>
+<p>Cluster mode
+To run your Scala shell in cluster mode, you need to specify Spark Master IP:</p>
+</li>
+</ol>
+<p><code>./bin/spark-shell --master spark://localhost:7077 --packages org.datasyslab:geospark:1.1.0,org.datasyslab:geospark-viz:1.1.0</code></p>
+<h2 id="download-geospark-jar-manually">Download GeoSpark jar manually</h2>
+<ol>
+<li>
+<p>Have your Spark cluster ready.</p>
+</li>
+<li>
+<p>Download GeoSpark jars</p>
+</li>
+<li>Download the pre-compiled jars from <a href="https://github.com/DataSystemsLab/GeoSpark/releases">GeoSpark Releases on GitHub</a></li>
+<li>Download / Git clone GeoSpark source code and compile the code by yourself: <code>mvn clean install -DskipTests</code></li>
+<li>
+<p>Run Spark shell with <code>--jars</code> option.
+  <code>./bin/spark-shell --jars /Path/To/GeoSparkJars.jar</code></p>
+</li>
+<li>
+<p>Local mode
+  <code>./bin/spark-shell --jars geospark-1.0.1.jar,geospark-viz-1.0.1.jar</code></p>
+</li>
+<li>
+<p>Cluster mode
+To run your Scala shell in cluster mode, you need to specify Spark Master IP:</p>
+</li>
+</ol>
+<p><code>./bin/spark-shell --master spark://localhost:7077 --jars geospark-1.0.1.jar,geospark-viz-1.0.1.jar</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../project/" class="btn btn-neutral float-right" title="Self-contain project">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cluster/" class="btn btn-neutral" title="Set up Spark cluser"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../cluster/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../project/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

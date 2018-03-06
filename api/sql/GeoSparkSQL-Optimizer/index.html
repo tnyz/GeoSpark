@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Optimizer - GeoSpark Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Optimizer";
+    var mkdocs_page_input_path = "api/sql/GeoSparkSQL-Optimizer.md";
+    var mkdocs_page_url = "/api/sql/GeoSparkSQL-Optimizer/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> GeoSpark Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">News</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../news/GeoSpark-All-Modules-Release-notes/">Release notes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../news/GeoSpark-All-Modules-Maven-Central-Coordinates/">Maven Centrl Coordinate</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Download</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../download/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../download/cluster/">Set up Spark cluser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../download/scalashell/">Spark Scala shell</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../download/project/">Self-contain project</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../download/compile/">Compile the source code</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../publication/">Publications</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../contact/">Contact</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">GeoSpark core</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../GeoSpark-Scala-and-Java-API/">Scala/Java doc</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">GeoSpark SQL</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Overview/">Overview</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Constructor/">Constructor</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Function/">Function</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Predicate/">Predicate</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-AggregateFunction/">Aggregate Function</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Optimizer</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#geosparksql-query-optimizer">GeoSparkSQL query optimizer</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#range-join">Range join</a></li>
+        
+            <li><a class="toctree-l5" href="#distance-join">Distance join</a></li>
+        
+            <li><a class="toctree-l5" href="#predicate-pushdown">Predicate pushdown</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Parameter/">Parameter</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">GeoSpark viz</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Babylon-Scala-and-Java-API/">Scala/Java doc</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorial</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../tutorial/benchmark/">Benchmark</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../tutorial/Advanced-Tutorial-Tune-your-GeoSpark-Application/">Tune GeoSpark core</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../tutorial/GeoSpark-Runnable-DEMO/">Runnable demo</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">GeoSpark Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+        
+          <li>GeoSpark SQL &raquo;</li>
+        
+      
+    
+    <li>Optimizer</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="geosparksql-query-optimizer">GeoSparkSQL query optimizer</h1>
+<p>GeoSpark Spatial operators fully supports Apache SparkSQL query optimizer. It has the following query optimization features:
+<em> Automatically optimizes range join query and distance join query.
+</em> Automatically performs predicate pushdown.</p>
+<h2 id="range-join">Range join</h2>
+<p>Introduction:</p>
+<p><em>Find geometries from A and geometries from B such that each geometry pair satisfies a certain predicate</em></p>
+<p>Spark SQL Example:</p>
+<pre><code>select * from polygondf, pointdf where ST_Contains(polygondf.polygonshape,pointdf.pointshape)
+select * from polygondf, pointdf where ST_Intersects(polygondf.polygonshape,pointdf.pointshape)
+select * from pointdf, polygondf where ST_Within(pointdf.pointshape, polygondf.polygonshape)
+
+</code></pre>
+
+<p>Spark SQL Physical plan:</p>
+<pre><code>== Physical Plan ==
+RangeJoin polygonshape#20: geometry, pointshape#43: geometry, false
+:- Project [st_polygonfromenvelope(cast(_c0#0 as decimal(24,20)), cast(_c1#1 as decimal(24,20)), cast(_c2#2 as decimal(24,20)), cast(_c3#3 as decimal(24,20)), mypolygonid) AS polygonshape#20]
+:  +- *FileScan csv
++- Project [st_point(cast(_c0#31 as decimal(24,20)), cast(_c1#32 as decimal(24,20)), myPointId) AS pointshape#43]
+   +- *FileScan csv
+
+</code></pre>
+
+<h2 id="distance-join">Distance join</h2>
+<p>Introduction:</p>
+<p><em>Find geometries from A and geometries from B such that the internal Euclidean distance of each geometry pair is less or equal than a certain distance</em></p>
+<p>Spark SQL Example:</p>
+<p><em>Only consider "fully within a certain distance"</em></p>
+<pre><code>select * from pointdf1, pointdf2 where ST_Distance(pointdf1.pointshape1,pointdf2.pointshape2) &lt; 2
+</code></pre>
+
+<p><em>Consider "intersects within a certain distance"</em></p>
+<pre><code>select * from pointdf1, pointdf2 where ST_Distance(pointdf1.pointshape1,pointdf2.pointshape2) &lt;= 2
+</code></pre>
+
+<p>Spark SQL Physical plan:</p>
+<pre><code>== Physical Plan ==
+DistanceJoin pointshape1#12: geometry, pointshape2#33: geometry, 2.0, true
+:- Project [st_point(cast(_c0#0 as decimal(24,20)), cast(_c1#1 as decimal(24,20)), myPointId) AS pointshape1#12]
+:  +- *FileScan csv
++- Project [st_point(cast(_c0#21 as decimal(24,20)), cast(_c1#22 as decimal(24,20)), myPointId) AS pointshape2#33]
+   +- *FileScan csv
+
+</code></pre>
+
+<h2 id="predicate-pushdown">Predicate pushdown</h2>
+<p>Introduction:
+<em>Given a join query and a predicate in the same WHERE clause, first executes the Predicate as a filter, then executes the join query</em></p>
+<p>Spark SQL Example:</p>
+<pre><code>select * from polygondf, pointdf 
+
+where ST_Contains(polygondf.polygonshape,pointdf.pointshape)
+
+and ST_Contains(ST_PolygonFromEnvelope(1.0,101.0,501.0,601.0), polygondf.polygonshape)
+</code></pre>
+
+<p>Spark SQL Physical plan:</p>
+<pre><code>== Physical Plan ==
+RangeJoin polygonshape#20: geometry, pointshape#43: geometry, false
+:- Project [st_polygonfromenvelope(cast(_c0#0 as decimal(24,20)), cast(_c1#1 as decimal(24,20)), cast(_c2#2 as decimal(24,20)), cast(_c3#3 as decimal(24,20)), mypolygonid) AS polygonshape#20]
+:  +- Filter  **org.apache.spark.sql.geosparksql.expressions.ST_Contains$**
+:     +- *FileScan csv
++- Project [st_point(cast(_c0#31 as decimal(24,20)), cast(_c1#32 as decimal(24,20)), myPointId) AS pointshape#43]
+   +- *FileScan csv
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../GeoSparkSQL-Parameter/" class="btn btn-neutral float-right" title="Parameter">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../GeoSparkSQL-AggregateFunction/" class="btn btn-neutral" title="Aggregate Function"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../GeoSparkSQL-AggregateFunction/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../GeoSparkSQL-Parameter/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>

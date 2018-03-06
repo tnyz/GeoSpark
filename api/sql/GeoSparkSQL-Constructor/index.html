@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Constructor - GeoSpark Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Constructor";
+    var mkdocs_page_input_path = "api/sql/GeoSparkSQL-Constructor.md";
+    var mkdocs_page_url = "/api/sql/GeoSparkSQL-Constructor/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> GeoSpark Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">News</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../news/GeoSpark-All-Modules-Release-notes/">Release notes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../news/GeoSpark-All-Modules-Maven-Central-Coordinates/">Maven Centrl Coordinate</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Download</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../download/overview/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../download/cluster/">Set up Spark cluser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../download/scalashell/">Spark Scala shell</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../download/project/">Self-contain project</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../download/compile/">Compile the source code</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../publication/">Publications</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../contact/">Contact</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">GeoSpark core</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../GeoSpark-Scala-and-Java-API/">Scala/Java doc</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">GeoSpark SQL</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Overview/">Overview</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Constructor</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#st_geomfromwkt-wktstring-uuid1-uuid2">ST_GeomFromWKT (Wkt:string, UUID1, UUID2, ...)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#st_geomfromgeojson-geojsonstring-uuid1-uuid2">ST_GeomFromGeoJSON (GeoJson:string, UUID1, UUID2, ...)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#st_point-xdecimal-ydecimal-uuid1-uuid2">ST_Point (X:decimal, Y:decimal, UUID1, UUID2, ...)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#st_pointfromtext-textstring-delimiterchar-uuid1-uuid2">ST_PointFromText (Text:string, Delimiter:char, UUID1, UUID2, ...)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#st_polygonfromtext-textstring-delimiterchar-uuid1-uuid2">ST_PolygonFromText (Text:string, Delimiter:char, UUID1, UUID2, ...)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#st_linestringfromtext-textstring-delimiterchar-uuid1-uuid2">ST_LineStringFromText (Text:string, Delimiter:char, UUID1, UUID2, ...)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#st_polygonfromenvelope-minxdecimal-minydecimal-maxxdecimal-maxydecimal-uuid1-uuid2">ST_PolygonFromEnvelope (MinX:decimal, MinY:decimal, MaxX:decimal, MaxY:decimal, UUID1, UUID2, ...)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#st_circle-ageometry-radiusdecimal">ST_Circle (A:Geometry, Radius:decimal)</a></li>
+    
+
+    <li class="toctree-l4"><a href="#construct-dataframe-from-esri-shapefile">Construct DataFrame from ESRI Shapefile</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Function/">Function</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Predicate/">Predicate</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-AggregateFunction/">Aggregate Function</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Optimizer/">Optimizer</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../GeoSparkSQL-Parameter/">Parameter</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">GeoSpark viz</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../Babylon-Scala-and-Java-API/">Scala/Java doc</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorial</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../tutorial/benchmark/">Benchmark</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../tutorial/Advanced-Tutorial-Tune-your-GeoSpark-Application/">Tune GeoSpark core</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../tutorial/GeoSpark-Runnable-DEMO/">Runnable demo</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">GeoSpark Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+        
+          <li>GeoSpark SQL &raquo;</li>
+        
+      
+    
+    <li>Constructor</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="st_geomfromwkt-wktstring-uuid1-uuid2">ST_GeomFromWKT (Wkt:string, UUID1, UUID2, ...)</h3>
+<p>Introduction:</p>
+<p><em>Construct a Geometry from Wkt. Unlimited UUID strings can be appended.</em></p>
+<p>Since: v1.0.0</p>
+<p>Spark SQL example:</p>
+<pre><code>select ST_GeomFromWKT(polygontable._c0) as polygonshape from polygontable
+</code></pre>
+
+<h3 id="st_geomfromgeojson-geojsonstring-uuid1-uuid2">ST_GeomFromGeoJSON (GeoJson:string, UUID1, UUID2, ...)</h3>
+<p>Introduction:</p>
+<p><em>Construct a Geometry from GeoJson. Unlimited UUID strings can be appended.</em></p>
+<p>Since: v1.0.0</p>
+<p>Spark SQL example:</p>
+<pre><code>var polygonJsonDf = sparkSession.read.format(&quot;csv&quot;).option(&quot;delimiter&quot;,&quot;\t&quot;).option(&quot;header&quot;,&quot;false&quot;).load(geoJsonGeomInputLocation)
+polygonJsonDf.createOrReplaceTempView(&quot;polygontable&quot;)
+polygonJsonDf.show()
+var polygonDf = sparkSession.sql(&quot;select ST_GeomFromGeoJSON(polygontable._c0) as countyshape from polygontable&quot;)
+polygonDf.show()
+</code></pre>
+
+<p>Regarding how to read JSON files in Spark, read <a href="https://docs.databricks.com/spark/latest/data-sources/read-json.html">the document from DataBricks</a></p>
+<h3 id="st_point-xdecimal-ydecimal-uuid1-uuid2">ST_Point (X:decimal, Y:decimal, UUID1, UUID2, ...)</h3>
+<p>Introduction:</p>
+<p><em>Construct a Point from X and Y. Unlimited UUID strings can be appended.</em></p>
+<p>Since: v1.0.0</p>
+<p>Spark SQL example:</p>
+<pre><code>select ST_Point(cast(pointtable._c0 as Decimal(24,20)), cast(pointtable._c1 as Decimal(24,20))) as pointshape from pointtable
+</code></pre>
+
+<h3 id="st_pointfromtext-textstring-delimiterchar-uuid1-uuid2">ST_PointFromText (Text:string, Delimiter:char, UUID1, UUID2, ...)</h3>
+<p>Introduction:</p>
+<p><em>Construct a Point from Text, delimited by Delimiter. Unlimited UUID strings can be appended.</em></p>
+<p>Spark SQL example:</p>
+<pre><code>select ST_PointFromText(pointtable._c0,',') as pointshape from pointtable
+</code></pre>
+
+<h3 id="st_polygonfromtext-textstring-delimiterchar-uuid1-uuid2">ST_PolygonFromText (Text:string, Delimiter:char, UUID1, UUID2, ...)</h3>
+<p>Introduction:</p>
+<p><em>Construct a Polygon from Text, delimited by Delimiter. Unlimited UUID strings can be appended.</em></p>
+<p>Since: v1.0.0</p>
+<p>Spark SQL example:</p>
+<pre><code>select ST_PolygonFromText(polygontable._c0,',') as polygonshape from polygontable
+</code></pre>
+
+<h3 id="st_linestringfromtext-textstring-delimiterchar-uuid1-uuid2">ST_LineStringFromText (Text:string, Delimiter:char, UUID1, UUID2, ...)</h3>
+<p>Introduction:</p>
+<p><em>Construct a LineString from Text, delimited by Delimiter. Unlimited UUID strings can be appended.</em></p>
+<p>Since: v1.0.0</p>
+<p>Spark SQL example:</p>
+<pre><code>select ST_LineStringFromText(linestringtable._c0,',') as linestringshape from linestringtable
+</code></pre>
+
+<h3 id="st_polygonfromenvelope-minxdecimal-minydecimal-maxxdecimal-maxydecimal-uuid1-uuid2">ST_PolygonFromEnvelope (MinX:decimal, MinY:decimal, MaxX:decimal, MaxY:decimal, UUID1, UUID2, ...)</h3>
+<p>Introduction:</p>
+<p><em>Construct a Polygon from MinX, MinY, MaxX, MaxY. Unlimited UUID strings can be appended.</em></p>
+<p>Since: v1.0.0</p>
+<p>Spark SQL example:</p>
+<pre><code>select * from pointdf where ST_Contains(ST_PolygonFromEnvelope(1.0,100.0,1000.0,1100.0), pointdf.pointshape)
+</code></pre>
+
+<h3 id="st_circle-ageometry-radiusdecimal">ST_Circle (A:Geometry, Radius:decimal)</h3>
+<p>Introduction:</p>
+<p><em>Construct a Circle from A with a Radius.</em></p>
+<p>Since: v1.0.0</p>
+<p>Spark SQL example:</p>
+<pre><code>select ST_Circle(pointdf.pointshape, 1.0) from pointdf)
+</code></pre>
+
+<h3 id="construct-dataframe-from-esri-shapefile">Construct DataFrame from ESRI Shapefile</h3>
+<p>Introduction:</p>
+<p><em>Construct a DataFrame from a Shapefile</em></p>
+<p>Since: v1.0.0</p>
+<p>SparkSQL example:</p>
+<pre><code>var spatialRDD = new SpatialRDD[Geometry]
+spatialRDD.rawSpatialRDD = ShapefileReader.readToGeometryRDD(sparkSession.sparkContext, shapefileInputLocation)
+var rawSpatialDf = Adapter.toDf(spatialRDD,sparkSession)
+rawSpatialDf.createOrReplaceTempView(&quot;rawSpatialDf&quot;)
+var spatialDf = sparkSession.sql(&quot;SELECT ST_GeomFromWKT(rddshape), _c1, _c2 FROM rawSpatialDf&quot;)
+spatialDf.show()
+spatialDf.printSchema()
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../GeoSparkSQL-Function/" class="btn btn-neutral float-right" title="Function">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../GeoSparkSQL-Overview/" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../GeoSparkSQL-Overview/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../GeoSparkSQL-Function/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/require.js"></script>
+      <script src="../../../search/search.js"></script>
+
+</body>
+</html>
