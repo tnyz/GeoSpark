@@ -214,7 +214,7 @@
         <li class="main "><a href="#apache-spark-1x-versions">Apache Spark 1.X versions</a></li>
             <li><a href="#geospark-core_1">GeoSpark-Core</a></li>
             <li><a href="#geospark-viz_1">GeoSpark-Viz</a></li>
-        <li class="main "><a href="#snapshot-versions-only-supports-spark-2x">SNAPSHOT versions (only supports Spark 2.X)</a></li>
+        <li class="main "><a href="#snapshot-versions-only-supports-spark-22">SNAPSHOT versions (only supports Spark 2.2)</a></li>
             <li><a href="#buildsbt">build.sbt</a></li>
             <li><a href="#pomxml">POM.XML</a></li>
     </ul>
@@ -226,26 +226,32 @@
 <h2 id="geospark-core">GeoSpark-Core</h2>
 <pre><code>groupId: org.datasyslab
 artifactId: geospark
-version: 1.0.1
+version: 1.1.0
 </code></pre>
 
 <h2 id="geospark-sql">GeoSpark-SQL</h2>
-<h3 id="for-sparksql-22-and-later">For SparkSQL-2.2 and later</h3>
+<h3 id="for-sparksql-23">For SparkSQL-2.3</h3>
 <pre><code>groupId: org.datasyslab
-artifactId: geospark-sql
-version: 1.0.1
+artifactId: geospark-sql_2.3
+version: 1.1.0
+</code></pre>
+
+<h3 id="for-sparksql-22">For SparkSQL-2.2</h3>
+<pre><code>groupId: org.datasyslab
+artifactId: geospark-sql_2.2
+version: 1.1.0
 </code></pre>
 
 <h3 id="for-sparksql-21">For SparkSQL-2.1</h3>
 <pre><code>groupId: org.datasyslab
 artifactId: geospark-sql_2.1
-version: 1.0.1
+version: 1.1.0
 </code></pre>
 
 <h2 id="geospark-viz">GeoSpark-Viz</h2>
 <pre><code>groupId: org.datasyslab
 artifactId: geospark-viz
-version: 1.0.1
+version: 1.1.0
 </code></pre>
 
 <hr />
@@ -264,7 +270,7 @@ version: 0.2.1-spark-1.x
 </code></pre>
 
 <hr />
-<h1 id="snapshot-versions-only-supports-spark-2x">SNAPSHOT versions (only supports Spark 2.X)</h1>
+<h1 id="snapshot-versions-only-supports-spark-22">SNAPSHOT versions (only supports Spark 2.2)</h1>
 <p>Sometimes GeoSpark has a SNAPSHOT version for the upcoming release. "SNAPSHOT" is uppercase.</p>
 <pre><code>groupId: org.datasyslab
 artifactId: geospark

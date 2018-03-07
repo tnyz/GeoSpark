@@ -207,7 +207,8 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#v101">v1.0.1</a></li>
+        <li class="main active"><a href="#v110">v1.1.0</a></li>
+        <li class="main "><a href="#v101">v1.0.1</a></li>
         <li class="main "><a href="#v100">v1.0.0</a></li>
             <li><a href="#v091-geospark-core">v0.9.1 (GeoSpark-core)</a></li>
             <li><a href="#v082-geospark-core">v0.8.2 (GeoSpark-core)</a></li>
@@ -218,12 +219,34 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h2 id="v110">v1.1.0</h2>
+<p>This version adds very efficient R-Tree and Quad-Tree index serializers and supports Apache Spark and  SparkSQL 2.3. See <a href="../GeoSpark-All-Modules-Maven-Central-Coordinates">Maven Central coordinate</a> to locate the particular version.</p>
+<p><strong>GeoSpark Core</strong></p>
+<ul>
+<li>Fixed Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/185">185</a>: CRStransform throws Exception for Bursa wolf parameters. See PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/189">189</a>.</li>
+<li>Fixed Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/190">190</a>: Shapefile reader doesn't support Chinese characters (中文字符). See PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/192">192</a>.</li>
+<li>Add R-Tree and Quad-Tree index serializer. GeoSpark custom index serializer has around 2 times smaller index size and faster serialization than Apache Spark kryo serializer. See PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/177">177</a>.</li>
+</ul>
+<p><strong>GeoSpark SQL</strong></p>
+<ul>
+<li>Fixed Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/194">194</a>: doesn't support Spark 2.3.</li>
+<li>Fixed Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/188">188</a>:ST_ConvexHull should accept any type of geometry as an input. See PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/189">189</a>.</li>
+<li>Add ST_Intersection function. See Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/110">110</a> and PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/189">189</a>.</li>
+</ul>
+<p><strong>GeoSpark Viz</strong></p>
+<ul>
+<li>Fixed Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/154">154</a>: GeoSpark kryp serializer and GeoSparkViz conflict. See PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/178">178</a></li>
+</ul>
 <h2 id="v101">v1.0.1</h2>
-<p><strong>GeoSpark Core</strong>
-* Fixed Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/170">170</a></p>
-<p><strong>GeoSpark SQL</strong>
-<em> Fixed Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/171">171</a>
-</em> Added the support of SparkSQL 2.2. GeoSpark-SQL for Spark 2.1 is published separately (<a href="../GeoSpark-All-Modules-Maven-Central-Coordinates">Maven Coordinates</a>).</p>
+<p><strong>GeoSpark Core</strong></p>
+<ul>
+<li>Fixed Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/170">170</a></li>
+</ul>
+<p><strong>GeoSpark SQL</strong></p>
+<ul>
+<li>Fixed Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/171">171</a></li>
+<li>Added the support of SparkSQL 2.2. GeoSpark-SQL for Spark 2.1 is published separately (<a href="../GeoSpark-All-Modules-Maven-Central-Coordinates">Maven Coordinates</a>).</li>
+</ul>
 <p><strong>GeoSpark Viz</strong>
 None</p>
 <hr />
