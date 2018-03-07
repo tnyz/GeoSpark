@@ -23,6 +23,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/news/publication/</loc>
+     <lastmod>2018-03-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
@@ -57,22 +63,6 @@
      <changefreq>daily</changefreq>
     </url>
         
-    
-
-    
-    <url>
-     <loc>/publication/</loc>
-     <lastmod>2018-03-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/contact/</loc>
-     <lastmod>2018-03-06</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
     
 
     
@@ -117,6 +107,14 @@
      <changefreq>daily</changefreq>
     </url>
         
+    
+
+    
+    <url>
+     <loc>/contact/</loc>
+     <lastmod>2018-03-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
     
 
 </urlset>

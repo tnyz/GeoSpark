@@ -141,6 +141,16 @@
             "title": "POM.XML"
         }, 
         {
+            "location": "/news/publication/", 
+            "text": "Publication\n\n\nJia Yu, Jinxuan Wu, Mohamed Sarwat. \n\"A Demonstration of GeoSpark: A Cluster Computing Framework for Processing Big Spatial Data\"\n. (demo paper) In Proceeding of IEEE International Conference on Data Engineering ICDE 2016, Helsinki, FI, May 2016\n\n\nJia Yu, Jinxuan Wu, Mohamed Sarwat. \n\"GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data\"\n. (short paper) In Proceeding of the ACM International Conference on Advances in Geographic Information Systems ACM SIGSPATIAL GIS 2015, Seattle, WA, USA November 2015\n\n\nCurrently, we have published two papers about GeoSpark. Only these two papers are associated with GeoSpark Development Team.", 
+            "title": "Publications"
+        }, 
+        {
+            "location": "/news/publication/#publication", 
+            "text": "Jia Yu, Jinxuan Wu, Mohamed Sarwat.  \"A Demonstration of GeoSpark: A Cluster Computing Framework for Processing Big Spatial Data\" . (demo paper) In Proceeding of IEEE International Conference on Data Engineering ICDE 2016, Helsinki, FI, May 2016  Jia Yu, Jinxuan Wu, Mohamed Sarwat.  \"GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data\" . (short paper) In Proceeding of the ACM International Conference on Advances in Geographic Information Systems ACM SIGSPATIAL GIS 2015, Seattle, WA, USA November 2015  Currently, we have published two papers about GeoSpark. Only these two papers are associated with GeoSpark Development Team.", 
+            "title": "Publication"
+        }, 
+        {
             "location": "/download/overview/", 
             "text": "Download\n\n\nGeoSpark source code is hosted on GitHub: \nGeoSpark GitHub repository\n\n\nBefore starting the GeoSpark journey, you need to make sure your Apache Spark cluster is ready.\n\n\nThere are two ways to use a Scala or Java library with Apache Spark. You can user either one to run GeoSpark.\n\n\n\n\nSpark interactive Scala shell: easy to start, good for new learners to try simple functions\n\n\nSelf-contained Scala / Java project: a steep learning curve of package management, but good for large projects", 
             "title": "Overview"
@@ -209,46 +219,6 @@
             "location": "/download/compile/#compile-geospark-source-code", 
             "text": "Some GeoSpark hackers may want to change some source code to fit in their own scenarios. To compile GeoSpark source code, you first need to download GeoSpark source code:   Download / Git clone GeoSpark source code from  GeoSpark Github repo .   GeoSpark is a a project with three modules, core, sql, and viz. Each module is a Scala/Java mixed project which is managed by Apache Maven 3.    Make sure your machine has Java 1.8 and Apache Maven 3.   To compile all modules, please make sure you are in the root folder of three modules. Then enter the following command in the terminal:  mvn clean install -DskipTests  This command will first delete the old binary files and compile all three modules. This compilation will skip the unit tests of GeoSpark.  To compile a module of GeoSpark, please make sure you are in the folder of that module. Then enter the same command.  To run unit tests, just simply remove  -DskipTests  option. The command is like this:  mvn clean install  Note, the unit tests of all three modules may take up to 20 minutes.", 
             "title": "Compile GeoSpark source code"
-        }, 
-        {
-            "location": "/publication/", 
-            "text": "Publication\n\n\nJia Yu, Jinxuan Wu, Mohamed Sarwat. \n\"A Demonstration of GeoSpark: A Cluster Computing Framework for Processing Big Spatial Data\"\n. (demo paper) In Proceeding of IEEE International Conference on Data Engineering ICDE 2016, Helsinki, FI, May 2016\n\n\nJia Yu, Jinxuan Wu, Mohamed Sarwat. \n\"GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data\"\n. (short paper) In Proceeding of the ACM International Conference on Advances in Geographic Information Systems ACM SIGSPATIAL GIS 2015, Seattle, WA, USA November 2015\n\n\nCurrently, we have published two papers about GeoSpark. Only these two papers are associated with GeoSpark Development Team.", 
-            "title": "Publications"
-        }, 
-        {
-            "location": "/publication/#publication", 
-            "text": "Jia Yu, Jinxuan Wu, Mohamed Sarwat.  \"A Demonstration of GeoSpark: A Cluster Computing Framework for Processing Big Spatial Data\" . (demo paper) In Proceeding of IEEE International Conference on Data Engineering ICDE 2016, Helsinki, FI, May 2016  Jia Yu, Jinxuan Wu, Mohamed Sarwat.  \"GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data\" . (short paper) In Proceeding of the ACM International Conference on Advances in Geographic Information Systems ACM SIGSPATIAL GIS 2015, Seattle, WA, USA November 2015  Currently, we have published two papers about GeoSpark. Only these two papers are associated with GeoSpark Development Team.", 
-            "title": "Publication"
-        }, 
-        {
-            "location": "/contact/", 
-            "text": "Contact\n\n\nQuestions\n\n\n\n\nGeoSpark@Twitter\n\n\nGeoSpark Discussion Board\n\n\nChat with us! \n\n\nEmail us!\n\n\n\n\nContact\n\n\n\n\n\n\nJia Yu\n (Email: jiayu2@asu.edu)\n\n\n\n\n\n\nMohamed Sarwat\n (Email: msarwat@asu.edu)\n\n\n\n\n\n\nProject website\n\n\nPlease visit \nGeoSpark project wesbite\n for latest news and releases.\n\n\nData Systems Lab\n\n\nGeoSpark is one of the projects initiated by \nData Systems Lab\n at Arizona State University. The mission of Data Systems Lab is designing and developing experimental data management systems (e.g., database systems).", 
-            "title": "Contact"
-        }, 
-        {
-            "location": "/contact/#contact", 
-            "text": "", 
-            "title": "Contact"
-        }, 
-        {
-            "location": "/contact/#questions", 
-            "text": "GeoSpark@Twitter  GeoSpark Discussion Board  Chat with us!   Email us!", 
-            "title": "Questions"
-        }, 
-        {
-            "location": "/contact/#contact_1", 
-            "text": "Jia Yu  (Email: jiayu2@asu.edu)    Mohamed Sarwat  (Email: msarwat@asu.edu)", 
-            "title": "Contact"
-        }, 
-        {
-            "location": "/contact/#project-website", 
-            "text": "Please visit  GeoSpark project wesbite  for latest news and releases.", 
-            "title": "Project website"
-        }, 
-        {
-            "location": "/contact/#data-systems-lab", 
-            "text": "GeoSpark is one of the projects initiated by  Data Systems Lab  at Arizona State University. The mission of Data Systems Lab is designing and developing experimental data management systems (e.g., database systems).", 
-            "title": "Data Systems Lab"
         }, 
         {
             "location": "/api/GeoSpark-Scala-and-Java-API/", 
@@ -504,6 +474,36 @@
             "location": "/tutorial/GeoSpark-Runnable-DEMO/#geospark-scala-runnable-demo", 
             "text": "Scala/Java Runnable Example", 
             "title": "GeoSpark Scala Runnable DEMO"
+        }, 
+        {
+            "location": "/contact/", 
+            "text": "Contact\n\n\nQuestions\n\n\n\n\nGeoSpark@Twitter\n\n\nGeoSpark Discussion Board\n\n\nChat with us! \n\n\nEmail us!\n\n\n\n\nContact\n\n\n\n\n\n\nJia Yu\n (Email: jiayu2@asu.edu)\n\n\n\n\n\n\nMohamed Sarwat\n (Email: msarwat@asu.edu)\n\n\n\n\n\n\nProject website\n\n\nPlease visit \nGeoSpark project wesbite\n for latest news and releases.\n\n\nData Systems Lab\n\n\nGeoSpark is one of the projects initiated by \nData Systems Lab\n at Arizona State University. The mission of Data Systems Lab is designing and developing experimental data management systems (e.g., database systems).", 
+            "title": "Contact"
+        }, 
+        {
+            "location": "/contact/#contact", 
+            "text": "", 
+            "title": "Contact"
+        }, 
+        {
+            "location": "/contact/#questions", 
+            "text": "GeoSpark@Twitter  GeoSpark Discussion Board  Chat with us!   Email us!", 
+            "title": "Questions"
+        }, 
+        {
+            "location": "/contact/#contact_1", 
+            "text": "Jia Yu  (Email: jiayu2@asu.edu)    Mohamed Sarwat  (Email: msarwat@asu.edu)", 
+            "title": "Contact"
+        }, 
+        {
+            "location": "/contact/#project-website", 
+            "text": "Please visit  GeoSpark project wesbite  for latest news and releases.", 
+            "title": "Project website"
+        }, 
+        {
+            "location": "/contact/#data-systems-lab", 
+            "text": "GeoSpark is one of the projects initiated by  Data Systems Lab  at Arizona State University. The mission of Data Systems Lab is designing and developing experimental data management systems (e.g., database systems).", 
+            "title": "Data Systems Lab"
         }
     ]
 }
