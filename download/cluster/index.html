@@ -221,8 +221,20 @@
 <li>Set up password-less SSH on your cluster. Each master-worker pair should have bi-directional password-less SSH.</li>
 <li>Make sure you have installed JRE 1.8 or later.</li>
 <li>Add the list of your workers' IP address in ./conf/slaves</li>
-<li>Add the following lines in SPark configuration files, if necessary.</li>
+<li>Besides the necessary Spark settings, you may need to add the following lines in Spark configuration files to avoid GeoSpark memory errors:</li>
 </ol>
+<p>In <code>./conf/spark-defaults.conf</code></p>
+<pre><code>spark.driver.memory 10g
+spark.network.timeout 1000s
+spark.driver.maxResultSize 5g
+</code></pre>
+
+<ul>
+<li><code>spark.driver.memory</code> tells Spark to allocate enough memory for the driver program because GeoSpark needs to build global grid files (global index) on the driver program. If you have a large amount of data (normally, over 100 GB), set this parameter to 2~5 GB will be good. Otherwise, you may observe "out of memory" error.</li>
+<li><code>spark.network.timeout</code> is the default timeout for all network interactions. Sometimes, spatial join query takes longer time to shuffle data. This will ensure Spark has enough patience to wait for the result.</li>
+<li><code>spark.driver.maxResultSize</code> is the limit of total size of serialized results of all partitions for each Spark action. Sometimes, the result size of spatial queries is large. The "Collect" operation may throw errors.</li>
+</ul>
+<p>For more details of Spark parameters, please visit <a href="https://spark.apache.org/docs/latest/configuration.html">Spark Website</a>.</p>
 <h2 id="start-your-cluster">Start your cluster</h2>
 <p>Go the root folder of the uncompressed Apache Spark folder. Start your spark cluster via a terminal</p>
 <pre><code>./sbin/start-all.sh
