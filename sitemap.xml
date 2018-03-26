@@ -4,62 +4,52 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-03-17</lastmod>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
-    <url>
-     <loc>/news/GeoSpark-All-Modules-Release-notes/</loc>
-     <lastmod>2018-03-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/news/GeoSpark-All-Modules-Maven-Central-Coordinates/</loc>
-     <lastmod>2018-03-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/news/publication/</loc>
-     <lastmod>2018-03-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
     
 
     
         
     <url>
      <loc>/download/overview/</loc>
-     <lastmod>2018-03-17</lastmod>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/download/GeoSpark-All-Modules-Release-notes/</loc>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/download/GeoSpark-All-Modules-Maven-Central-Coordinates/</loc>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/download/cluster/</loc>
-     <lastmod>2018-03-17</lastmod>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/download/scalashell/</loc>
-     <lastmod>2018-03-17</lastmod>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/download/project/</loc>
-     <lastmod>2018-03-17</lastmod>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/download/compile/</loc>
-     <lastmod>2018-03-17</lastmod>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -68,42 +58,98 @@
     
         
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>/tutorial/rdd/</loc>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
+     <loc>/tutorial/sql/</loc>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
-     <lastmod></lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/tutorial/benchmark/</loc>
-     <lastmod>2018-03-17</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/tutorial/Advanced-Tutorial-Tune-your-GeoSpark-Application/</loc>
-     <lastmod>2018-03-17</lastmod>
+     <loc>/tutorial/viz/</loc>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/tutorial/GeoSpark-Runnable-DEMO/</loc>
-     <lastmod>2018-03-17</lastmod>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorial/faq/</loc>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorial/Advanced-Tutorial-Tune-your-GeoSpark-Application/</loc>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tutorial/benchmark/</loc>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc></loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/contribute/rule/</loc>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contribute/contributor/</loc>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/contact/contact/</loc>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contact/publication/</loc>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -111,8 +157,8 @@
 
     
     <url>
-     <loc>/contact/</loc>
-     <lastmod>2018-03-17</lastmod>
+     <loc>/license/License/</loc>
+     <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
