@@ -1438,6 +1438,11 @@ Use the following code to create a PolygonRDD/LineStringRDD
 <h2 id="transform-the-coordinate-reference-system">Transform the Coordinate Reference System<a class="headerlink" href="#transform-the-coordinate-reference-system" title="Permanent link">&para;</a></h2>
 <p>GeoSpark doesn't control the coordinate unit (degree-based or meter-based) of all geometries in an SpatialRDD. The unit of all related distances in GeoSpark is same as the unit of all geometries in an SpatialRDD.</p>
 <p>To convert Coordinate Reference System of an SpatialRDD, use the following code:</p>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="n">sourceCrsCode</span> <span class="k">=</span> <span class="s">&quot;epsg:4326&quot;</span> <span class="c1">// WGS84, the most common degree-based CRS</span>
+<span class="k">val</span> <span class="n">targetCrsCode</span> <span class="k">=</span> <span class="s">&quot;epsg:3857&quot;</span> <span class="c1">// The most common meter-based CRS</span>
+<span class="n">objectRDD</span><span class="o">.</span><span class="nc">CRSTransform</span><span class="o">(</span><span class="n">sourceCrsCode</span><span class="o">,</span> <span class="n">targetCrsCode</span><span class="o">)</span>
+</pre></div>
+
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>CRS transformation should be done right after creating each SpatialRDD, otherwise it will lead to wrong query results. For instace, use something like this:
