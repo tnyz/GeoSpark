@@ -1410,7 +1410,7 @@ Use the following code to create a PolygonRDD/LineStringRDD
 <span class="s">        |FROM inputtable</span>
 <span class="s">    &quot;&quot;&quot;</span><span class="o">.</span><span class="n">stripMargin</span><span class="o">)</span>
 </pre></div></li>
-<li>Use GeoSpark SQL-RDD Adapter to convert a DataFrame to an SpatialRDD
+<li>Use GeoSparkSQL DataFrame-RDD Adapter to convert a DataFrame to an SpatialRDD
 <div class="codehilite"><pre><span></span><span class="k">var</span> <span class="n">spatialRDD</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SpatialRDD</span><span class="o">[</span><span class="kt">Geometry</span><span class="o">]</span>
 <span class="n">spatialRDD</span><span class="o">.</span><span class="n">rawSpatialRDD</span> <span class="k">=</span> <span class="nc">Adapter</span><span class="o">.</span><span class="n">toRdd</span><span class="o">(</span><span class="n">spatialDf</span><span class="o">)</span>
 </pre></div></li>

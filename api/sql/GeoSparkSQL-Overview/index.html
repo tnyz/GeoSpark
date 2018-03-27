@@ -576,8 +576,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" title="Usage" class="md-nav__link">
-    Usage
+  <a href="#quick-start" title="Quick start" class="md-nav__link">
+    Quick start
   </a>
   
 </li>
@@ -847,8 +847,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#usage" title="Usage" class="md-nav__link">
-    Usage
+  <a href="#quick-start" title="Quick start" class="md-nav__link">
+    Quick start
   </a>
   
 </li>
@@ -900,7 +900,8 @@
 </li>
 </ul>
 <p>GeoSparkSQL supports SparkSQL query optimizer, documentation is <a href="../GeoSparkSQL-Optimizer">Here</a></p>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>The detailed explanation is here <a href="../../../tutorial/sql/">Write a SQL/DataFrame application</a>.</p>
 <ol>
 <li>Add GeoSpark-core and GeoSparkSQL into your project POM.xml or build.sbt</li>
 <li>Declare your Spark Session
@@ -910,7 +911,7 @@
       <span class="n">master</span><span class="o">(</span><span class="s">&quot;local[*]&quot;</span><span class="o">).</span><span class="n">appName</span><span class="o">(</span><span class="s">&quot;myGeoSparkSQLdemo&quot;</span><span class="o">).</span><span class="n">getOrCreate</span><span class="o">()</span>
 </pre></div></li>
 <li>Add the following line after your SparkSession declaration:
-<div class="codehilite"><pre><span></span><span class="nc">GeoSparkSQLRegistrator</span><span class="o">.</span><span class="n">registerAll</span><span class="o">(</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">sqlContext</span><span class="o">)</span>
+<div class="codehilite"><pre><span></span><span class="nc">GeoSparkSQLRegistrator</span><span class="o">.</span><span class="n">registerAll</span><span class="o">(</span><span class="n">sparkSession</span><span class="o">)</span>
 </pre></div></li>
 </ol>
                 
