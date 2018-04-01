@@ -495,6 +495,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#save-to-permanent-storage" title="Save to permanent storage" class="md-nav__link">
+    Save to permanent storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#convert-between-dataframe-and-spatialrdd" title="Convert between DataFrame and SpatialRDD" class="md-nav__link">
     Convert between DataFrame and SpatialRDD
   </a>
@@ -1018,6 +1025,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#save-to-permanent-storage" title="Save to permanent storage" class="md-nav__link">
+    Save to permanent storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#convert-between-dataframe-and-spatialrdd" title="Convert between DataFrame and SpatialRDD" class="md-nav__link">
     Convert between DataFrame and SpatialRDD
   </a>
@@ -1176,7 +1190,7 @@ The file may have many other columns.</p>
 <p>GeoSparkSQL provides more than 10 different functions to create a Geometry column, please read <a href="../../api/sql/GeoSparkSQL-Constructor/">GeoSparkSQL constructor API</a>.</p>
 </div>
 <h2 id="transform-the-coordinate-reference-system">Transform the Coordinate Reference System<a class="headerlink" href="#transform-the-coordinate-reference-system" title="Permanent link">&para;</a></h2>
-<p>GeoSpark doesn't control the coordinate unit (degree-based or meter-based) of all geometries in a Geometyr column. The unit of all related distances in GeoSparkSQL is same as the unit of all geometries in a Geometyr column.</p>
+<p>GeoSpark doesn't control the coordinate unit (degree-based or meter-based) of all geometries in a Geometry column. The unit of all related distances in GeoSparkSQL is same as the unit of all geometries in a Geometry column.</p>
 <p>To convert Coordinate Reference System of the Geometry column created before, use the following code:</p>
 <div class="codehilite"><pre><span></span><span class="n">spatialDf</span> <span class="k">=</span> <span class="n">sparkSession</span><span class="o">.</span><span class="n">sql</span><span class="o">(</span>
   <span class="s">&quot;&quot;&quot;</span>
@@ -1237,6 +1251,21 @@ The file may have many other columns.</p>
 <p>The details of a join query is available here <a href="../../api/sql/GeoSparkSQL-Optimizer/">Join query</a>.</p>
 <h3 id="other-queries">Other queries<a class="headerlink" href="#other-queries" title="Permanent link">&para;</a></h3>
 <p>There are lots of other functions can be combined with these queries. Please read <a href="../../api/sql/GeoSparkSQL-Function/">GeoSparkSQL functions</a> and <a href="../../api/sql/GeoSparkSQL-AggregateFunction/">GeoSparkSQL aggregate functions</a>.</p>
+<h2 id="save-to-permanent-storage">Save to permanent storage<a class="headerlink" href="#save-to-permanent-storage" title="Permanent link">&para;</a></h2>
+<p>To save a Spatial DataFrame to some permanent storage such as Hive tables and HDFS, you can simply convert each geometry in the Geometry type column back to a plain String and save the plain DataFrame to wherever you want.</p>
+<p>Use the following code to convert the Geometry column in a DataFrame back to a WKT string column:
+<div class="codehilite"><pre><span></span><span class="n">sparkSession</span><span class="o">.</span><span class="n">udf</span><span class="o">.</span><span class="n">register</span><span class="o">(</span><span class="s">&quot;ST_SaveAsWKT&quot;</span><span class="o">,</span> <span class="o">(</span><span class="n">geometry</span><span class="k">:</span> <span class="kt">Geometry</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">geometry</span><span class="o">.</span><span class="n">toText</span><span class="o">))</span>
+<span class="k">var</span> <span class="n">stringDf</span> <span class="k">=</span> <span class="n">sparkSession</span><span class="o">.</span><span class="n">sql</span><span class="o">(</span>
+  <span class="s">&quot;&quot;&quot;</span>
+<span class="s">    |SELECT ST_SaveAsWKT(countyshape)</span>
+<span class="s">    |FROM polygondf</span>
+<span class="s">  &quot;&quot;&quot;</span><span class="o">.</span><span class="n">stripMargin</span><span class="o">)</span>
+</pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are working on providing more user-friendly output functions such as <mark>ST_SaveAsWKT</mark> and <mark>ST_SaveAsWKB</mark>. Stay tuned!</p>
+</div>
+<p>To load the DataFrame back, you first use the regular method to load the saved string DataFrame from the permanent storage and use <mark>ST_GeomFromWKT</mark> to re-build the Geometry type column.</p>
 <h2 id="convert-between-dataframe-and-spatialrdd">Convert between DataFrame and SpatialRDD<a class="headerlink" href="#convert-between-dataframe-and-spatialrdd" title="Permanent link">&para;</a></h2>
 <h3 id="dataframe-to-spatialrdd">DataFrame to SpatialRDD<a class="headerlink" href="#dataframe-to-spatialrdd" title="Permanent link">&para;</a></h3>
 <p>Use GeoSparkSQL DataFrame-RDD Adapter to convert a DataFrame to an SpatialRDD

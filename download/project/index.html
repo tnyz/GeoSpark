@@ -981,21 +981,13 @@
 <p>To run this project in cluster mode, you have to package this project to a JAR and then run it using <code class="codehilite">spark-submit</code> command.</p>
 <p>Before packaging this project, you always need to check two places:</p>
 <ul>
-<li>
-<p>Remove the hardcoded Master IP <code class="codehilite">master(&quot;local[*]&quot;)</code>. This hardcoded IP is only needed when you run this project in an IDE.
+<li>Remove the hardcoded Master IP <code class="codehilite">master(&quot;local[*]&quot;)</code>. This hardcoded IP is only needed when you run this project in an IDE.
 <div class="codehilite"><pre><span></span><span class="k">var</span> <span class="n">sparkSession</span><span class="k">:</span><span class="kt">SparkSession</span> <span class="o">=</span> <span class="nc">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">()</span>
     <span class="o">.</span><span class="n">config</span><span class="o">(</span><span class="s">&quot;spark.serializer&quot;</span><span class="o">,</span><span class="n">classOf</span><span class="o">[</span><span class="kt">KryoSerializer</span><span class="o">].</span><span class="n">getName</span><span class="o">)</span>
     <span class="o">.</span><span class="n">config</span><span class="o">(</span><span class="s">&quot;spark.kryo.registrator&quot;</span><span class="o">,</span><span class="n">classOf</span><span class="o">[</span><span class="kt">GeoSparkKryoRegistrator</span><span class="o">].</span><span class="n">getName</span><span class="o">)</span>
     <span class="o">.</span><span class="n">master</span><span class="o">(</span><span class="s">&quot;local[*]&quot;</span><span class="o">)</span>
     <span class="o">.</span><span class="n">appName</span><span class="o">(</span><span class="s">&quot;GeoSparkSQL-demo&quot;</span><span class="o">).</span><span class="n">getOrCreate</span><span class="o">()</span>
-</pre></div></p>
-</li>
-<li>
-<p>In build.sbt (or POM.xml), set Spark dependency scope to <code class="codehilite">provided</code> instead of <code class="codehilite">compile</code>. <code class="codehilite">compile</code> is only needed when you run this project in an IDE.
-<div class="codehilite"><pre><span></span>org.apache.spark&quot; %% &quot;spark-core&quot; % SparkVersion % &quot;compile,
-org.apache.spark&quot; %% &quot;spark-sql&quot; % SparkVersion % &quot;compile
-</pre></div></p>
-</li>
+</pre></div></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
