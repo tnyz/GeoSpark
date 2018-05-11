@@ -993,6 +993,9 @@
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_GeomFromWKT</span><span class="p">(</span><span class="n">polygontable</span><span class="p">.</span><span class="n">_c0</span><span class="p">)</span> <span class="k">AS</span> <span class="n">polygonshape</span>
 <span class="k">FROM</span> <span class="n">polygontable</span>
 </pre></div></p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_GeomFromWKT</span><span class="p">(</span><span class="s1">&#39;POINT(40.7128,-74.0060)&#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="n">geometry</span>
+</pre></div>
+
 <h2 id="st_geomfromwkb">ST_GeomFromWKB<a class="headerlink" href="#st_geomfromwkb" title="Permanent link">&para;</a></h2>
 <p>Introduction: Construct a Geometry from WKB string. Unlimited UUID strings can be appended.</p>
 <p>Format:
@@ -1052,7 +1055,7 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Please make sure you use <mark>ST_GeomFromWKT</mark> to create Geometry type column otherwise that column cannot be used in GeoSparkSQL. </p>
+<p>Please make sure you use <mark>ST_GeomFromWKT</mark> to create Geometry type column otherwise that column cannot be used in GeoSparkSQL.</p>
 </div>
 <h2 id="st_point">ST_Point<a class="headerlink" href="#st_point" title="Permanent link">&para;</a></h2>
 <p>Introduction: Construct a Point from X and Y. Unlimited UUID strings can be appended.</p>
@@ -1070,14 +1073,20 @@
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_PointFromText</span><span class="p">(</span><span class="n">pointtable</span><span class="p">.</span><span class="n">_c0</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="n">pointshape</span>
 <span class="k">FROM</span> <span class="n">pointtable</span>
 </pre></div></p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_PointFromText</span><span class="p">(</span><span class="s1">&#39;40.7128,-74.0060&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="n">pointshape</span>
+</pre></div>
+
 <h2 id="st_polygonfromtext">ST_PolygonFromText<a class="headerlink" href="#st_polygonfromtext" title="Permanent link">&para;</a></h2>
-<p>Introduction: Construct a Polygon from Text, delimited by Delimiter. Unlimited UUID strings can be appended.</p>
+<p>Introduction: Construct a Polygon from Text, delimited by Delimiter. Path must be closed. Unlimited UUID strings can be appended.</p>
 <p>Format: <code class="codehilite">ST_PolygonFromText (Text:string, Delimiter:char, UUID1, UUID2, ...)</code></p>
 <p>Since: <code class="codehilite">v1.0.0</code></p>
 <p>Spark SQL example:
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_PolygonFromText</span><span class="p">(</span><span class="n">polygontable</span><span class="p">.</span><span class="n">_c0</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="n">polygonshape</span>
 <span class="k">FROM</span> <span class="n">polygontable</span>
 </pre></div></p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_PolygonFromText</span><span class="p">(</span><span class="s1">&#39;-74.0428197,40.6867969,-74.0421975,40.6921336,-74.0508020,40.6912794,-74.0428197,40.6867969&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="n">polygonshape</span>
+</pre></div>
+
 <h2 id="st_linestringfromtext">ST_LineStringFromText<a class="headerlink" href="#st_linestringfromtext" title="Permanent link">&para;</a></h2>
 <p>Introduction: Construct a LineString from Text, delimited by Delimiter. Unlimited UUID strings can be appended.</p>
 <p>Format: <code class="codehilite">ST_LineStringFromText (Text:string, Delimiter:char, UUID1, UUID2, ...)</code></p>
@@ -1086,6 +1095,9 @@
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_LineStringFromText</span><span class="p">(</span><span class="n">linestringtable</span><span class="p">.</span><span class="n">_c0</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="n">linestringshape</span>
 <span class="k">FROM</span> <span class="n">linestringtable</span>
 </pre></div></p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_LineStringFromText</span><span class="p">(</span><span class="s1">&#39;-74.0428197,40.6867969,-74.0421975,40.6921336,-74.0508020,40.6912794&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="n">linestringshape</span>
+</pre></div>
+
 <h2 id="st_polygonfromenvelope">ST_PolygonFromEnvelope<a class="headerlink" href="#st_polygonfromenvelope" title="Permanent link">&para;</a></h2>
 <p>Introduction: Construct a Polygon from MinX, MinY, MaxX, MaxY. Unlimited UUID strings can be appended.</p>
 <p>Format: <code class="codehilite">ST_PolygonFromEnvelope (MinX:decimal, MinY:decimal, MaxX:decimal, MaxY:decimal, UUID1, UUID2, ...)</code></p>
@@ -1101,7 +1113,7 @@
 <p>Since: <code class="codehilite">v1.0.0</code></p>
 <p>Spark SQL example:</p>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_Circle</span><span class="p">(</span><span class="n">pointdf</span><span class="p">.</span><span class="n">pointshape</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">FROM</span> <span class="n">pointdf</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">pointdf</span>
 </pre></div>
 
 <div class="admonition note">
