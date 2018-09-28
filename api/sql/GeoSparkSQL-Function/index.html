@@ -644,6 +644,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#st_isvalid" title="ST_IsValid" class="md-nav__link">
+    ST_IsValid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_precisionreduce" title="ST_PrecisionReduce" class="md-nav__link">
+    ST_PrecisionReduce
+  </a>
+  
+</li>
+      
       
       
       
@@ -931,6 +945,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#st_isvalid" title="ST_IsValid" class="md-nav__link">
+    ST_IsValid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_precisionreduce" title="ST_PrecisionReduce" class="md-nav__link">
+    ST_PrecisionReduce
+  </a>
+  
+</li>
+      
       
       
       
@@ -1033,6 +1061,25 @@ FROM polygondf
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_Intersection</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">,</span> <span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="n">polygondf</span>
 </pre></div>
+
+<h2 id="st_isvalid">ST_IsValid<a class="headerlink" href="#st_isvalid" title="Permanent link">&para;</a></h2>
+<p>Introduction: Test if a geometry is well formed</p>
+<p>Format: <code class="codehilite">ST_IsValid (A:geometry)</code></p>
+<p>Since: <code class="codehilite">v1.2.0</code></p>
+<p>Spark SQL example:</p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_IsValid</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">polygondf</span>
+</pre></div>
+
+<h2 id="st_precisionreduce">ST_PrecisionReduce<a class="headerlink" href="#st_precisionreduce" title="Permanent link">&para;</a></h2>
+<p>Introduction: Reduce the decimals places in the coordinates of the geometry to the given number of decimal places. The last decimal place will be rounded.</p>
+<p>Format: <code class="codehilite">ST_PrecisionReduce (A:geometry, B:int)</code></p>
+<p>Since: <code class="codehilite">v1.2.0</code></p>
+<p>Spark SQL example:</p>
+<p><div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_PrecisionReduce</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">polygondf</span>
+</pre></div>
+The new coordinates will only have 9 decimal places.</p>
                 
                   
                 

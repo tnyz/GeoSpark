@@ -830,13 +830,11 @@
 <p><a href="https://twitter.com/GeoSpark_ASU">GeoSpark@Twitter</a> || <a href="https://groups.google.com/forum/#!forum/geospark-discussion-board">GeoSpark Discussion Board</a> || <a href="https://gitter.im/geospark-datasys/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/geospark-datasys/Lobby" src="https://badges.gitter.im/geospark-datasys/Lobby.svg" /></a> || <a href="http://hits.dwyl.io/DataSystemsLab/GeoSpark"><img alt="HitCount" src="http://hits.dwyl.io/DataSystemsLab/GeoSpark.svg" /></a>(since Jan. 2018)</p>
 <h4 id="news">News<a class="headerlink" href="#news" title="Permanent link">&para;</a></h4>
 <ul>
+<li>The full <a href="http://www.public.asu.edu/~jiayu2/geospark/publication/GeoSpark_Geoinformatica_2018.pdf">research paper</a> of GeoSpark has been accepted by Geoinformatica Journal. This paper has over 40 pages to dissect GeoSpark in details and compare it with many other existing systems such as Magellan, Simba, and SpatialHadoop.</li>
 <li>GeoSpark 1.1.3 is released. This release contains a critical bug fix for GeoSpark-core RDD API. <a href="download/GeoSpark-All-Modules-Release-notes/">Release notes</a> || <a href="download/GeoSpark-All-Modules-Maven-Central-Coordinates/">Maven Coordinate</a>.</li>
 <li>GeoSpark 1.1.2 is released. This release contains several bug fixes. Thanks for the patch from Lucas C.! <a href="download/GeoSpark-All-Modules-Release-notes/">Release notes</a> || <a href="download/GeoSpark-All-Modules-Maven-Central-Coordinates/">Maven Coordinate</a>.</li>
-<li>GeoSpark 1.1.0 is released. This release contains new SQL functions, custom Quad-Tree/R-Tree index serializers and bug fixes. GeoSpark 1.1.0 supposrt Apache Spark 2.3. <strong>Note, GeoSparkSQL Maven Coordinate changed</strong> <a href="download/GeoSpark-All-Modules-Release-notes/">Release notes</a> || <a href="download/GeoSpark-All-Modules-Maven-Central-Coordinates/">Maven Coordinate</a> (Thanks for the index serializer patch contributed by Zongsi Zhang!)</li>
-<li>GeoSpark wiki is now moved to <a href="http://datasystemslab.github.io/GeoSpark/">GeoSpark new website</a>! Users are welcome to contribute your tutorials and stories by making a PR!</li>
 </ul>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-<p>GeoSpark is listed as <strong>Infrastructure Project</strong> on <a href="http://spark.apache.org/third-party-projects.html"><strong>Apache Spark Official Third Party Project Page</strong></a></p>
 <p>GeoSpark is a cluster computing system for processing large-scale spatial data. GeoSpark extends Apache Spark / SparkSQL with a set of out-of-the-box Spatial Resilient Distributed Datasets (SRDDs)/ SpatialSQL that efficiently load, process, and analyze large-scale spatial data across machines.</p>
 <p>GeoSpark contains three modules:</p>
 <table>
@@ -874,6 +872,11 @@
 <li>SQL: SQL interfaces for GeoSpark core.</li>
 <li>Viz: Visualization extension of GeoSpark core.</li>
 </ul>
+<p>GeoSpark development team has published four papers about GeoSpark. Please read <a href="http://datasystemslab.github.io/GeoSpark/contact/publication/">Publications</a>. </p>
+<p>GeoSpark received an evaluation from PVLDB 2018 paper <a href="http://www.vldb.org/pvldb/vol11/p1661-pandey.pdf">"How Good Are Modern Spatial Analytics Systems?"</a> Varun Pandey, Andreas Kipf, Thomas Neumann, Alfons Kemper (Technical University of Munich), quoted as follows: </p>
+<blockquote>
+<p>GeoSpark comes close to a complete spatial analytics system. It also exhibits the best performance in most cases.</p>
+</blockquote>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
 <li><mark>Spatial RDD</mark></li>
