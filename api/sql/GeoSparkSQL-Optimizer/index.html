@@ -929,7 +929,7 @@
 <li>Automatically performs predicate pushdown.</li>
 </ul>
 <h2 id="range-join">Range join<a class="headerlink" href="#range-join" title="Permanent link">&para;</a></h2>
-<p>Introduction: Find geometries from A and geometries from B such that each geometry pair satisfies a certain predicate</p>
+<p>Introduction: Find geometries from A and geometries from B such that each geometry pair satisfies a certain predicate. Most predicates supported by GeoSparkSQL can trigger a range join.</p>
 <p>Spark SQL Example:</p>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">polygondf</span><span class="p">,</span> <span class="n">pointdf</span>

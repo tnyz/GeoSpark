@@ -443,6 +443,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-generic-spatialrdd-behavoir-changed-in-v120" title="Create a generic SpatialRDD (behavoir changed in v1.2.0)" class="md-nav__link">
+    Create a generic SpatialRDD (behavoir changed in v1.2.0)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#from-wktwkb" title="From WKT/WKB" class="md-nav__link">
     From WKT/WKB
@@ -457,29 +470,16 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-generic-spatialrdd" title="Create a generic SpatialRDD" class="md-nav__link">
-    Create a generic SpatialRDD
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#from-all-formats" title="From all formats" class="md-nav__link">
-    From all formats
-  </a>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#from-shapefile" title="From Shapefile" class="md-nav__link">
     From Shapefile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-sparksql-dataframe" title="From SparkSQL DataFrame" class="md-nav__link">
+    From SparkSQL DataFrame
   </a>
   
 </li>
@@ -1216,6 +1216,19 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-generic-spatialrdd-behavoir-changed-in-v120" title="Create a generic SpatialRDD (behavoir changed in v1.2.0)" class="md-nav__link">
+    Create a generic SpatialRDD (behavoir changed in v1.2.0)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#from-wktwkb" title="From WKT/WKB" class="md-nav__link">
     From WKT/WKB
@@ -1230,29 +1243,16 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-generic-spatialrdd" title="Create a generic SpatialRDD" class="md-nav__link">
-    Create a generic SpatialRDD
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#from-all-formats" title="From all formats" class="md-nav__link">
-    From all formats
-  </a>
-  
-</li>
-        
           <li class="md-nav__item">
   <a href="#from-shapefile" title="From Shapefile" class="md-nav__link">
     From Shapefile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-sparksql-dataframe" title="From SparkSQL DataFrame" class="md-nav__link">
+    From SparkSQL DataFrame
   </a>
   
 </li>
@@ -1588,6 +1588,8 @@ Use the following code to create a PointRDD</p>
 <div class="codehilite"><pre><span></span><span class="k">val</span> <span class="n">polygonRDDSplitter</span> <span class="k">=</span> <span class="nc">FileDataSplitter</span><span class="o">.</span><span class="nc">TSV</span>
 </pre></div></p>
 <p>The way to create a LineStringRDD is the same as PolygonRDD.</p>
+<h3 id="create-a-generic-spatialrdd-behavoir-changed-in-v120">Create a generic SpatialRDD (behavoir changed in v1.2.0)<a class="headerlink" href="#create-a-generic-spatialrdd-behavoir-changed-in-v120" title="Permanent link">&para;</a></h3>
+<p>A generic SpatialRDD is not typed to a certain geometry type and open to more scenarios. It allows an input data file contains mixed types of geometries. For instace, a WKT file contains three types gemetries <mark>LineString</mark>, <mark>Polygon</mark> and <mark>MultiPolygon</mark>.</p>
 <h4 id="from-wktwkb">From WKT/WKB<a class="headerlink" href="#from-wktwkb" title="Permanent link">&para;</a></h4>
 <p>Geometries in a WKT and WKB file always occucpy a single column no matter how many coordinates they have. Therefore, creating a typed SpatialRDD is easy.</p>
 <p>Suppose we have a <code class="codehilite">checkin.tsv</code> WKT TSV file at Path <code class="codehilite">/Download/checkin.tsv</code> as follows:
@@ -1597,21 +1599,14 @@ POINT (-88.388954,32.357073)    bar
 POINT (-88.221102,32.35078) restaurant
 </pre></div>
 This file has two columns and corresponding <mark>offsets</mark>(Column IDs) are 0, 1. Column 0 is the WKT string and Column 1 is the checkin business type.</p>
-<p>Use the following code to create a PointRDD</p>
-<p><div class="codehilite"><pre><span></span><span class="k">val</span> <span class="n">pointRDDInputLocation</span> <span class="k">=</span> <span class="s">&quot;/Download/checkin.csv&quot;</span>
-<span class="k">val</span> <span class="n">pointRDDOffset</span> <span class="k">=</span> <span class="mi">0</span> <span class="c1">// The WKT string starts from Column 0</span>
-<span class="k">val</span> <span class="n">pointRDDSplitter</span> <span class="k">=</span> <span class="nc">FileDataSplitter</span><span class="o">.</span><span class="nc">WKT</span>
-<span class="k">val</span> <span class="n">carryOtherAttributes</span> <span class="k">=</span> <span class="kc">true</span> <span class="c1">// Carry Column 1 (hotel, gas, bar...)</span>
-<span class="k">var</span> <span class="n">objectRDD</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">PointRDD</span><span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="n">pointRDDInputLocation</span><span class="o">,</span> <span class="n">pointRDDOffset</span><span class="o">,</span> <span class="n">pointRDDSplitter</span><span class="o">,</span> <span class="n">carryOtherAttributes</span><span class="o">)</span>
+<p>Use the following code to create a SpatialRDD</p>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="n">inputLocation</span> <span class="k">=</span> <span class="s">&quot;/Download/checkin.csv&quot;</span>
+<span class="k">val</span> <span class="n">wktColumn</span> <span class="k">=</span> <span class="mi">0</span> <span class="c1">// The WKT string starts from Column 0</span>
+<span class="k">val</span> <span class="n">allowTopologyInvalidGeometris</span> <span class="k">=</span> <span class="kc">true</span> <span class="c1">// Optional</span>
+<span class="k">val</span> <span class="n">skipSyntaxInvalidGeometries</span> <span class="k">=</span> <span class="kc">false</span> <span class="c1">// Optional</span>
+<span class="k">val</span> <span class="n">spatialRDD</span> <span class="k">=</span> <span class="nc">WktReader</span><span class="o">.</span><span class="n">readToGeometryRDD</span><span class="o">(</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">sparkContext</span><span class="o">,</span> <span class="n">inputLocation</span><span class="o">,</span> <span class="n">wktColumn</span><span class="o">,</span> <span class="n">allowTopologyInvalidGeometris</span><span class="o">,</span> <span class="n">skipSyntaxInvalidGeometries</span><span class="o">)</span>
 </pre></div>
-Use the following code to create a PolygonRDD/LineStringRDD
-<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="n">polygonRDDInputLocation</span> <span class="k">=</span> <span class="s">&quot;/Download/checkin.csv&quot;</span>
-<span class="k">val</span> <span class="n">polygonRDDStartOffset</span> <span class="k">=</span> <span class="mi">0</span> <span class="c1">// The coordinates start from Column 0</span>
-<span class="k">val</span> <span class="n">polygonRDDEndOffset</span> <span class="k">=</span> <span class="mi">0</span> <span class="c1">// The coordinates end at Column 0</span>
-<span class="k">val</span> <span class="n">polygonRDDSplitter</span> <span class="k">=</span> <span class="nc">FileDataSplitter</span><span class="o">.</span><span class="nc">WKT</span>
-<span class="k">val</span> <span class="n">carryOtherAttributes</span> <span class="k">=</span> <span class="kc">true</span> <span class="c1">// Carry Column 1 (hotel, gas, bar...)</span>
-<span class="k">var</span> <span class="n">objectRDD</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">PolygonRDD</span><span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="n">polygonRDDInputLocation</span><span class="o">,</span> <span class="n">polygonRDDStartOffset</span><span class="o">,</span> <span class="n">polygonRDDEndOffset</span><span class="o">,</span> <span class="n">polygonRDDSplitter</span><span class="o">,</span> <span class="n">carryOtherAttributes</span><span class="o">)</span>
-</pre></div></p>
+
 <h4 id="from-geojson">From GeoJSON<a class="headerlink" href="#from-geojson" title="Permanent link">&para;</a></h4>
 <p>Geometries in GeoJSON is similar to WKT/WKB. However, a GeoJSON file must be beaked into multiple lines.</p>
 <p>Suppose we have a <code class="codehilite">polygon.json</code> GeoJSON file at Path <code class="codehilite">/Download/polygon.json</code> as follows:</p>
@@ -1621,20 +1616,42 @@ Use the following code to create a PolygonRDD/LineStringRDD
 { &quot;type&quot;: &quot;Feature&quot;, &quot;properties&quot;: { &quot;STATEFP&quot;: &quot;01&quot;, &quot;COUNTYFP&quot;: &quot;089&quot;, &quot;TRACTCE&quot;: &quot;001700&quot;, &quot;BLKGRPCE&quot;: &quot;2&quot;, &quot;AFFGEOID&quot;: &quot;1500000US010890017002&quot;, &quot;GEOID&quot;: &quot;010890017002&quot;, &quot;NAME&quot;: &quot;2&quot;, &quot;LSAD&quot;: &quot;BG&quot;, &quot;ALAND&quot;: 1040641, &quot;AWATER&quot;: 0 }, &quot;geometry&quot;: { &quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [ [ [ -86.574172, 34.727375 ], [ -86.562684, 34.727131 ], [ -86.562797, 34.723865 ], [ -86.562957, 34.723168 ], [ -86.562336, 34.719766 ], [ -86.557381, 34.719143 ], [ -86.557352, 34.718322 ], [ -86.559921, 34.717363 ], [ -86.564827, 34.718513 ], [ -86.567582, 34.718565 ], [ -86.570572, 34.718577 ], [ -86.573618, 34.719377 ], [ -86.574172, 34.727375 ] ] ] } },
 </pre></div>
 
-<p>Use the following code to create a typed SpatialRDD (PointRDD/PolygonRDD/LineStringRDD):
-<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="n">pointRDDInputLocation</span> <span class="k">=</span> <span class="s">&quot;/Download/polygon.json&quot;</span>
-<span class="k">val</span> <span class="n">pointRDDSplitter</span> <span class="k">=</span> <span class="nc">FileDataSplitter</span><span class="o">.</span><span class="nc">GEOJSON</span>
-<span class="k">val</span> <span class="n">carryOtherAttributes</span> <span class="k">=</span> <span class="kc">true</span> <span class="c1">// Carry Column 1 (hotel, gas, bar...)</span>
-<span class="k">var</span> <span class="n">objectRDD</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">PointRDD</span><span class="o">(</span><span class="n">sc</span><span class="o">,</span> <span class="n">pointRDDInputLocation</span><span class="o">,</span> <span class="n">pointRDDSplitter</span><span class="o">,</span> <span class="n">carryOtherAttributes</span><span class="o">)</span>
+<p>Use the following code to create a generic SpatialRDD:
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="n">inputLocation</span> <span class="k">=</span> <span class="s">&quot;/Download/polygon.json&quot;</span>
+<span class="k">val</span> <span class="n">allowTopologyInvalidGeometris</span> <span class="k">=</span> <span class="kc">true</span> <span class="c1">// Optional</span>
+<span class="k">val</span> <span class="n">skipSyntaxInvalidGeometries</span> <span class="k">=</span> <span class="kc">false</span> <span class="c1">// Optional</span>
+<span class="k">val</span> <span class="n">spatialRDD</span> <span class="k">=</span> <span class="nc">GeoJsonReader</span><span class="o">.</span><span class="n">readToGeometryRDD</span><span class="o">(</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">sparkContext</span><span class="o">,</span> <span class="n">inputLocation</span><span class="o">,</span> <span class="n">allowTopologyInvalidGeometris</span><span class="o">,</span> <span class="n">skipSyntaxInvalidGeometries</span><span class="o">)</span>
 </pre></div></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The way that GeoSpark reads GeoJSON is different from that in SparkSQL</p>
+<p>The way that GeoSpark reads JSON file is different from SparkSQL</p>
 </div>
-<h3 id="create-a-generic-spatialrdd">Create a generic SpatialRDD<a class="headerlink" href="#create-a-generic-spatialrdd" title="Permanent link">&para;</a></h3>
-<p>A generic SpatialRDD is not typed to a certain geometry type and open to more scenarios. It allows an input data file contains mixed types of geometries. For instace, a WKT file contains three types gemetries <mark>LineString</mark>, <mark>Polygon</mark> and <mark>MultiPolygon</mark>.</p>
-<h4 id="from-all-formats">From all formats<a class="headerlink" href="#from-all-formats" title="Permanent link">&para;</a></h4>
-<p>To create a generic SpatialRDD from CSV, TSV, WKT, WKB and GeoJSON input formats, you have to use GeoSparkSQL. Make sure you include <mark>the full dependencies</mark> of GeoSpark. Read <a href="../../api/sql/GeoSparkSQL-Overview">GeoSparkSQL API</a>.</p>
+<h4 id="from-shapefile">From Shapefile<a class="headerlink" href="#from-shapefile" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="n">shapefileInputLocation</span><span class="o">=</span><span class="s">&quot;/Download/myshapefile&quot;</span>
+<span class="k">val</span> <span class="n">spatialRDD</span> <span class="k">=</span> <span class="nc">ShapefileReader</span><span class="o">.</span><span class="n">readToGeometryRDD</span><span class="o">(</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">sparkContext</span><span class="o">,</span> <span class="n">shapefileInputLocation</span><span class="o">)</span>
+</pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The file extensions of .shp, .shx, .dbf must be in lowercase. Assume you have a shape file called <mark>myShapefile</mark>, the file structure should be like this:
+<div class="codehilite"><pre><span></span>- shapefile1
+- shapefile2
+- myshapefile
+    - myshapefile.shp
+    - myshapefile.shx
+    - myshapefile.dbf
+    - myshapefile...
+    - ...
+</pre></div></p>
+</div>
+<p>If the file you are reading contains non-ASCII characters you'll need to explicitly set the encoding
+via <code class="codehilite">geospark.global.charset</code> system property before the call to <code class="codehilite">ShapefileReader.readToGeometryRDD</code>.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><span class="nc">System</span><span class="o">.</span><span class="n">setProperty</span><span class="o">(</span><span class="s">&quot;geospark.global.charset&quot;</span><span class="o">,</span> <span class="s">&quot;utf8&quot;</span><span class="o">)</span>
+</pre></div>
+
+<h4 id="from-sparksql-dataframe">From SparkSQL DataFrame<a class="headerlink" href="#from-sparksql-dataframe" title="Permanent link">&para;</a></h4>
+<p>To create a generic SpatialRDD from CSV, TSV, WKT, WKB and GeoJSON input formats, you can use GeoSparkSQL. Make sure you include <mark>the full dependencies</mark> of GeoSpark. Read <a href="../../api/sql/GeoSparkSQL-Overview">GeoSparkSQL API</a>.</p>
 <p>We use <a href="#pointrdd-from-csvtsv">checkin.csv CSV file</a> as the example. You can create a generic SpatialRDD using the following steps:</p>
 <ol>
 <li>Load data in GeoSparkSQL.
@@ -1654,25 +1671,6 @@ Use the following code to create a PolygonRDD/LineStringRDD
 </pre></div></li>
 </ol>
 <p>For WKT/WKB/GeoJSON data, please use <mark>ST_GeomFromWKT / ST_GeomFromWKB / ST_GeomFromGeoJSON</mark> instead.</p>
-<h4 id="from-shapefile">From Shapefile<a class="headerlink" href="#from-shapefile" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><span class="k">val</span> <span class="n">shapefileInputLocation</span><span class="o">=</span><span class="s">&quot;/Download/myshapefile&quot;</span>
-<span class="k">var</span> <span class="n">spatialRDD</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SpatialRDD</span><span class="o">[</span><span class="kt">Geometry</span><span class="o">]</span>
-<span class="n">spatialRDD</span><span class="o">.</span><span class="n">rawSpatialRDD</span> <span class="k">=</span> <span class="nc">ShapefileReader</span><span class="o">.</span><span class="n">readToGeometryRDD</span><span class="o">(</span><span class="n">sparkSession</span><span class="o">.</span><span class="n">sparkContext</span><span class="o">,</span> <span class="n">shapefileInputLocation</span><span class="o">)</span>
-</pre></div>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The file extensions of .shp, .shx, .dbf must be in lowercase. Assume you have a shape file called <mark>myShapefile</mark>, the file structure should be like this:
-<div class="codehilite"><pre><span></span>- shapefile1
-- shapefile2
-- myshapefile
-    - myshapefile.shp
-    - myshapefile.shx
-    - myshapefile.dbf
-    - myshapefile...
-    - ...
-</pre></div></p>
-</div>
 <h2 id="transform-the-coordinate-reference-system">Transform the Coordinate Reference System<a class="headerlink" href="#transform-the-coordinate-reference-system" title="Permanent link">&para;</a></h2>
 <p>GeoSpark doesn't control the coordinate unit (degree-based or meter-based) of all geometries in an SpatialRDD. The unit of all related distances in GeoSpark is same as the unit of all geometries in an SpatialRDD.</p>
 <p>To convert Coordinate Reference System of an SpatialRDD, use the following code:</p>

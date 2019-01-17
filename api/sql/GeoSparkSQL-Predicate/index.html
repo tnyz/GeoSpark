@@ -621,6 +621,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#st_equals" title="ST_Equals" class="md-nav__link">
+    ST_Equals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_crosses" title="ST_Crosses" class="md-nav__link">
+    ST_Crosses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_touches" title="ST_Touches" class="md-nav__link">
+    ST_Touches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_overlaps" title="ST_Overlaps" class="md-nav__link">
+    ST_Overlaps
+  </a>
+  
+</li>
+      
       
       
       
@@ -897,6 +925,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#st_equals" title="ST_Equals" class="md-nav__link">
+    ST_Equals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_crosses" title="ST_Crosses" class="md-nav__link">
+    ST_Crosses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_touches" title="ST_Touches" class="md-nav__link">
+    ST_Touches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_overlaps" title="ST_Overlaps" class="md-nav__link">
+    ST_Overlaps
+  </a>
+  
+</li>
+      
       
       
       
@@ -944,6 +1000,42 @@
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> 
 <span class="k">FROM</span> <span class="n">pointdf</span> 
 <span class="k">WHERE</span> <span class="n">ST_Within</span><span class="p">(</span><span class="n">pointdf</span><span class="p">.</span><span class="n">arealandmark</span><span class="p">,</span> <span class="n">ST_PolygonFromEnvelope</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1100</span><span class="p">.</span><span class="mi">0</span><span class="p">))</span>
+</pre></div></p>
+<h2 id="st_equals">ST_Equals<a class="headerlink" href="#st_equals" title="Permanent link">&para;</a></h2>
+<p>Introduction: Return true if A equals to B</p>
+<p>Format: <code class="codehilite">ST_Equals (A:geometry, B:geometry)</code></p>
+<p>Since: <code class="codehilite">v1.2.0</code></p>
+<p>Spark SQL example:
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="n">pointdf</span> 
+<span class="k">WHERE</span> <span class="n">ST_Equals</span><span class="p">(</span><span class="n">pointdf</span><span class="p">.</span><span class="n">arealandmark</span><span class="p">,</span> <span class="n">ST_PolygonFromEnvelope</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1100</span><span class="p">.</span><span class="mi">0</span><span class="p">))</span>
+</pre></div></p>
+<h2 id="st_crosses">ST_Crosses<a class="headerlink" href="#st_crosses" title="Permanent link">&para;</a></h2>
+<p>Introduction: Return true if A crosses B</p>
+<p>Format: <code class="codehilite">ST_Crosses (A:geometry, B:geometry)</code></p>
+<p>Since: <code class="codehilite">v1.2.0</code></p>
+<p>Spark SQL example:
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="n">pointdf</span> 
+<span class="k">WHERE</span> <span class="n">ST_Crosses</span><span class="p">(</span><span class="n">pointdf</span><span class="p">.</span><span class="n">arealandmark</span><span class="p">,</span> <span class="n">ST_PolygonFromEnvelope</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1100</span><span class="p">.</span><span class="mi">0</span><span class="p">))</span>
+</pre></div></p>
+<h2 id="st_touches">ST_Touches<a class="headerlink" href="#st_touches" title="Permanent link">&para;</a></h2>
+<p>Introduction: Return true if A touches B</p>
+<p>Format: <code class="codehilite">ST_Touches (A:geometry, B:geometry)</code></p>
+<p>Since: <code class="codehilite">v1.2.0</code></p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> 
+<span class="k">FROM</span> <span class="n">pointdf</span> 
+<span class="k">WHERE</span> <span class="n">ST_Touches</span><span class="p">(</span><span class="n">pointdf</span><span class="p">.</span><span class="n">arealandmark</span><span class="p">,</span> <span class="n">ST_PolygonFromEnvelope</span><span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">1100</span><span class="p">.</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+
+<h2 id="st_overlaps">ST_Overlaps<a class="headerlink" href="#st_overlaps" title="Permanent link">&para;</a></h2>
+<p>Introduction: Return true if A overlaps B</p>
+<p>Format: <code class="codehilite">ST_Overlaps (A:geometry, B:geometry)</code></p>
+<p>Since: <code class="codehilite">v1.2.0</code></p>
+<p>Spark SQL example:
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">geom</span>
+<span class="k">WHERE</span> <span class="n">ST_Overlaps</span><span class="p">(</span><span class="n">geom</span><span class="p">.</span><span class="n">geom_a</span><span class="p">,</span> <span class="n">geom</span><span class="p">.</span><span class="n">geom_b</span><span class="p">)</span>
 </pre></div></p>
                 
                   

@@ -658,6 +658,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#st_issimple" title="ST_IsSimple" class="md-nav__link">
+    ST_IsSimple
+  </a>
+  
+</li>
+      
       
       
       
@@ -995,6 +1002,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#st_issimple" title="ST_IsSimple" class="md-nav__link">
+    ST_IsSimple
+  </a>
+  
+</li>
+      
       
       
       
@@ -1116,6 +1130,14 @@ FROM polygondf
 <span class="k">FROM</span> <span class="n">polygondf</span>
 </pre></div>
 The new coordinates will only have 9 decimal places.</p>
+<h2 id="st_issimple">ST_IsSimple<a class="headerlink" href="#st_issimple" title="Permanent link">&para;</a></h2>
+<p>Introduction: Test if geometry's only self-intersections are at boundary points.</p>
+<p>Format: <code class="codehilite">ST_IsSimple (A:geometry)</code></p>
+<p>Since: <code class="codehilite">v1.2.0</code></p>
+<p>Spark SQL example:</p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_IsSimple</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">polygondf</span>
+</pre></div>
                 
                   
                 

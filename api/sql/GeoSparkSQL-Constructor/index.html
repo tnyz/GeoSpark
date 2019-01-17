@@ -1093,6 +1093,12 @@
 <p class="admonition-title">Warning</p>
 <p>Please make sure you use <mark>ST_GeomFromWKT</mark> to create Geometry type column otherwise that column cannot be used in GeoSparkSQL.</p>
 </div>
+<p>If the file you are reading contains non-ASCII characters you'll need to explicitly set the encoding
+via <code class="codehilite">geospark.global.charset</code> system property before the call to <code class="codehilite">ShapefileReader.readToGeometryRDD</code>.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><span class="nc">System</span><span class="o">.</span><span class="n">setProperty</span><span class="o">(</span><span class="s">&quot;geospark.global.charset&quot;</span><span class="o">,</span> <span class="s">&quot;utf8&quot;</span><span class="o">)</span>
+</pre></div>
+
 <h2 id="st_point">ST_Point<a class="headerlink" href="#st_point" title="Permanent link">&para;</a></h2>
 <p>Introduction: Construct a Point from X and Y. Unlimited UUID strings can be appended.</p>
 <p>Format: <code class="codehilite">ST_Point (X:decimal, Y:decimal, UUID1, UUID2, ...)</code></p>
