@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Stable\n\n\nLatest\n\n\nSource code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeoSpark@Twitter\n || \nGeoSpark Discussion Board\n || \n || \n(since Jan. 2018)\n\n\nNews\n\n\n\n\nThe full \nresearch paper\n of GeoSpark has been accepted by Geoinformatica Journal. This paper has over 40 pages to dissect GeoSpark in details and compare it with many other existing systems such as Magellan, Simba, and SpatialHadoop.\n\n\nGeoSpark 1.1.3 is released. This release contains a critical bug fix for GeoSpark-core RDD API. \nRelease notes\n || \nMaven Coordinate\n.\n\n\nGeoSpark 1.1.2 is released. This release contains several bug fixes. Thanks for the patch from Lucas C.! \nRelease notes\n || \nMaven Coordinate\n.\n\n\n\n\nCompanies are using GeoSpark\n\n\n(incomplete list)\n\n\n \n\n\nPlease make a Pull Request to add yourself!\n\n\nIntroduction\n\n\nGeoSpark is a cluster computing system for processing large-scale spatial data. GeoSpark extends Apache Spark / SparkSQL with a set of out-of-the-box Spatial Resilient Distributed Datasets (SRDDs)/ SpatialSQL that efficiently load, process, and analyze large-scale spatial data across machines.\n\n\nGeoSpark contains three modules:\n\n\n\n\n\n\n\n\nName\n\n\nAPI\n\n\nSpark compatibility\n\n\nDependency\n\n\n\n\n\n\n\n\n\n\nGeoSpark-core\n\n\nRDD\n\n\nSpark 2.X/1.X\n\n\nSpark-core\n\n\n\n\n\n\nGeoSpark-SQL\n\n\nSQL/DataFrame\n\n\nSparkSQL 2.1 and later\n\n\nSpark-core, Spark-SQL, GeoSpark-core\n\n\n\n\n\n\nGeoSpark-Viz\n\n\nRDD\n\n\nSpark 2.X/1.X\n\n\nSpark-core, GeoSpark-core\n\n\n\n\n\n\n\n\n\n\nCore: GeoSpark SpatialRDDs and Query Operators. \n\n\nSQL: SQL interfaces for GeoSpark core.\n\n\nViz: Visualization extension of GeoSpark core.\n\n\n\n\nGeoSpark development team has published four papers about GeoSpark. Please read \nPublications\n. \n\n\nGeoSpark received an evaluation from PVLDB 2018 paper \n\"How Good Are Modern Spatial Analytics Systems?\"\n Varun Pandey, Andreas Kipf, Thomas Neumann, Alfons Kemper (Technical University of Munich), quoted as follows: \n\n\n\n\nGeoSpark comes close to a complete spatial analytics system. It also exhibits the best performance in most cases.\n\n\n\n\nFeatures\n\n\n\n\nSpatial RDD\n\n\nSpatial SQL\n\n\nSELECT\n \nsuperhero\n.\nname\n\n\nFROM\n \ncity\n,\n \nsuperhero\n\n\nWHERE\n \nST_Contains\n(\ncity\n.\ngeom\n,\n \nsuperhero\n.\ngeom\n)\n\n\nAND\n \ncity\n.\nname\n \n=\n \nGotham\n;\n\n\n\n\nComplex geometries / trajectories\n: point, polygon, linestring, multi-point, multi-polygon, multi-linestring, GeometryCollection\n\n\nVarious input formats\n: CSV, TSV, WKT, WKB, GeoJSON, NASA NetCDF/HDF, Shapefile (.shp, .shx, .dbf): extension must be in lower case\n\n\nSpatial query\n: range query, range join query, distance join query, K Nearest Neighbor query\n\n\nSpatial index\n: R-Tree, Quad-Tree\n\n\nSpatial partitioning\n: KDB-Tree, Quad-Tree, R-Tree, Voronoi diagram, Hilbert curve, Uniform grids\n\n\nCoordinate Reference System / Spatial Reference System Transformation\n: for exmaple, from WGS84 (EPSG:4326, degree-based), to EPSG:3857 (meter-based)\n\n\nHigh resolution map\n: Scatter plot, heat map, choropleth map\n\n\n\n\nGeoSpark Visualization Extension (GeoSparkViz)\n\n\nGeoSparkViz is a large-scale in-memory geospatial visualization system.\n\n\nGeoSparkViz provides native support for general cartographic design by extending GeoSpark to process large-scale spatial data. It can visulize Spatial RDD and Spatial Queries and render super high resolution image in parallel.\n\n\nMore details are available here: \nGeoSpark Visualization Extension\n \n\n\nGeoSparkViz Gallery\n\n\n\n\n\n\nWatch the high resolution version on a real map", 
+            "text": "Stable\n\n\nLatest\n\n\nSource code\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGeoSpark@Twitter\n || \nGeoSpark Discussion Board\n || \n || \n(since Jan. 2018)\n\n\nNews\n\n\n\n\nThe full \nresearch paper\n of GeoSpark has been accepted by Geoinformatica Journal. This paper has over 40 pages to dissect GeoSpark in details and compare it with many other existing systems such as Magellan, Simba, and SpatialHadoop.\n\n\nGeoSpark 1.1.3 is released. This release contains a critical bug fix for GeoSpark-core RDD API. \nRelease notes\n || \nMaven Coordinate\n.\n\n\nGeoSpark 1.1.2 is released. This release contains several bug fixes. Thanks for the patch from Lucas C.! \nRelease notes\n || \nMaven Coordinate\n.\n\n\n\n\nCompanies are using GeoSpark\n\n\n(incomplete list)\n\n\n \n\n\nPlease make a Pull Request to add yourself!\n\n\nIntroduction\n\n\nGeoSpark is a cluster computing system for processing large-scale spatial data. GeoSpark extends Apache Spark / SparkSQL with a set of out-of-the-box Spatial Resilient Distributed Datasets (SRDDs)/ SpatialSQL that efficiently load, process, and analyze large-scale spatial data across machines.\n\n\nGeoSpark contains several modules:\n\n\n\n\n\n\n\n\nName\n\n\nAPI\n\n\nSpark compatibility\n\n\nDependency\n\n\n\n\n\n\n\n\n\n\nGeoSpark-core\n\n\nRDD\n\n\nSpark 2.X/1.X\n\n\nSpark-core\n\n\n\n\n\n\nGeoSpark-SQL\n\n\nSQL/DataFrame\n\n\nSparkSQL 2.1 and later\n\n\nSpark-core, Spark-SQL, GeoSpark-core\n\n\n\n\n\n\nGeoSpark-Viz\n\n\nRDD, SQL/DataFrame\n\n\nRDD - Spark 2.X/1.X, SQL - Spark 2.1 and later\n\n\nSpark-core, Spark-SQL, GeoSpark-core, GeoSpark-SQL\n\n\n\n\n\n\nGeoSpark-Zeppelin\n\n\nApache Zeppelin\n\n\nSpark 2.1+, Zeppelin 0.8.1+\n\n\nSpark-core, Spark-SQL, GeoSpark-core, GeoSpark-SQL, GeoSpark-Viz\n\n\n\n\n\n\n\n\n\n\nCore: GeoSpark SpatialRDDs and Query Operators. \n\n\nSQL: SQL interfaces for GeoSpark core.\n\n\nViz: Visualization extension of GeoSpark Spatial RDD and DataFrame.\n\n\nGeoSpark-Zeppelin: GeoSpark visualization plugin for Apache Zeppelin\n\n\n\n\nGeoSpark development team has published four papers about GeoSpark. Please read \nPublications\n. \n\n\nGeoSpark received an evaluation from PVLDB 2018 paper \n\"How Good Are Modern Spatial Analytics Systems?\"\n Varun Pandey, Andreas Kipf, Thomas Neumann, Alfons Kemper (Technical University of Munich), quoted as follows: \n\n\n\n\nGeoSpark comes close to a complete spatial analytics system. It also exhibits the best performance in most cases.\n\n\n\n\nFeatures\n\n\n\n\nSpatial RDD\n\n\nSpatial SQL\n\n\nSELECT\n \nsuperhero\n.\nname\n\n\nFROM\n \ncity\n,\n \nsuperhero\n\n\nWHERE\n \nST_Contains\n(\ncity\n.\ngeom\n,\n \nsuperhero\n.\ngeom\n)\n\n\nAND\n \ncity\n.\nname\n \n=\n \nGotham\n;\n\n\n\n\nComplex geometries / trajectories\n: point, polygon, linestring, multi-point, multi-polygon, multi-linestring, GeometryCollection\n\n\nVarious input formats\n: CSV, TSV, WKT, WKB, GeoJSON, NASA NetCDF/HDF, Shapefile (.shp, .shx, .dbf): extension must be in lower case\n\n\nSpatial query\n: range query, range join query, distance join query, K Nearest Neighbor query\n\n\nSpatial index\n: R-Tree, Quad-Tree\n\n\nSpatial partitioning\n: KDB-Tree, Quad-Tree, R-Tree, Voronoi diagram, Hilbert curve, Uniform grids\n\n\nCoordinate Reference System / Spatial Reference System Transformation\n: for exmaple, from WGS84 (EPSG:4326, degree-based), to EPSG:3857 (meter-based)\n\n\nHigh resolution map\n: Scatter plot, heat map, choropleth map\n\n\n\n\nGeoSpark Visualization Extension (GeoSparkViz)\n\n\nGeoSparkViz is a large-scale in-memory geospatial visualization system.\n\n\nGeoSparkViz provides native support for general cartographic design by extending GeoSpark to process large-scale spatial data. It can visulize Spatial RDD and Spatial Queries and render super high resolution image in parallel.\n\n\nMore details are available here: \nGeoSpark Visualization Extension\n \n\n\nGeoSparkViz Gallery\n\n\n\n\n\n\nWatch the high resolution version on a real map", 
             "title": "Home"
         }, 
         {
@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/#introduction", 
-            "text": "GeoSpark is a cluster computing system for processing large-scale spatial data. GeoSpark extends Apache Spark / SparkSQL with a set of out-of-the-box Spatial Resilient Distributed Datasets (SRDDs)/ SpatialSQL that efficiently load, process, and analyze large-scale spatial data across machines.  GeoSpark contains three modules:     Name  API  Spark compatibility  Dependency      GeoSpark-core  RDD  Spark 2.X/1.X  Spark-core    GeoSpark-SQL  SQL/DataFrame  SparkSQL 2.1 and later  Spark-core, Spark-SQL, GeoSpark-core    GeoSpark-Viz  RDD  Spark 2.X/1.X  Spark-core, GeoSpark-core      Core: GeoSpark SpatialRDDs and Query Operators.   SQL: SQL interfaces for GeoSpark core.  Viz: Visualization extension of GeoSpark core.   GeoSpark development team has published four papers about GeoSpark. Please read  Publications .   GeoSpark received an evaluation from PVLDB 2018 paper  \"How Good Are Modern Spatial Analytics Systems?\"  Varun Pandey, Andreas Kipf, Thomas Neumann, Alfons Kemper (Technical University of Munich), quoted as follows:    GeoSpark comes close to a complete spatial analytics system. It also exhibits the best performance in most cases.", 
+            "text": "GeoSpark is a cluster computing system for processing large-scale spatial data. GeoSpark extends Apache Spark / SparkSQL with a set of out-of-the-box Spatial Resilient Distributed Datasets (SRDDs)/ SpatialSQL that efficiently load, process, and analyze large-scale spatial data across machines.  GeoSpark contains several modules:     Name  API  Spark compatibility  Dependency      GeoSpark-core  RDD  Spark 2.X/1.X  Spark-core    GeoSpark-SQL  SQL/DataFrame  SparkSQL 2.1 and later  Spark-core, Spark-SQL, GeoSpark-core    GeoSpark-Viz  RDD, SQL/DataFrame  RDD - Spark 2.X/1.X, SQL - Spark 2.1 and later  Spark-core, Spark-SQL, GeoSpark-core, GeoSpark-SQL    GeoSpark-Zeppelin  Apache Zeppelin  Spark 2.1+, Zeppelin 0.8.1+  Spark-core, Spark-SQL, GeoSpark-core, GeoSpark-SQL, GeoSpark-Viz      Core: GeoSpark SpatialRDDs and Query Operators.   SQL: SQL interfaces for GeoSpark core.  Viz: Visualization extension of GeoSpark Spatial RDD and DataFrame.  GeoSpark-Zeppelin: GeoSpark visualization plugin for Apache Zeppelin   GeoSpark development team has published four papers about GeoSpark. Please read  Publications .   GeoSpark received an evaluation from PVLDB 2018 paper  \"How Good Are Modern Spatial Analytics Systems?\"  Varun Pandey, Andreas Kipf, Thomas Neumann, Alfons Kemper (Technical University of Munich), quoted as follows:    GeoSpark comes close to a complete spatial analytics system. It also exhibits the best performance in most cases.", 
             "title": "Introduction"
         }, 
         {
@@ -562,18 +562,18 @@
         }, 
         {
             "location": "/tutorial/viz/", 
-            "text": "Coming soon...\n\n\nFor now, please read \nGeoSparkViz JavaDoc\n and \nGeoSparkViz Template Project\n.", 
-            "title": "Visualize an Spatial RDD"
+            "text": "The page outlines the steps to manage spatial data using GeoSparkSQL. \nThe example code is written in Scala but also works for Java\n.", 
+            "title": "Visualize Spatial DataFrame/RDD"
         }, 
         {
             "location": "/tutorial/GeoSpark-Runnable-DEMO/", 
             "text": "GeoSpark Template Project contains six template projects for GeoSpark, GeoSparkSQL and GeoSparkViz. The template projects have been configured properly. You are able to compile, package, and run the code locally \nwithout any extra coding\n.\n\n\nScala/Java Template Project", 
-            "title": "Template project"
+            "title": "GeoSpark template project"
         }, 
         {
             "location": "/tutorial/faq/", 
             "text": "Coming soon...\n\n\nFor now, please read \nGeoSpark Github FAQ Issues\n.", 
-            "title": "Frequently Asked Questions (FAQ)"
+            "title": "Frequently Asked Questions"
         }, 
         {
             "location": "/tutorial/Advanced-Tutorial-Tune-your-GeoSpark-Application/", 
@@ -702,7 +702,7 @@
         }, 
         {
             "location": "/api/sql/GeoSparkSQL-Function/", 
-            "text": "ST_Distance\n\n\nIntroduction: Return the Euclidean distance between A and B\n\n\nFormat: \nST_Distance (A:geometry, B:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_Distance\n(\npolygondf\n.\ncountyshape\n,\n \npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_ConvexHull\n\n\nIntroduction: Return the Convex Hull of polgyon A\n\n\nFormat: \nST_ConvexHull (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_ConvexHull\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_Envelope\n\n\nIntroduction: Return the envelop boundary of A\n\n\nFormat: \nST_Envelope (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT ST_Envelope(polygondf.countyshape)\nFROM polygondf\n\n\n\nST_Length\n\n\nIntroduction: Return the perimeter of A\n\n\nFormat: ST_Length (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_Length\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_Area\n\n\nIntroduction: Return the area of A\n\n\nFormat: \nST_Area (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_Area\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_Centroid\n\n\nIntroduction: Return the centroid point of A\n\n\nFormat: \nST_Centroid (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_Centroid\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_Transform\n\n\nIntroduction:\n\n\nTransform the Spatial Reference System / Coordinate Reference System of A, from SourceCRS to TargetCRS\n\n\n\n\nNote\n\n\nBy default, \nST_Transform\n assumes Longitude/Latitude is your coordinate X/Y. If this is not the case, set UseLongitudeLatitudeOrder as \"false\".\n\n\n\n\n\n\nNote\n\n\nIf \nST_Transform\n throws an Exception called \"Bursa wolf parameters required\", you need to disable the error notification in ST_Transform. You can append a boolean value at the end.\n\n\n\n\nFormat: \nST_Transform (A:geometry, SourceCRS:string, TargetCRS:string, [Optional] UseLongitudeLatitudeOrder:Boolean, [Optional] DisableError)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example (simple):\n\nSELECT\n \nST_Transform\n(\npolygondf\n.\ncountyshape\n,\n \nepsg:4326\n,\nepsg:3857\n)\n \n\nFROM\n \npolygondf\n\n\n\n\nSpark SQL example (with optional parameters):\n\nSELECT\n \nST_Transform\n(\npolygondf\n.\ncountyshape\n,\n \nepsg:4326\n,\nepsg:3857\n,\ntrue\n,\n \nfalse\n)\n\n\nFROM\n \npolygondf\n\n\n\n\n\n\nNote\n\n\nThe detailed EPSG information can be searched on \nEPSG.io\n.\n\n\n\n\nST_Intersection\n\n\nIntroduction: Return the intersection geometry of A and B\n\n\nFormat: \nST_Intersection (A:geometry, B:geometry)\n\n\nSince: \nv1.1.0\n\n\nSpark SQL example:\n\n\nSELECT\n \nST_Intersection\n(\npolygondf\n.\ncountyshape\n,\n \npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\n\nST_IsValid\n\n\nIntroduction: Test if a geometry is well formed\n\n\nFormat: \nST_IsValid (A:geometry)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\n\nSELECT\n \nST_IsValid\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\n\nST_PrecisionReduce\n\n\nIntroduction: Reduce the decimals places in the coordinates of the geometry to the given number of decimal places. The last decimal place will be rounded.\n\n\nFormat: \nST_PrecisionReduce (A:geometry, B:int)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\n\nSELECT\n \nST_PrecisionReduce\n(\npolygondf\n.\ncountyshape\n,\n \n9\n)\n\n\nFROM\n \npolygondf\n\n\n\nThe new coordinates will only have 9 decimal places.\n\n\nST_IsSimple\n\n\nIntroduction: Test if geometry's only self-intersections are at boundary points.\n\n\nFormat: \nST_IsSimple (A:geometry)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\n\nSELECT\n \nST_IsSimple\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf", 
+            "text": "ST_Distance\n\n\nIntroduction: Return the Euclidean distance between A and B\n\n\nFormat: \nST_Distance (A:geometry, B:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_Distance\n(\npolygondf\n.\ncountyshape\n,\n \npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_ConvexHull\n\n\nIntroduction: Return the Convex Hull of polgyon A\n\n\nFormat: \nST_ConvexHull (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_ConvexHull\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_Envelope\n\n\nIntroduction: Return the envelop boundary of A\n\n\nFormat: \nST_Envelope (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT ST_Envelope(polygondf.countyshape)\nFROM polygondf\n\n\n\nST_Length\n\n\nIntroduction: Return the perimeter of A\n\n\nFormat: ST_Length (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_Length\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_Area\n\n\nIntroduction: Return the area of A\n\n\nFormat: \nST_Area (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_Area\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_Centroid\n\n\nIntroduction: Return the centroid point of A\n\n\nFormat: \nST_Centroid (A:geometry)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_Centroid\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\nST_Transform\n\n\nIntroduction:\n\n\nTransform the Spatial Reference System / Coordinate Reference System of A, from SourceCRS to TargetCRS\n\n\n\n\nNote\n\n\nBy default, \nST_Transform\n assumes Longitude/Latitude is your coordinate X/Y. If this is not the case, set UseLongitudeLatitudeOrder as \"false\".\n\n\n\n\n\n\nNote\n\n\nIf \nST_Transform\n throws an Exception called \"Bursa wolf parameters required\", you need to disable the error notification in ST_Transform. You can append a boolean value at the end.\n\n\n\n\nFormat: \nST_Transform (A:geometry, SourceCRS:string, TargetCRS:string, [Optional] UseLongitudeLatitudeOrder:Boolean, [Optional] DisableError)\n\n\nSince: \nv1.0.0\n\n\nSpark SQL example (simple):\n\nSELECT\n \nST_Transform\n(\npolygondf\n.\ncountyshape\n,\n \nepsg:4326\n,\nepsg:3857\n)\n \n\nFROM\n \npolygondf\n\n\n\n\nSpark SQL example (with optional parameters):\n\nSELECT\n \nST_Transform\n(\npolygondf\n.\ncountyshape\n,\n \nepsg:4326\n,\nepsg:3857\n,\ntrue\n,\n \nfalse\n)\n\n\nFROM\n \npolygondf\n\n\n\n\n\n\nNote\n\n\nThe detailed EPSG information can be searched on \nEPSG.io\n.\n\n\n\n\nST_Intersection\n\n\nIntroduction: Return the intersection geometry of A and B\n\n\nFormat: \nST_Intersection (A:geometry, B:geometry)\n\n\nSince: \nv1.1.0\n\n\nSpark SQL example:\n\n\nSELECT\n \nST_Intersection\n(\npolygondf\n.\ncountyshape\n,\n \npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\n\nST_IsValid\n\n\nIntroduction: Test if a geometry is well formed\n\n\nFormat: \nST_IsValid (A:geometry)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\n\nSELECT\n \nST_IsValid\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\n\nST_PrecisionReduce\n\n\nIntroduction: Reduce the decimals places in the coordinates of the geometry to the given number of decimal places. The last decimal place will be rounded.\n\n\nFormat: \nST_PrecisionReduce (A:geometry, B:int)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\n\nSELECT\n \nST_PrecisionReduce\n(\npolygondf\n.\ncountyshape\n,\n \n9\n)\n\n\nFROM\n \npolygondf\n\n\n\nThe new coordinates will only have 9 decimal places.\n\n\nST_IsSimple\n\n\nIntroduction: Test if geometry's only self-intersections are at boundary points.\n\n\nFormat: \nST_IsSimple (A:geometry)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\n\nSELECT\n \nST_IsSimple\n(\npolygondf\n.\ncountyshape\n)\n\n\nFROM\n \npolygondf\n\n\n\n\n\nST_Buffer\n\n\nIntroduction: Returns a geometry/geography that represents all points whose distance from this Geometry/geography is less than or equal to distance.\n\n\nFormat: \nST_Buffer (A:geometry, buffer: Double)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n```SQL\nSELECT ST_Buffer(polygondf.countyshape, 1)\nFROM polygondf\n````\n\n\nST_AsText\n\n\nIntroduction: Return the Well-Known Text string representation of a geometry\n\n\nFormat: \nST_AsText (A:geometry)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n```SQL\nSELECT ST_AsText(polygondf.countyshape)\nFROM polygondf\n````", 
             "title": "Function"
         }, 
         {
@@ -759,6 +759,16 @@
             "location": "/api/sql/GeoSparkSQL-Function/#st_issimple", 
             "text": "Introduction: Test if geometry's only self-intersections are at boundary points.  Format:  ST_IsSimple (A:geometry)  Since:  v1.2.0  Spark SQL example:  SELECT   ST_IsSimple ( polygondf . countyshape )  FROM   polygondf", 
             "title": "ST_IsSimple"
+        }, 
+        {
+            "location": "/api/sql/GeoSparkSQL-Function/#st_buffer", 
+            "text": "Introduction: Returns a geometry/geography that represents all points whose distance from this Geometry/geography is less than or equal to distance.  Format:  ST_Buffer (A:geometry, buffer: Double)  Since:  v1.2.0  Spark SQL example:\n```SQL\nSELECT ST_Buffer(polygondf.countyshape, 1)\nFROM polygondf\n````", 
+            "title": "ST_Buffer"
+        }, 
+        {
+            "location": "/api/sql/GeoSparkSQL-Function/#st_astext", 
+            "text": "Introduction: Return the Well-Known Text string representation of a geometry  Format:  ST_AsText (A:geometry)  Since:  v1.2.0  Spark SQL example:\n```SQL\nSELECT ST_AsText(polygondf.countyshape)\nFROM polygondf\n````", 
+            "title": "ST_AsText"
         }, 
         {
             "location": "/api/sql/GeoSparkSQL-Predicate/", 
@@ -856,14 +866,69 @@
             "title": "Explanation"
         }, 
         {
-            "location": "/api/Babylon-Scala-and-Java-API/", 
-            "text": "Scala and Java API\n\n\nGeoSpark-Viz (former name, Babylon) Scala and Java API: \nhttp://www.public.asu.edu/~jiayu2/geosparkviz/javadoc/\n\n\nNote: Scala can call Java APIs seamlessly. That means GeoSparkViz Scala users use the same APIs with GeoSparkViz Java users.", 
-            "title": "Scala/Java doc"
+            "location": "/api/viz/sql/", 
+            "text": "Quick start\n\n\nThe detailed explanation is here: \nVisualize Spatial DataFrame/RDD\n.\n\n\n\n\nAdd GeoSpark-core, GeoSparkSQL, GeoSparkViz into your project POM.xml or build.sbt\n\n\nDeclare your Spark Session\n\nsparkSession\n \n=\n \nSparkSession\n.\nbuilder\n().\n\n\nconfig\n(\nspark.serializer\n,\nclassOf\n[\nKryoSerializer\n].\ngetName\n).\n\n\nconfig\n(\nspark.kryo.registrator\n,\n \nclassOf\n[\nGeoSparkVizKryoRegistrator\n].\ngetName\n).\n\n\nmaster\n(\nlocal[*]\n).\nappName\n(\nmyGeoSparkVizDemo\n).\ngetOrCreate\n()\n\n\n\n\nAdd the following lines after your SparkSession declaration:\n\nGeoSparkSQLRegistrator\n.\nregisterAll\n(\nsparkSession\n)\n\n\nGeoSparkVizRegistrator\n.\nregisterAll\n(\nsparkSession\n)\n\n\n\n\n\n\nRegular functions\n\n\nST_Pixelize\n\n\nIntroduction: Return a pixel for a given resolution\n\n\nFormat: \nST_Pixelize (A:geometry, ResolutionX:int, ResolutionY:int, Boundary:geometry)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_Pixelize\n(\nshape\n,\n \n256\n,\n \n256\n,\n \n(\nST_Envelope_Aggr\n(\nshape\n)\n \nFROM\n \npointtable\n))\n\n\nFROM\n \npolygondf\n\n\n\n\nST_TileName\n\n\nIntroduction: Return the map tile name for a given zoom level. Please refer to \nOpenStreetMap ZoomLevel\n and \nOpenStreetMap tile name\n.\n\n\n\n\nNote\n\n\nTile name is formatted as a \"Z-X-Y\" string. Z is zoom level. X is tile coordinate on X axis. Y is tile coordinate on Y axis.\n\n\n\n\nFormat: \nST_TileName (A:pixel, ZoomLevel:int)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_TileName\n(\npixels\n.\npx\n,\n \n3\n)\n\n\nFROM\n \npixels\n\n\n\n\nST_Colorize\n\n\nIntroduction: Given the weight of a pixel, return the corresponding color. The weight can be the spatial aggregation of spatial objects or spatial observations such as temperature and humidity.\n\n\n\n\nNote\n\n\nThe color is encoded to an Integer type value in DataFrame. When you print it, it will show some nonsense values. You can just treat them as colors in GeoSparkViz.\n\n\n\n\nFormat: \nST_Colorize (weight:Double, maxWeight:Double, mandatory color: string (Optional))\n\n\nSince: \nv1.2.0\n\n\nProduce various colors - heat map\n\n\nThis function will normalize the weight according to the max weight among all pixels. Different pixel obtains different color.\n\n\nSpark SQL example:\n\nSELECT\n \npixels\n.\npx\n,\n \nST_Colorize\n(\npixels\n.\nweight\n,\n \n999\n)\n \nAS\n \ncolor\n\n\nFROM\n \npixels\n\n\n\n\nProduce uniform colors - scatter plot\n\n\nIf a mandatory color name is put as the third input argument, this function will directly ouput this color, without considering the weights. In this case, every pixel will possess the same color.\n\n\nSpark SQL example:\n\nSELECT\n \npixels\n.\npx\n,\n \nST_Colorize\n(\npixels\n.\nweight\n,\n \n999\n,\n \nred\n)\n \nAS\n \ncolor\n\n\nFROM\n \npixels\n\n\n\n\nHere are some example color names can be entered:\n\nfirebrick\n\n\n#aa38e0\n\n\n0x40A8CC\n\n\nrgba(112,36,228,0.9)\n\n\n\n\nPlease refer to \nAWT Colors\n for a list of pre-defined colors.\n\n\nST_EncodeImage\n\n\nIntroduction: Return the base64 string representation of a Java PNG BufferedImage. This is specific for the server-client environment. For example, transfer the base64 string from GeoSparkViz to Apache Zeppelin.\n\n\nFormat: \nST_EncodeImage (A:image)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\nSELECT\n \nST_EncodeImage\n(\nimages\n.\nimg\n)\n\n\nFROM\n \nimages\n\n\n\n\nAggregate functions\n\n\nST_Render\n\n\nIntroduction: Given a group of pixels and their colors, return a single Java PNG BufferedImage\n\n\nFormat: \nST_Render (A:pixel, B:color)\n\n\nSince: \nv1.2.0\n\n\nSpark SQL example:\n\nSELECT\n \ntilename\n,\n \nST_Render\n(\npixels\n.\npx\n,\n \npixels\n.\ncolor\n)\n \nAS\n \ntileimg\n\n\nFROM\n \npixels\n\n\nGROUP\n \nBY\n \ntilename", 
+            "title": "DataFrame/SQL"
         }, 
         {
-            "location": "/api/Babylon-Scala-and-Java-API/#scala-and-java-api", 
-            "text": "GeoSpark-Viz (former name, Babylon) Scala and Java API:  http://www.public.asu.edu/~jiayu2/geosparkviz/javadoc/  Note: Scala can call Java APIs seamlessly. That means GeoSparkViz Scala users use the same APIs with GeoSparkViz Java users.", 
-            "title": "Scala and Java API"
+            "location": "/api/viz/sql/#quick-start", 
+            "text": "The detailed explanation is here:  Visualize Spatial DataFrame/RDD .   Add GeoSpark-core, GeoSparkSQL, GeoSparkViz into your project POM.xml or build.sbt  Declare your Spark Session sparkSession   =   SparkSession . builder ().  config ( spark.serializer , classOf [ KryoSerializer ]. getName ).  config ( spark.kryo.registrator ,   classOf [ GeoSparkVizKryoRegistrator ]. getName ).  master ( local[*] ). appName ( myGeoSparkVizDemo ). getOrCreate ()   Add the following lines after your SparkSession declaration: GeoSparkSQLRegistrator . registerAll ( sparkSession )  GeoSparkVizRegistrator . registerAll ( sparkSession )", 
+            "title": "Quick start"
+        }, 
+        {
+            "location": "/api/viz/sql/#regular-functions", 
+            "text": "", 
+            "title": "Regular functions"
+        }, 
+        {
+            "location": "/api/viz/sql/#st_pixelize", 
+            "text": "Introduction: Return a pixel for a given resolution  Format:  ST_Pixelize (A:geometry, ResolutionX:int, ResolutionY:int, Boundary:geometry)  Since:  v1.2.0  Spark SQL example: SELECT   ST_Pixelize ( shape ,   256 ,   256 ,   ( ST_Envelope_Aggr ( shape )   FROM   pointtable ))  FROM   polygondf", 
+            "title": "ST_Pixelize"
+        }, 
+        {
+            "location": "/api/viz/sql/#st_tilename", 
+            "text": "Introduction: Return the map tile name for a given zoom level. Please refer to  OpenStreetMap ZoomLevel  and  OpenStreetMap tile name .   Note  Tile name is formatted as a \"Z-X-Y\" string. Z is zoom level. X is tile coordinate on X axis. Y is tile coordinate on Y axis.   Format:  ST_TileName (A:pixel, ZoomLevel:int)  Since:  v1.2.0  Spark SQL example: SELECT   ST_TileName ( pixels . px ,   3 )  FROM   pixels", 
+            "title": "ST_TileName"
+        }, 
+        {
+            "location": "/api/viz/sql/#st_colorize", 
+            "text": "Introduction: Given the weight of a pixel, return the corresponding color. The weight can be the spatial aggregation of spatial objects or spatial observations such as temperature and humidity.   Note  The color is encoded to an Integer type value in DataFrame. When you print it, it will show some nonsense values. You can just treat them as colors in GeoSparkViz.   Format:  ST_Colorize (weight:Double, maxWeight:Double, mandatory color: string (Optional))  Since:  v1.2.0", 
+            "title": "ST_Colorize"
+        }, 
+        {
+            "location": "/api/viz/sql/#produce-various-colors-heat-map", 
+            "text": "This function will normalize the weight according to the max weight among all pixels. Different pixel obtains different color.  Spark SQL example: SELECT   pixels . px ,   ST_Colorize ( pixels . weight ,   999 )   AS   color  FROM   pixels", 
+            "title": "Produce various colors - heat map"
+        }, 
+        {
+            "location": "/api/viz/sql/#produce-uniform-colors-scatter-plot", 
+            "text": "If a mandatory color name is put as the third input argument, this function will directly ouput this color, without considering the weights. In this case, every pixel will possess the same color.  Spark SQL example: SELECT   pixels . px ,   ST_Colorize ( pixels . weight ,   999 ,   red )   AS   color  FROM   pixels   Here are some example color names can be entered: firebrick  #aa38e0  0x40A8CC  rgba(112,36,228,0.9)   Please refer to  AWT Colors  for a list of pre-defined colors.", 
+            "title": "Produce uniform colors - scatter plot"
+        }, 
+        {
+            "location": "/api/viz/sql/#st_encodeimage", 
+            "text": "Introduction: Return the base64 string representation of a Java PNG BufferedImage. This is specific for the server-client environment. For example, transfer the base64 string from GeoSparkViz to Apache Zeppelin.  Format:  ST_EncodeImage (A:image)  Since:  v1.2.0  Spark SQL example: SELECT   ST_EncodeImage ( images . img )  FROM   images", 
+            "title": "ST_EncodeImage"
+        }, 
+        {
+            "location": "/api/viz/sql/#aggregate-functions", 
+            "text": "", 
+            "title": "Aggregate functions"
+        }, 
+        {
+            "location": "/api/viz/sql/#st_render", 
+            "text": "Introduction: Given a group of pixels and their colors, return a single Java PNG BufferedImage  Format:  ST_Render (A:pixel, B:color)  Since:  v1.2.0  Spark SQL example: SELECT   tilename ,   ST_Render ( pixels . px ,   pixels . color )   AS   tileimg  FROM   pixels  GROUP   BY   tilename", 
+            "title": "ST_Render"
+        }, 
+        {
+            "location": "/api/viz/Babylon-Scala-and-Java-API/", 
+            "text": "Scala and Java API for RDD\n\n\nGeoSpark-Viz Scala and Java API: \nhttp://www.public.asu.edu/~jiayu2/geosparkviz/javadoc/\n\n\nNote: Scala can call Java APIs seamlessly. That means GeoSparkViz Scala users use the same APIs with GeoSparkViz Java users.", 
+            "title": "RDD"
+        }, 
+        {
+            "location": "/api/viz/Babylon-Scala-and-Java-API/#scala-and-java-api-for-rdd", 
+            "text": "GeoSpark-Viz Scala and Java API:  http://www.public.asu.edu/~jiayu2/geosparkviz/javadoc/  Note: Scala can call Java APIs seamlessly. That means GeoSparkViz Scala users use the same APIs with GeoSparkViz Java users.", 
+            "title": "Scala and Java API for RDD"
         }, 
         {
             "location": "/contribute/rule/", 
@@ -906,37 +971,37 @@
             "title": "Contributor"
         }, 
         {
-            "location": "/contact/contact/", 
+            "location": "/contact/", 
             "text": "Contact\n\n\nQuestions\n\n\n\n\nGeoSpark@Twitter\n\n\nGeoSpark Discussion Board\n\n\nChat with us! \n\n\nEmail us!\n\n\n\n\nCommitter\n\n\n\n\n\n\nJia Yu\n (Email: jiayu2 at asu.edu)\n\n\n\n\n\n\nMohamed Sarwat\n (Email: msarwat at asu.edu)\n\n\n\n\n\n\nData Systems Lab @ ASU\n\n\nGeoSpark is one of the projects initiated by \nData Systems Lab\n at Arizona State University. The mission of Data Systems Lab is designing and developing experimental data management systems (e.g., database systems).", 
-            "title": "Questions"
+            "title": "Contact"
         }, 
         {
-            "location": "/contact/contact/#contact", 
+            "location": "/contact/#contact", 
             "text": "", 
             "title": "Contact"
         }, 
         {
-            "location": "/contact/contact/#questions", 
+            "location": "/contact/#questions", 
             "text": "GeoSpark@Twitter  GeoSpark Discussion Board  Chat with us!   Email us!", 
             "title": "Questions"
         }, 
         {
-            "location": "/contact/contact/#committer", 
+            "location": "/contact/#committer", 
             "text": "Jia Yu  (Email: jiayu2 at asu.edu)    Mohamed Sarwat  (Email: msarwat at asu.edu)", 
             "title": "Committer"
         }, 
         {
-            "location": "/contact/contact/#data-systems-lab-asu", 
+            "location": "/contact/#data-systems-lab-asu", 
             "text": "GeoSpark is one of the projects initiated by  Data Systems Lab  at Arizona State University. The mission of Data Systems Lab is designing and developing experimental data management systems (e.g., database systems).", 
             "title": "Data Systems Lab @ ASU"
         }, 
         {
-            "location": "/contact/publication/", 
+            "location": "/publication/", 
             "text": "Publication\n\n\n\"Spatial Data Management in Apache Spark: The\nGeoSpark Perspective and Beyond\"\n (research paper). Jia Yu, Zongsi Zhang, Mohamed Sarwat. Geoinformatica Journal 2018.\n\n\n\"GeoSparkViz: A Scalable Geospatial Data Visualization Framework in the Apache Spark Ecosystem\"\n (research paper). Jia Yu, Zongsi Zhang, Mohamed Sarwat. In Proceedings of the International Conference on Scientific and Statistical Database Management, SSDBM 2018, Bolzano-Bozen, Italy July 2018\n\n\n\"A Demonstration of GeoSpark: A Cluster Computing Framework for Processing Big Spatial Data\"\n (demo paper). Jia Yu, Jinxuan Wu, Mohamed Sarwat. In Proceeding of IEEE International Conference on Data Engineering ICDE 2016, Helsinki, FI, May 2016\n\n\n\"GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data\"\n (short paper). Jia Yu, Jinxuan Wu, Mohamed Sarwat. In Proceeding of the ACM International Conference on Advances in Geographic Information Systems ACM SIGSPATIAL GIS 2015, Seattle, WA, USA November 2015\n\n\n--\n\n\n\"Spatial Data Management in Apache Spark: The\nGeoSpark Perspective and Beyond\"\n is the full research paper that talks about the entire GeoSpark ecosystem. Please cite this paper if your work mentions GeoSpark core system.\n\n\n\"GeoSparkViz: A Scalable Geospatial Data Visualization Framework in the Apache Spark Ecosystem\"\n is the full research paper that talks about map visualization system in GeoSpark. Please cite this paper if your work mentions GeoSpark visualization system.", 
             "title": "Publications"
         }, 
         {
-            "location": "/contact/publication/#publication", 
+            "location": "/publication/#publication", 
             "text": "\"Spatial Data Management in Apache Spark: The\nGeoSpark Perspective and Beyond\"  (research paper). Jia Yu, Zongsi Zhang, Mohamed Sarwat. Geoinformatica Journal 2018.  \"GeoSparkViz: A Scalable Geospatial Data Visualization Framework in the Apache Spark Ecosystem\"  (research paper). Jia Yu, Zongsi Zhang, Mohamed Sarwat. In Proceedings of the International Conference on Scientific and Statistical Database Management, SSDBM 2018, Bolzano-Bozen, Italy July 2018  \"A Demonstration of GeoSpark: A Cluster Computing Framework for Processing Big Spatial Data\"  (demo paper). Jia Yu, Jinxuan Wu, Mohamed Sarwat. In Proceeding of IEEE International Conference on Data Engineering ICDE 2016, Helsinki, FI, May 2016  \"GeoSpark: A Cluster Computing Framework for Processing Large-Scale Spatial Data\"  (short paper). Jia Yu, Jinxuan Wu, Mohamed Sarwat. In Proceeding of the ACM International Conference on Advances in Geographic Information Systems ACM SIGSPATIAL GIS 2015, Seattle, WA, USA November 2015  --  \"Spatial Data Management in Apache Spark: The\nGeoSpark Perspective and Beyond\"  is the full research paper that talks about the entire GeoSpark ecosystem. Please cite this paper if your work mentions GeoSpark core system.  \"GeoSparkViz: A Scalable Geospatial Data Visualization Framework in the Apache Spark Ecosystem\"  is the full research paper that talks about map visualization system in GeoSpark. Please cite this paper if your work mentions GeoSpark visualization system.", 
             "title": "Publication"
         }, 

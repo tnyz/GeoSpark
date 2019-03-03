@@ -408,8 +408,8 @@
 
 
   <li class="md-nav__item">
-    <a href="tutorial/viz/" title="Visualize an Spatial RDD" class="md-nav__link">
-      Visualize an Spatial RDD
+    <a href="tutorial/viz/" title="Visualize Spatial DataFrame/RDD" class="md-nav__link">
+      Visualize Spatial DataFrame/RDD
     </a>
   </li>
 
@@ -420,8 +420,8 @@
 
 
   <li class="md-nav__item">
-    <a href="tutorial/GeoSpark-Runnable-DEMO/" title="Template project" class="md-nav__link">
-      Template project
+    <a href="tutorial/GeoSpark-Runnable-DEMO/" title="GeoSpark template project" class="md-nav__link">
+      GeoSpark template project
     </a>
   </li>
 
@@ -432,8 +432,8 @@
 
 
   <li class="md-nav__item">
-    <a href="tutorial/faq/" title="Frequently Asked Questions (FAQ)" class="md-nav__link">
-      Frequently Asked Questions (FAQ)
+    <a href="tutorial/faq/" title="Frequently Asked Questions" class="md-nav__link">
+      Frequently Asked Questions
     </a>
   </li>
 
@@ -640,11 +640,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
     
     <label class="md-nav__link" for="nav-4-3">
-      GeoSpark viz
+      GeoSpark Viz
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-4-3">
-        GeoSpark viz
+        GeoSpark Viz
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -655,8 +655,20 @@
 
 
   <li class="md-nav__item">
-    <a href="api/Babylon-Scala-and-Java-API/" title="Scala/Java doc" class="md-nav__link">
-      Scala/Java doc
+    <a href="api/viz/sql/" title="DataFrame/SQL" class="md-nav__link">
+      DataFrame/SQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="api/viz/Babylon-Scala-and-Java-API/" title="RDD" class="md-nav__link">
+      RDD
     </a>
   </li>
 
@@ -724,48 +736,24 @@
       
 
 
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Contact
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Contact
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
   <li class="md-nav__item">
-    <a href="contact/contact/" title="Questions" class="md-nav__link">
-      Questions
+    <a href="contact/" title="Contact" class="md-nav__link">
+      Contact
     </a>
   </li>
 
-        
-          
-          
-          
+    
+      
+      
+      
 
 
   <li class="md-nav__item">
-    <a href="contact/publication/" title="Publications" class="md-nav__link">
+    <a href="publication/" title="Publications" class="md-nav__link">
       Publications
     </a>
   </li>
 
-        
-      </ul>
-    </nav>
-  </li>
-
     
       
       
@@ -774,13 +762,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-8">
       License
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-8">
         License
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -876,7 +864,7 @@
 <p>Please make a Pull Request to add yourself!</p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>GeoSpark is a cluster computing system for processing large-scale spatial data. GeoSpark extends Apache Spark / SparkSQL with a set of out-of-the-box Spatial Resilient Distributed Datasets (SRDDs)/ SpatialSQL that efficiently load, process, and analyze large-scale spatial data across machines.</p>
-<p>GeoSpark contains three modules:</p>
+<p>GeoSpark contains several modules:</p>
 <table>
 <thead>
 <tr>
@@ -901,16 +889,23 @@
 </tr>
 <tr>
 <td>GeoSpark-Viz</td>
-<td>RDD</td>
-<td>Spark 2.X/1.X</td>
-<td>Spark-core, GeoSpark-core</td>
+<td>RDD, SQL/DataFrame</td>
+<td>RDD - Spark 2.X/1.X, SQL - Spark 2.1 and later</td>
+<td>Spark-core, Spark-SQL, GeoSpark-core, GeoSpark-SQL</td>
+</tr>
+<tr>
+<td>GeoSpark-Zeppelin</td>
+<td>Apache Zeppelin</td>
+<td>Spark 2.1+, Zeppelin 0.8.1+</td>
+<td>Spark-core, Spark-SQL, GeoSpark-core, GeoSpark-SQL, GeoSpark-Viz</td>
 </tr>
 </tbody>
 </table>
 <ul>
 <li>Core: GeoSpark SpatialRDDs and Query Operators. </li>
 <li>SQL: SQL interfaces for GeoSpark core.</li>
-<li>Viz: Visualization extension of GeoSpark core.</li>
+<li>Viz: Visualization extension of GeoSpark Spatial RDD and DataFrame.</li>
+<li>GeoSpark-Zeppelin: GeoSpark visualization plugin for Apache Zeppelin</li>
 </ul>
 <p>GeoSpark development team has published four papers about GeoSpark. Please read <a href="http://datasystemslab.github.io/GeoSpark/contact/publication/">Publications</a>. </p>
 <p>GeoSpark received an evaluation from PVLDB 2018 paper <a href="http://www.vldb.org/pvldb/vol11/p1661-pandey.pdf">"How Good Are Modern Spatial Analytics Systems?"</a> Varun Pandey, Andreas Kipf, Thomas Neumann, Alfons Kemper (Technical University of Munich), quoted as follows: </p>
