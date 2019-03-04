@@ -339,6 +339,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../download/zeppelin/" title="Install GeoSpark-Zeppelin" class="md-nav__link">
+      Install GeoSpark-Zeppelin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../download/compile/" title="Compile the source code" class="md-nav__link">
       Compile the source code
     </a>
@@ -442,6 +454,13 @@
         <li class="md-nav__item">
   <a href="#create-a-geometry-type-column" title="Create a Geometry type column" class="md-nav__link">
     Create a Geometry type column
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-shapefile-and-geojson" title="Load Shapefile and GeoJSON" class="md-nav__link">
+    Load Shapefile and GeoJSON
   </a>
   
 </li>
@@ -554,6 +573,18 @@
   <li class="md-nav__item">
     <a href="../viz/" title="Visualize Spatial DataFrame/RDD" class="md-nav__link">
       Visualize Spatial DataFrame/RDD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../zeppelin/" title="Interact with GeoSpark via Zeppelin" class="md-nav__link">
+      Interact with GeoSpark via Zeppelin
     </a>
   </li>
 
@@ -1001,6 +1032,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#load-shapefile-and-geojson" title="Load Shapefile and GeoJSON" class="md-nav__link">
+    Load Shapefile and GeoJSON
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#transform-the-coordinate-reference-system" title="Transform the Coordinate Reference System" class="md-nav__link">
     Transform the Coordinate Reference System
   </a>
@@ -1213,6 +1251,8 @@ The file may have many other columns.</p>
 <p class="admonition-title">Note</p>
 <p>GeoSparkSQL provides more than 10 different functions to create a Geometry column, please read <a href="../../api/sql/GeoSparkSQL-Constructor/">GeoSparkSQL constructor API</a>.</p>
 </div>
+<h2 id="load-shapefile-and-geojson">Load Shapefile and GeoJSON<a class="headerlink" href="#load-shapefile-and-geojson" title="Permanent link">&para;</a></h2>
+<p>Shapefile and GeoJSON must be loaded by SpatialRDD and converted to DataFrame using Adapter. Please read <a href="../rdd/#create-a-generic-spatialrdd-behavoir-changed-in-v120">Load SpatialRDD</a> and <a href="../sql/#convert-between-dataframe-and-spatialrdd">DataFrame &lt;-&gt; RDD</a>.</p>
 <h2 id="transform-the-coordinate-reference-system">Transform the Coordinate Reference System<a class="headerlink" href="#transform-the-coordinate-reference-system" title="Permanent link">&para;</a></h2>
 <p>GeoSpark doesn't control the coordinate unit (degree-based or meter-based) of all geometries in a Geometry column. The unit of all related distances in GeoSparkSQL is same as the unit of all geometries in a Geometry column.</p>
 <p>To convert Coordinate Reference System of the Geometry column created before, use the following code:</p>
@@ -1292,17 +1332,23 @@ The file may have many other columns.</p>
 <p>To load the DataFrame back, you first use the regular method to load the saved string DataFrame from the permanent storage and use <mark>ST_GeomFromWKT</mark> to re-build the Geometry type column.</p>
 <h2 id="convert-between-dataframe-and-spatialrdd">Convert between DataFrame and SpatialRDD<a class="headerlink" href="#convert-between-dataframe-and-spatialrdd" title="Permanent link">&para;</a></h2>
 <h3 id="dataframe-to-spatialrdd">DataFrame to SpatialRDD<a class="headerlink" href="#dataframe-to-spatialrdd" title="Permanent link">&para;</a></h3>
-<p>Use GeoSparkSQL DataFrame-RDD Adapter to convert a DataFrame to an SpatialRDD
+<p>Use GeoSparkSQL DataFrame-RDD Adapter to convert a DataFrame to an SpatialRDD</p>
+<p><strong>GeoSpark 1.2.0+</strong>
+<div class="codehilite"><pre><span></span><span class="k">var</span> <span class="n">spatialRDD</span> <span class="k">=</span> <span class="nc">Adapter</span><span class="o">.</span><span class="n">toSpatialRdd</span><span class="o">(</span><span class="n">spatialDf</span><span class="o">,</span> <span class="s">&quot;usacounty&quot;</span><span class="o">)</span>
+</pre></div></p>
+<p>"usacounty" is the name of the geometry column</p>
+<p><strong>Before GeoSpark 1.2.0</strong>
 <div class="codehilite"><pre><span></span><span class="k">var</span> <span class="n">spatialRDD</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SpatialRDD</span><span class="o">[</span><span class="kt">Geometry</span><span class="o">]</span>
 <span class="n">spatialRDD</span><span class="o">.</span><span class="n">rawSpatialRDD</span> <span class="k">=</span> <span class="nc">Adapter</span><span class="o">.</span><span class="n">toRdd</span><span class="o">(</span><span class="n">spatialDf</span><span class="o">)</span>
 </pre></div></p>
+<p>Geometry must be the first column in the DataFrame</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Geometry must be the first column in the DataFrame and only one Geometry type column is allowed per DataFrame.</p>
+<p>Only one Geometry type column is allowed per DataFrame.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Other non-spatial columns can also be brought to SpatialRDD using the UUIDs. Please read <a href="../../api/sql/GeoSparkSQL-Constructor/">GeoSparkSQL constructor API</a>.</p>
+<p>Before GeoSpark 1.2.0, other non-spatial columns need be brought to SpatialRDD using the UUIDs. Please read <a href="../../api/sql/GeoSparkSQL-Constructor/">GeoSparkSQL constructor API</a>. In GeoSpark 1.2.0+, all other non-spatial columns are automatically kept in SpatialRDD.</p>
 </div>
 <h3 id="spatialrdd-to-dataframe">SpatialRDD to DataFrame<a class="headerlink" href="#spatialrdd-to-dataframe" title="Permanent link">&para;</a></h3>
 <p>Use GeoSparkSQL DataFrame-RDD Adapter to convert a DataFrame to an SpatialRDD

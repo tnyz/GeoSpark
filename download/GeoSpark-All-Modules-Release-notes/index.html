@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#v113" tabindex="1" class="md-skip">
+      <a href="#v120" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -304,6 +304,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v120" title="v1.2.0" class="md-nav__link">
+    v1.2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v113" title="v1.1.3" class="md-nav__link">
     v1.1.3
   </a>
@@ -452,6 +459,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../zeppelin/" title="Install GeoSpark-Zeppelin" class="md-nav__link">
+      Install GeoSpark-Zeppelin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../compile/" title="Compile the source code" class="md-nav__link">
       Compile the source code
     </a>
@@ -514,6 +533,18 @@
   <li class="md-nav__item">
     <a href="../../tutorial/viz/" title="Visualize Spatial DataFrame/RDD" class="md-nav__link">
       Visualize Spatial DataFrame/RDD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/zeppelin/" title="Interact with GeoSpark via Zeppelin" class="md-nav__link">
+      Interact with GeoSpark via Zeppelin
     </a>
   </li>
 
@@ -926,6 +957,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v120" title="v1.2.0" class="md-nav__link">
+    v1.2.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v113" title="v1.1.3" class="md-nav__link">
     v1.1.3
   </a>
@@ -1030,7 +1068,75 @@
                 
                   <h1>Release notes</h1>
                 
-                <h2 id="v113">v1.1.3<a class="headerlink" href="#v113" title="Permanent link">&para;</a></h2>
+                <h2 id="v120">v1.2.0<a class="headerlink" href="#v120" title="Permanent link">&para;</a></h2>
+<p>This version contains numerous bug fixes, new functions, and new GeoSpark module.</p>
+<p><strong>License change</strong></p>
+<p>From MIT to Apache License 2.0</p>
+<p><strong>GeoSpark Core</strong></p>
+<p>Bug fix:</p>
+<ul>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/224">224</a> load GeoJSON non-spatial attributes.</li>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/228">228</a> Shapefiel Reader fails to handle UNDEFINED type.</li>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/320">320</a> Read CSV ArrayIndexOutOfBoundsException</li>
+</ul>
+<p>New functions:</p>
+<ul>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/270">270</a> #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/298">298</a> Add GeoJSON Reader to load GeoJSON with all attributes. See <a href="../../tutorial/rdd/#from-geojson">GeoSpark doc</a> for an example.</li>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/314">314</a> Add WktReader and WkbReader. Their usage is simialr to GeoJSON reader.</li>
+</ul>
+<p><strong>GeoSpark SQL</strong></p>
+<p>Bug fix:</p>
+<ul>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/244">244</a> JTS side location conflict</li>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/245">245</a> Drop ST_Circle in 1.2.0</li>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/288">288</a> ST_isValid fails</li>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/321">321</a> ST_Point doesn't accept null user data</li>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/284">284</a> ST_Union_Aggr bug</li>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/331">331</a> Adapter doesn't handle null values</li>
+</ul>
+<p>New SQL functions:</p>
+<ul>
+<li>ST_IsValid</li>
+<li>ST_PrecisionReduce</li>
+<li>ST_Touches</li>
+<li>ST_Overlaps</li>
+<li>ST_Equals</li>
+<li>ST_Crosses</li>
+<li>ST_IsSimple</li>
+<li>ST_AsText</li>
+</ul>
+<p>Behavior / API change:</p>
+<ul>
+<li>GeoSpark Adapter will automatically carry all attributes between DataFrame and RDD. No need to use UUID in SQL ST functions to pass values. Please read <a href="../../tutorial/sql/#dataframe-to-spatialrdd">GeoSpark doc</a>.</li>
+</ul>
+<p><strong>GeoSpark Viz</strong></p>
+<p>Bug fix:</p>
+<ul>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/231">231</a> Pixel NullPointException</li>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/234">234</a> OutOfMemory for large images</li>
+</ul>
+<p>New functions</p>
+<ul>
+<li>Add the DataFrame support. Please read <a href="../../tutorial/viz">GeoSpark doc</a></li>
+<li>ST_Pixelize</li>
+<li>ST_TileName</li>
+<li>ST_Colorize</li>
+<li>ST_EncodeImage</li>
+<li>ST_Render</li>
+</ul>
+<p>Behavior / API change</p>
+<ul>
+<li>GeoSparkViz Maven coordinate changed. You need to specify Spark version. Please read <a href="../GeoSpark-All-Modules-Maven-Central-Coordinates/#geospark-viz-120-and-later">GeoSpark Maven coordinate</a></li>
+</ul>
+<p><strong>GeoSpark-Zeppelin</strong></p>
+<p>New functions</p>
+<ul>
+<li>Add the support of connecting GeoSpark and Zeppelin</li>
+<li>Add the support of connecting GeoSparkViz and Zeppelin</li>
+</ul>
+<p><strong>Contributors (13)</strong></p>
+<p>Anton Peniaziev, Avshalom Orenstein, Jia Yu, Jordan Perr-Sauer, JulienPeloton, Sergii Mikhtoniuk, Netanel Malka, Rishabh Mishra, sagar1993, Shi-Hao Liu, Serhuela, tociek, Wrussia</p>
+<h2 id="v113">v1.1.3<a class="headerlink" href="#v113" title="Permanent link">&para;</a></h2>
 <p>This version contains a critical bug fix for GeoSpark-core RDD API.</p>
 <p><strong>GeoSpark Core</strong></p>
 <ul>
