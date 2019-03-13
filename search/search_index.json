@@ -122,7 +122,7 @@
         }, 
         {
             "location": "/download/GeoSpark-All-Modules-Maven-Central-Coordinates/", 
-            "text": "Apache Spark 2.X versions\n\n\nPlease add the following dependencies into your POM.xml or build.sbt\n\n\nGeoSpark-Core\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n\n\nversion\n:\n \n1.1\n.\n3\n\n\n\n\n\nGeoSpark-SQL\n\n\nFor SparkSQL-2.3\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nsql_2\n.\n3\n\n\nversion\n:\n \n1.1\n.\n3\n\n\n\n\n\nFor SparkSQL-2.2\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nsql_2\n.\n2\n\n\nversion\n:\n \n1.1\n.\n3\n\n\n\n\n\nFor SparkSQL-2.1\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nsql_2\n.\n1\n\n\nversion\n:\n \n1.1\n.\n3\n\n\n\n\n\nGeoSpark-Viz 1.2.0 and later\n\n\nFor SparkSQL-2.3\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz_2\n.\n3\n\n\nversion\n:\n \n1.1\n.\n3\n\n\n\n\n\nFor SparkSQL-2.2\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz_2\n.\n2\n\n\nversion\n:\n \n1.1\n.\n3\n\n\n\n\n\nFor SparkSQL-2.1\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz_2\n.\n1\n\n\nversion\n:\n \n1.1\n.\n3\n\n\n\n\n\nGeoSpark-Viz 1.1.3 and earlier\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz\n\n\nversion\n:\n \n1.1\n.\n3\n\n\n\n\n\n\n\nApache Spark 1.X versions\n\n\nPlease add the following dependencies into your POM.xml or build.sbt\n\n\nGeoSpark-Core\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n\n\nversion\n:\n \n0.8\n.\n2\n-\nspark\n-\n1\n.\nx\n\n\n\n\n\nGeoSpark-Viz\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \nbabylon\n\n\nversion\n:\n \n0.2\n.\n1\n-\nspark\n-\n1\n.\nx\n\n\n\n\n\n\n\nSNAPSHOT versions\n\n\nSometimes GeoSpark has a SNAPSHOT version for the upcoming release. \"SNAPSHOT\" is uppercase.\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n\n\nversion\n:\n \n1.2\n.\n0\n-\nSNAPSHOT\n\n\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nsql_2\n.\n3\n\n\nversion\n:\n \n1.2\n.\n0\n-\nSNAPSHOT\n\n\n\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz\n\n\nversion\n:\n \n1.2\n.\n0\n-\nSNAPSHOT\n\n\n\n\n\nIn order to download SNAPSHOTs, you need to add the following repositories in your POM.XML or build.sbt\n\n\nbuild.sbt\n\n\nresolvers +=\n  \"Sonatype OSS Snapshots\" at \"\nhttps://oss.sonatype.org/content/repositories/snapshots\n\"\n\n\nPOM.XML\n\n\nprofiles\n\n    \nprofile\n\n        \nid\nallow-snapshots\n/id\n\n        \nactivation\nactiveByDefault\ntrue\n/activeByDefault\n/activation\n\n        \nrepositories\n\n            \nrepository\n\n                \nid\nsnapshots-repo\n/id\n\n                \nurl\nhttps://oss.sonatype.org/content/repositories/snapshots\n/url\n\n                \nreleases\nenabled\nfalse\n/enabled\n/releases\n\n                \nsnapshots\nenabled\ntrue\n/enabled\n/snapshots\n\n            \n/repository\n\n        \n/repositories\n\n    \n/profile\n\n\n/profiles", 
+            "text": "Apache Spark 2.X versions\n\n\nPlease add the following dependencies into your POM.xml or build.sbt\n\n\nGeoSpark-Core\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n\n\nversion\n:\n \n1.2\n.\n0\n\n\n\n\n\nGeoSpark-SQL\n\n\nFor SparkSQL-2.3\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nsql_2\n.\n3\n\n\nversion\n:\n \n1.2\n.\n0\n\n\n\n\n\nFor SparkSQL-2.2\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nsql_2\n.\n2\n\n\nversion\n:\n \n1.2\n.\n0\n\n\n\n\n\nFor SparkSQL-2.1\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nsql_2\n.\n1\n\n\nversion\n:\n \n1.2\n.\n0\n\n\n\n\n\nGeoSpark-Viz 1.2.0 and later\n\n\nFor SparkSQL-2.3\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz_2\n.\n3\n\n\nversion\n:\n \n1.2\n.\n0\n\n\n\n\n\nFor SparkSQL-2.2\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz_2\n.\n2\n\n\nversion\n:\n \n1.2\n.\n0\n\n\n\n\n\nFor SparkSQL-2.1\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz_2\n.\n1\n\n\nversion\n:\n \n1.2\n.\n0\n\n\n\n\n\nGeoSpark-Viz 1.1.3 and earlier\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz\n\n\nversion\n:\n \n1.1\n.\n3\n\n\n\n\n\n\n\nApache Spark 1.X versions\n\n\nPlease add the following dependencies into your POM.xml or build.sbt\n\n\nGeoSpark-Core\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n\n\nversion\n:\n \n0.8\n.\n2\n-\nspark\n-\n1\n.\nx\n\n\n\n\n\nGeoSpark-Viz\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \nbabylon\n\n\nversion\n:\n \n0.2\n.\n1\n-\nspark\n-\n1\n.\nx\n\n\n\n\n\n\n\nSNAPSHOT versions\n\n\nSometimes GeoSpark has a SNAPSHOT version for the upcoming release. \"SNAPSHOT\" is uppercase.\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n\n\nversion\n:\n \n1.2\n.\n0\n-\nSNAPSHOT\n\n\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nsql_2\n.\n3\n\n\nversion\n:\n \n1.2\n.\n0\n-\nSNAPSHOT\n\n\n\n\n\ngroupId\n:\n \norg\n.\ndatasyslab\n\n\nartifactId\n:\n \ngeospark\n-\nviz\n\n\nversion\n:\n \n1.2\n.\n0\n-\nSNAPSHOT\n\n\n\n\n\nIn order to download SNAPSHOTs, you need to add the following repositories in your POM.XML or build.sbt\n\n\nbuild.sbt\n\n\nresolvers +=\n  \"Sonatype OSS Snapshots\" at \"\nhttps://oss.sonatype.org/content/repositories/snapshots\n\"\n\n\nPOM.XML\n\n\nprofiles\n\n    \nprofile\n\n        \nid\nallow-snapshots\n/id\n\n        \nactivation\nactiveByDefault\ntrue\n/activeByDefault\n/activation\n\n        \nrepositories\n\n            \nrepository\n\n                \nid\nsnapshots-repo\n/id\n\n                \nurl\nhttps://oss.sonatype.org/content/repositories/snapshots\n/url\n\n                \nreleases\nenabled\nfalse\n/enabled\n/releases\n\n                \nsnapshots\nenabled\ntrue\n/enabled\n/snapshots\n\n            \n/repository\n\n        \n/repositories\n\n    \n/profile\n\n\n/profiles", 
             "title": "Maven Central coordinate"
         }, 
         {
@@ -132,7 +132,7 @@
         }, 
         {
             "location": "/download/GeoSpark-All-Modules-Maven-Central-Coordinates/#geospark-core", 
-            "text": "groupId :   org . datasyslab  artifactId :   geospark  version :   1.1 . 3", 
+            "text": "groupId :   org . datasyslab  artifactId :   geospark  version :   1.2 . 0", 
             "title": "GeoSpark-Core"
         }, 
         {
@@ -142,17 +142,17 @@
         }, 
         {
             "location": "/download/GeoSpark-All-Modules-Maven-Central-Coordinates/#for-sparksql-23", 
-            "text": "groupId :   org . datasyslab  artifactId :   geospark - sql_2 . 3  version :   1.1 . 3", 
+            "text": "groupId :   org . datasyslab  artifactId :   geospark - sql_2 . 3  version :   1.2 . 0", 
             "title": "For SparkSQL-2.3"
         }, 
         {
             "location": "/download/GeoSpark-All-Modules-Maven-Central-Coordinates/#for-sparksql-22", 
-            "text": "groupId :   org . datasyslab  artifactId :   geospark - sql_2 . 2  version :   1.1 . 3", 
+            "text": "groupId :   org . datasyslab  artifactId :   geospark - sql_2 . 2  version :   1.2 . 0", 
             "title": "For SparkSQL-2.2"
         }, 
         {
             "location": "/download/GeoSpark-All-Modules-Maven-Central-Coordinates/#for-sparksql-21", 
-            "text": "groupId :   org . datasyslab  artifactId :   geospark - sql_2 . 1  version :   1.1 . 3", 
+            "text": "groupId :   org . datasyslab  artifactId :   geospark - sql_2 . 1  version :   1.2 . 0", 
             "title": "For SparkSQL-2.1"
         }, 
         {
@@ -162,17 +162,17 @@
         }, 
         {
             "location": "/download/GeoSpark-All-Modules-Maven-Central-Coordinates/#for-sparksql-23_1", 
-            "text": "groupId :   org . datasyslab  artifactId :   geospark - viz_2 . 3  version :   1.1 . 3", 
+            "text": "groupId :   org . datasyslab  artifactId :   geospark - viz_2 . 3  version :   1.2 . 0", 
             "title": "For SparkSQL-2.3"
         }, 
         {
             "location": "/download/GeoSpark-All-Modules-Maven-Central-Coordinates/#for-sparksql-22_1", 
-            "text": "groupId :   org . datasyslab  artifactId :   geospark - viz_2 . 2  version :   1.1 . 3", 
+            "text": "groupId :   org . datasyslab  artifactId :   geospark - viz_2 . 2  version :   1.2 . 0", 
             "title": "For SparkSQL-2.2"
         }, 
         {
             "location": "/download/GeoSpark-All-Modules-Maven-Central-Coordinates/#for-sparksql-21_1", 
-            "text": "groupId :   org . datasyslab  artifactId :   geospark - viz_2 . 1  version :   1.1 . 3", 
+            "text": "groupId :   org . datasyslab  artifactId :   geospark - viz_2 . 1  version :   1.2 . 0", 
             "title": "For SparkSQL-2.1"
         }, 
         {
