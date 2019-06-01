@@ -890,15 +890,16 @@
 <p><a href="https://twitter.com/GeoSpark_ASU">GeoSpark@Twitter</a> || <a href="https://groups.google.com/forum/#!forum/geospark-discussion-board">GeoSpark Discussion Board</a> || <a href="https://gitter.im/geospark-datasys/Lobby?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/geospark-datasys/Lobby" src="https://badges.gitter.im/geospark-datasys/Lobby.svg" /></a> || <a href="http://hits.dwyl.io/DataSystemsLab/GeoSpark"><img alt="HitCount" src="http://hits.dwyl.io/DataSystemsLab/GeoSpark.svg" /></a>(since Jan. 2018)</p>
 <h2 id="news">News!<a class="headerlink" href="#news" title="Permanent link">&para;</a></h2>
 <ul>
+<li>A research paper about <a href="http://www.public.asu.edu/~jiayu2/geospark/publication/geosparksim-mdm-2019.pdf">"GeoSparkSim: A Microscopic Road Network Traffic Simulator in Apache Spark"</a> is accepted to MDM 2019, Hong Kong China. The next release of GeoSpark will come with a built-in scalable traffic simulator. Please stay tuned!</li>
+<li>A 1.5-hour tutorial about "Geospatial Data Management in Apache Spark" was presented by Jia Yu and Mohamed Sarwat in ICDE 2019, Macau, China. Visit <a href="https://jiayuasu.github.io/geospatial-tutorial/">our tutorial website</a> to learn how to craft your <strong>"GeoSpark"</strong> from scratch.</li>
 <li>GeoSpark 1.2.0 is released.<ul>
-<li>Tons of bug fixes and new functions! Please read <a href="./download/GeoSpark-All-Modules-Release-notes/">GeoSpark release note</a>.</li>
-<li>GeoSparkViz now supports DataFrame API. Please read <a href="./tutorial/viz/">Visualize Spatial DataFrame/RDD</a>.</li>
-<li>GeoSpark-Zeppelin can connect GeoSpark to <a href="https://zeppelin.apache.org/">Apache Zeppelin</a>. Please read <a href="./tutorial/zeppelin/">Interact with GeoSpark via Zeppelin</a></li>
-<li>GeoSparkViz Maven coordinate change. Please read <a href="./download/GeoSpark-All-Modules-Maven-Central-Coordinates/#geospark-viz-120-and-later">Maven coordinate</a>.</li>
+<li>Tons of bug fixes and new functions! Please read <a href="http://datasystemslab.github.io/GeoSpark/download/GeoSpark-All-Modules-Release-notes/">GeoSpark release note</a>.</li>
+<li>GeoSparkViz now supports DataFrame API. Please read <a href="http://datasystemslab.github.io/GeoSpark/tutorial/viz/">Visualize Spatial DataFrame/RDD</a>.</li>
+<li>GeoSpark-Zeppelin can connect GeoSpark to <a href="https://zeppelin.apache.org/">Apache Zeppelin</a>. Please read <a href="http://datasystemslab.github.io/GeoSpark/tutorial/zeppelin/">Interact with GeoSpark via Zeppelin</a></li>
+<li>GeoSparkViz Maven coordinate change. Please read <a href="http://datasystemslab.github.io/GeoSpark/download/GeoSpark-All-Modules-Maven-Central-Coordinates/#geospark-viz-120-and-later">Maven coordinate</a>.</li>
 <li>This release includes the PR from 13 contributors. Please read <a href="./download/GeoSpark-All-Modules-Release-notes/">GeoSpark release note</a> to learn their names.</li>
 </ul>
 </li>
-<li>The full <a href="http://www.public.asu.edu/~jiayu2/geospark/publication/GeoSpark_Geoinformatica_2018.pdf">research paper</a> of GeoSpark has been accepted by Geoinformatica Journal. This paper has over 40 pages to dissect GeoSpark in details and compare it with many other existing systems such as Magellan, Simba, and SpatialHadoop.</li>
 </ul>
 <h2 id="companies-are-using-geospark">Companies are using GeoSpark<a class="headerlink" href="#companies-are-using-geospark" title="Permanent link">&para;</a></h2>
 <p>(incomplete list)</p>
@@ -906,49 +907,44 @@
 <p>Please make a Pull Request to add yourself!</p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>GeoSpark is a cluster computing system for processing large-scale spatial data. GeoSpark extends Apache Spark / SparkSQL with a set of out-of-the-box Spatial Resilient Distributed Datasets (SRDDs)/ SpatialSQL that efficiently load, process, and analyze large-scale spatial data across machines.</p>
-<p>GeoSpark contains several modules:</p>
+<h3 id="geospark-contains-several-modules">GeoSpark contains several modules:<a class="headerlink" href="#geospark-contains-several-modules" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>API</th>
 <th>Spark compatibility</th>
-<th>Dependency</th>
+<th>Introduction</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>GeoSpark-core</td>
+<td>Core</td>
 <td>RDD</td>
 <td>Spark 2.X/1.X</td>
-<td>Spark-core</td>
+<td>SpatialRDDs and Query Operators.</td>
 </tr>
 <tr>
-<td>GeoSpark-SQL</td>
+<td>SQL</td>
 <td>SQL/DataFrame</td>
-<td>SparkSQL 2.1 and later</td>
-<td>Spark-core, Spark-SQL, GeoSpark-core</td>
+<td>SparkSQL 2.1+</td>
+<td>SQL interfaces for GeoSpark core.</td>
 </tr>
 <tr>
-<td>GeoSpark-Viz</td>
+<td>Viz</td>
 <td>RDD, SQL/DataFrame</td>
-<td>RDD - Spark 2.X/1.X, SQL - Spark 2.1 and later</td>
-<td>Spark-core, Spark-SQL, GeoSpark-core, GeoSpark-SQL</td>
+<td>RDD - Spark 2.X/1.X, SQL - Spark 2.1+</td>
+<td>Visualization for Spatial RDD and DataFrame.</td>
 </tr>
 <tr>
-<td>GeoSpark-Zeppelin</td>
+<td>Zeppelin</td>
 <td>Apache Zeppelin</td>
 <td>Spark 2.1+, Zeppelin 0.8.1+</td>
-<td>Spark-core, Spark-SQL, GeoSpark-core, GeoSpark-SQL, GeoSpark-Viz</td>
+<td>GeoSpark plugin for Apache Zeppelin</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Core: GeoSpark SpatialRDDs and Query Operators. </li>
-<li>SQL: SQL interfaces for GeoSpark core.</li>
-<li>Viz: Visualization extension of GeoSpark Spatial RDD and DataFrame.</li>
-<li>GeoSpark-Zeppelin: GeoSpark visualization plugin for Apache Zeppelin</li>
-</ul>
+<h3 id="geospark-supports-several-programming-languages-scala-java-and-r">GeoSpark supports several programming languages: Scala, Java, and R.<a class="headerlink" href="#geospark-supports-several-programming-languages-scala-java-and-r" title="Permanent link">&para;</a></h3>
 <h2 id="social-impact">Social impact<a class="headerlink" href="#social-impact" title="Permanent link">&para;</a></h2>
 <p>GeoSpark development team has published four papers about GeoSpark. Please read <a href="http://datasystemslab.github.io/GeoSpark/contact/publication/">Publications</a>. </p>
 <p>GeoSpark received an evaluation from PVLDB 2018 paper <a href="http://www.vldb.org/pvldb/vol11/p1661-pandey.pdf">"How Good Are Modern Spatial Analytics Systems?"</a> Varun Pandey, Andreas Kipf, Thomas Neumann, Alfons Kemper (Technical University of Munich), quoted as follows: </p>

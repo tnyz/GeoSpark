@@ -708,13 +708,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#st_astext" title="ST_AsText" class="md-nav__link">
-    ST_AsText
-  </a>
-  
-</li>
-      
       
       
       
@@ -1054,13 +1047,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#st_astext" title="ST_AsText" class="md-nav__link">
-    ST_AsText
-  </a>
-  
-</li>
-      
       
       
       
@@ -1196,19 +1182,34 @@ The new coordinates will only have 9 decimal places.</p>
 <p>Format: <code class="codehilite">ST_Buffer (A:geometry, buffer: Double)</code></p>
 <p>Since: <code class="codehilite">v1.2.0</code></p>
 <p>Spark SQL example:
-```SQL
-SELECT ST_Buffer(polygondf.countyshape, 1)
-FROM polygondf
-````</p>
-<h2 id="st_astext">ST_AsText<a class="headerlink" href="#st_astext" title="Permanent link">&para;</a></h2>
-<p>Introduction: Return the Well-Known Text string representation of a geometry</p>
-<p>Format: <code class="codehilite">ST_AsText (A:geometry)</code></p>
-<p>Since: <code class="codehilite">v1.2.0</code></p>
-<p>Spark SQL example:
-```SQL
-SELECT ST_AsText(polygondf.countyshape)
-FROM polygondf
-````</p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_Buffer</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">polygondf</span>
+<span class="o">````</span>
+
+<span class="o">##</span> <span class="n">ST_AsText</span>
+
+<span class="n">Introduction</span><span class="p">:</span> <span class="k">Return</span> <span class="n">the</span> <span class="n">Well</span><span class="o">-</span><span class="n">Known</span> <span class="nb">Text</span> <span class="n">string</span> <span class="n">representation</span> <span class="k">of</span> <span class="n">a</span> <span class="n">geometry</span>
+
+<span class="n">Format</span><span class="p">:</span> <span class="o">`</span><span class="n">ST_AsText</span> <span class="p">(</span><span class="n">A</span><span class="p">:</span><span class="n">geometry</span><span class="p">)</span><span class="o">`</span>
+
+<span class="n">Since</span><span class="p">:</span> <span class="o">`</span><span class="n">v1</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="o">`</span>
+
+<span class="n">Spark</span> <span class="k">SQL</span> <span class="n">example</span><span class="p">:</span>
+<span class="o">```</span><span class="k">SQL</span>
+<span class="k">SELECT</span> <span class="n">ST_AsText</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">polygondf</span>
+<span class="o">````</span>
+
+<span class="o">##</span> <span class="n">ST_NPoints</span>
+
+<span class="n">Introduction</span><span class="p">:</span> <span class="k">Return</span> <span class="n">points</span> <span class="k">of</span> <span class="n">the</span> <span class="n">geometry</span>
+
+<span class="n">Format</span><span class="p">:</span> <span class="o">`</span><span class="n">ST_NPoints</span> <span class="p">(</span><span class="n">A</span><span class="p">:</span><span class="n">geometry</span><span class="p">)</span><span class="o">`</span>
+
+<span class="o">```</span><span class="k">SQL</span>
+<span class="k">SELECT</span> <span class="n">ST_NPoints</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">polygondf</span>
+</pre></div></p>
                 
                   
                 
