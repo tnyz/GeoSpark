@@ -708,6 +708,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#st_geometrytype" title="ST_GeometryType" class="md-nav__link">
+    ST_GeometryType
+  </a>
+  
+</li>
+      
       
       
       
@@ -1047,6 +1054,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#st_geometrytype" title="ST_GeometryType" class="md-nav__link">
+    ST_GeometryType
+  </a>
+  
+</li>
+      
       
       
       
@@ -1210,6 +1224,15 @@ The new coordinates will only have 9 decimal places.</p>
 <span class="k">SELECT</span> <span class="n">ST_NPoints</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="n">polygondf</span>
 </pre></div></p>
+<h2 id="st_geometrytype">ST_GeometryType<a class="headerlink" href="#st_geometrytype" title="Permanent link">&para;</a></h2>
+<p>Introduction: Returns the type of the geometry as a string. EG: 'ST_Linestring', 'ST_Polygon' etc.</p>
+<p>Format: <code class="codehilite">ST_GeometryType (A:geometry)</code></p>
+<p>Since: <code class="codehilite">v1.2.1</code></p>
+<p>Spark SQL example:
+```SQL
+SELECT ST_GeometryType(polygondf.countyshape)
+FROM polygondf
+````</p>
                 
                   
                 
