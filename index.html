@@ -904,18 +904,11 @@
 <ul>
 <li>A research paper about <a href="http://www.public.asu.edu/~jiayu2/geospark/publication/geosparksim-mdm-2019.pdf">"GeoSparkSim: A Microscopic Road Network Traffic Simulator in Apache Spark"</a> is accepted to MDM 2019, Hong Kong China. The next release of GeoSpark will come with a built-in scalable traffic simulator. Please stay tuned!</li>
 <li>A 1.5-hour tutorial about "Geospatial Data Management in Apache Spark" was presented by Jia Yu and Mohamed Sarwat in ICDE 2019, Macau, China. Visit <a href="https://jiayuasu.github.io/geospatial-tutorial/">our tutorial website</a> to learn how to craft your <strong>"GeoSpark"</strong> from scratch.</li>
-<li>GeoSpark 1.2.0 is released.<ul>
-<li>Tons of bug fixes and new functions! Please read <a href="http://datasystemslab.github.io/GeoSpark/download/GeoSpark-All-Modules-Release-notes/">GeoSpark release note</a>.</li>
-<li>GeoSparkViz now supports DataFrame API. Please read <a href="http://datasystemslab.github.io/GeoSpark/tutorial/viz/">Visualize Spatial DataFrame/RDD</a>.</li>
-<li>GeoSpark-Zeppelin can connect GeoSpark to <a href="https://zeppelin.apache.org/">Apache Zeppelin</a>. Please read <a href="http://datasystemslab.github.io/GeoSpark/tutorial/zeppelin/">Interact with GeoSpark via Zeppelin</a></li>
-<li>GeoSparkViz Maven coordinate change. Please read <a href="http://datasystemslab.github.io/GeoSpark/download/GeoSpark-All-Modules-Maven-Central-Coordinates/#geospark-viz-120-and-later">Maven coordinate</a>.</li>
-<li>This release includes the PR from 13 contributors. Please read <a href="./download/GeoSpark-All-Modules-Release-notes/">GeoSpark release note</a> to learn their names.</li>
-</ul>
-</li>
+<li>GeoSpark 1.2.0 is released.</li>
 </ul>
 <h2 id="companies-are-using-geospark">Companies are using GeoSpark<a class="headerlink" href="#companies-are-using-geospark" title="Permanent link">&para;</a></h2>
 <p>(incomplete list)</p>
-<p><a href="https://www.bluedme.com/"><img src="https://www.dataiku.com/static/img/partners/LOGO-Blue-DME-PNG-3.png" width="200"></a> <a href="https://www.gyana.co.uk/"><img src="https://retailrecharged.com/wp-content/uploads/2017/10/logo.png" width="150"></a><a href="https://mobike.com"><img src="https://mobike.com/global/public/invitation__footer__logo.png" width="150"></a></p>
+<p><a href="https://www.bluedme.com/"><img src="https://www.dataiku.com/static/img/partners/LOGO-Blue-DME-PNG-3.png" width="200"></a> &nbsp;&nbsp; <a href="https://www.gyana.co.uk/"><img src="https://www.gyana.co.uk/images/logo@4x.png" width="200"></a> &nbsp;&nbsp; <a href="https://mobike.com"><img src="https://mobike.com/global/public/invitation__footer__logo.png" width="150"></a></p>
 <p>Please make a Pull Request to add yourself!</p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>GeoSpark is a cluster computing system for processing large-scale spatial data. GeoSpark extends Apache Spark / SparkSQL with a set of out-of-the-box Spatial Resilient Distributed Datasets (SRDDs)/ SpatialSQL that efficiently load, process, and analyze large-scale spatial data across machines.</p>
@@ -956,17 +949,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="geospark-supports-several-programming-languages-scala-java-and-r">GeoSpark supports several programming languages: Scala, Java, and R.<a class="headerlink" href="#geospark-supports-several-programming-languages-scala-java-and-r" title="Permanent link">&para;</a></h3>
 <h2 id="impact">Impact<a class="headerlink" href="#impact" title="Permanent link">&para;</a></h2>
 <h3 id="geospark-downloads-on-maven-central">GeoSpark Downloads on Maven Central<a class="headerlink" href="#geospark-downloads-on-maven-central" title="Permanent link">&para;</a></h3>
 <p>GeoSpark ecosystem has around 8K - 10K downloads per month.</p>
 <p><img src="image/geospark-stat.png" width="500"/></p>
-<h3 id="research">Research<a class="headerlink" href="#research" title="Permanent link">&para;</a></h3>
-<p>GeoSpark development team has published many papers about GeoSpark. Please read <a href="http://datasystemslab.github.io/GeoSpark/contact/publication/">Publications</a>. </p>
-<p>GeoSpark received an evaluation from PVLDB 2018 paper <a href="http://www.vldb.org/pvldb/vol11/p1661-pandey.pdf">"How Good Are Modern Spatial Analytics Systems?"</a> Varun Pandey, Andreas Kipf, Thomas Neumann, Alfons Kemper (Technical University of Munich), quoted as follows: </p>
-<blockquote>
-<p>GeoSpark comes close to a complete spatial analytics system. It also exhibits the best performance in most cases.</p>
-</blockquote>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
 <ul>
 <li><mark>Spatial RDD</mark></li>
@@ -984,6 +970,43 @@
 <li><mark>Coordinate Reference System / Spatial Reference System Transformation</mark>: for exmaple, from WGS84 (EPSG:4326, degree-based), to EPSG:3857 (meter-based)</li>
 <li><mark>High resolution map</mark>: Scatter plot, heat map, choropleth map</li>
 </ul>
+<h2 id="geospark-language-support">GeoSpark language support<a class="headerlink" href="#geospark-language-support" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="center">Language</th>
+<th align="center">Supported GeoSpark modules</th>
+<th align="center">Tutorial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Scala</td>
+<td align="center">RDD, SQL, Viz, Zeppelin</td>
+<td align="center"><a href="./tutorial/rdd">RDD</a>, <a href="./tutorial/sql">SQL</a>, <a href="./tutorial/viz">Viz</a>, <a href="./tutorial/zeppelin">Zeppelin</a></td>
+</tr>
+<tr>
+<td align="center">Java</td>
+<td align="center">RDD, SQL, Viz</td>
+<td align="center"><a href="./tutorial/rdd">RDD</a>, <a href="./tutorial/sql">SQL</a>, <a href="./tutorial/viz">Viz</a></td>
+</tr>
+<tr>
+<td align="center">SQL</td>
+<td align="center">SQL, Viz, Zeppelin</td>
+<td align="center"><a href="./tutorial/sql">SQL</a>, <a href="./tutorial/viz">Viz</a>, <a href="./tutorial/zeppelin">Zeppelin</a></td>
+</tr>
+<tr>
+<td align="center">Python</td>
+<td align="center">SQL</td>
+<td align="center"><a href="./tutorial/geospark-python">SQL</a></td>
+</tr>
+<tr>
+<td align="center">R</td>
+<td align="center">SQL</td>
+<td align="center"><a href=""></a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="geospark-visualization-extension-geosparkviz">GeoSpark Visualization Extension (GeoSparkViz)<a class="headerlink" href="#geospark-visualization-extension-geosparkviz" title="Permanent link">&para;</a></h2>
 <p>GeoSparkViz is a large-scale in-memory geospatial visualization system.</p>
 <p>GeoSparkViz provides native support for general cartographic design by extending GeoSpark to process large-scale spatial data. It can visulize Spatial RDD and Spatial Queries and render super high resolution image in parallel.</p>
@@ -993,6 +1016,12 @@
 <img src="http://www.public.asu.edu/~jiayu2/geospark/picture/ustweet.png" width="250"></p>
 <p><a href="http://www.public.asu.edu/~jiayu2/geospark/picture/overlay.html">Watch the high resolution version on a real map</a></p>
 <p><img src="http://www.public.asu.edu/~jiayu2/geospark/picture/heatmapnycsmall.png" width="500"></p>
+<h3 id="research">Research<a class="headerlink" href="#research" title="Permanent link">&para;</a></h3>
+<p>GeoSpark development team has published many papers about GeoSpark. Please read <a href="./publication">Publications</a>. </p>
+<p>GeoSpark received an evaluation from PVLDB 2018 paper <a href="http://www.vldb.org/pvldb/vol11/p1661-pandey.pdf">"How Good Are Modern Spatial Analytics Systems?"</a> Varun Pandey, Andreas Kipf, Thomas Neumann, Alfons Kemper (Technical University of Munich), quoted as follows: </p>
+<blockquote>
+<p>GeoSpark comes close to a complete spatial analytics system. It also exhibits the best performance in most cases.</p>
+</blockquote>
                 
                   
                 
