@@ -721,6 +721,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#st_astext" title="ST_AsText" class="md-nav__link">
+    ST_AsText
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_npoints" title="ST_NPoints" class="md-nav__link">
+    ST_NPoints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#st_geometrytype" title="ST_GeometryType" class="md-nav__link">
     ST_GeometryType
   </a>
@@ -1067,6 +1081,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#st_astext" title="ST_AsText" class="md-nav__link">
+    ST_AsText
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_npoints" title="ST_NPoints" class="md-nav__link">
+    ST_NPoints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#st_geometrytype" title="ST_GeometryType" class="md-nav__link">
     ST_GeometryType
   </a>
@@ -1210,32 +1238,23 @@ The new coordinates will only have 9 decimal places.</p>
 <p>Spark SQL example:
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_Buffer</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="n">polygondf</span>
-<span class="o">````</span>
-
-<span class="o">##</span> <span class="n">ST_AsText</span>
-
-<span class="n">Introduction</span><span class="p">:</span> <span class="k">Return</span> <span class="n">the</span> <span class="n">Well</span><span class="o">-</span><span class="n">Known</span> <span class="nb">Text</span> <span class="n">string</span> <span class="n">representation</span> <span class="k">of</span> <span class="n">a</span> <span class="n">geometry</span>
-
-<span class="n">Format</span><span class="p">:</span> <span class="o">`</span><span class="n">ST_AsText</span> <span class="p">(</span><span class="n">A</span><span class="p">:</span><span class="n">geometry</span><span class="p">)</span><span class="o">`</span>
-
-<span class="n">Since</span><span class="p">:</span> <span class="o">`</span><span class="n">v1</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="o">`</span>
-
-<span class="n">Spark</span> <span class="k">SQL</span> <span class="n">example</span><span class="p">:</span>
-<span class="o">```</span><span class="k">SQL</span>
-<span class="k">SELECT</span> <span class="n">ST_AsText</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
-<span class="k">FROM</span> <span class="n">polygondf</span>
-<span class="o">````</span>
-
-<span class="o">##</span> <span class="n">ST_NPoints</span>
-
-<span class="n">Introduction</span><span class="p">:</span> <span class="k">Return</span> <span class="n">points</span> <span class="k">of</span> <span class="n">the</span> <span class="n">geometry</span>
-
-<span class="n">Format</span><span class="p">:</span> <span class="o">`</span><span class="n">ST_NPoints</span> <span class="p">(</span><span class="n">A</span><span class="p">:</span><span class="n">geometry</span><span class="p">)</span><span class="o">`</span>
-
-<span class="o">```</span><span class="k">SQL</span>
-<span class="k">SELECT</span> <span class="n">ST_NPoints</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
+</pre></div></p>
+<h2 id="st_astext">ST_AsText<a class="headerlink" href="#st_astext" title="Permanent link">&para;</a></h2>
+<p>Introduction: Return the Well-Known Text string representation of a geometry</p>
+<p>Format: <code class="codehilite">ST_AsText (A:geometry)</code></p>
+<p>Since: <code class="codehilite">v1.2.0</code></p>
+<p>Spark SQL example:
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_AsText</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="n">polygondf</span>
 </pre></div></p>
+<h2 id="st_npoints">ST_NPoints<a class="headerlink" href="#st_npoints" title="Permanent link">&para;</a></h2>
+<p>Introduction: Return points of the geometry</p>
+<p>Since: <code class="codehilite">v1.2.1</code></p>
+<p>Format: <code class="codehilite">ST_NPoints (A:geometry)</code></p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_NPoints</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">polygondf</span>
+</pre></div>
+
 <h2 id="st_geometrytype">ST_GeometryType<a class="headerlink" href="#st_geometrytype" title="Permanent link">&para;</a></h2>
 <p>Introduction: Returns the type of the geometry as a string. EG: 'ST_Linestring', 'ST_Polygon' etc.</p>
 <p>Format: <code class="codehilite">ST_GeometryType (A:geometry)</code></p>
