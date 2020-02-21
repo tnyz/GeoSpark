@@ -387,8 +387,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/rdd/" title="Write an Spatial RDD application" class="md-nav__link">
-      Write an Spatial RDD application
+    <a href="../../../tutorial/rdd/" title="Spatial RDD application" class="md-nav__link">
+      Spatial RDD application
     </a>
   </li>
 
@@ -399,8 +399,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/sql/" title="Write an Spatial SQL/DataFrame application" class="md-nav__link">
-      Write an Spatial SQL/DataFrame application
+    <a href="../../../tutorial/sql/" title="Spatial SQL application" class="md-nav__link">
+      Spatial SQL application
     </a>
   </li>
 
@@ -411,8 +411,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/viz/" title="Visualize Spatial DataFrame/RDD" class="md-nav__link">
-      Visualize Spatial DataFrame/RDD
+    <a href="../../../tutorial/viz/" title="Visualize Spatial DataFrame" class="md-nav__link">
+      Visualize Spatial DataFrame
     </a>
   </li>
 
@@ -423,8 +423,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/zeppelin/" title="Interact with GeoSpark via Zeppelin" class="md-nav__link">
-      Interact with GeoSpark via Zeppelin
+    <a href="../../../tutorial/zeppelin/" title="Run GeoSpark via Zeppelin" class="md-nav__link">
+      Run GeoSpark via Zeppelin
     </a>
   </li>
 
@@ -435,8 +435,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/geospark-python/" title="Write an GeoSpark Python application" class="md-nav__link">
-      Write an GeoSpark Python application
+    <a href="../../../tutorial/geospark-core-python/" title="Spatial RDD in Python" class="md-nav__link">
+      Spatial RDD in Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/geospark-sql-python/" title="Spatial SQL in Python" class="md-nav__link">
+      Spatial SQL in Python
     </a>
   </li>
 
@@ -542,6 +554,18 @@
   <li class="md-nav__item">
     <a href="../../GeoSpark-Scala-and-Java-API/" title="Scala/Java doc" class="md-nav__link">
       Scala/Java doc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../GeoSpark-Python-API/" title="Python doc" class="md-nav__link">
+      Python doc
     </a>
   </li>
 
@@ -670,6 +694,13 @@
         <li class="md-nav__item">
   <a href="#st_union_aggr" title="ST_Union_Aggr" class="md-nav__link">
     ST_Union_Aggr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_intersection_aggr" title="ST_Intersection_Aggr" class="md-nav__link">
+    ST_Intersection_Aggr
   </a>
   
 </li>
@@ -919,6 +950,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#st_intersection_aggr" title="ST_Intersection_Aggr" class="md-nav__link">
+    ST_Intersection_Aggr
+  </a>
+  
+</li>
+      
       
       
       
@@ -954,6 +992,14 @@
 <p>Since: <code class="codehilite">v1.0.0</code></p>
 <p>Spark SQL example:
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_Union_Aggr</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">polygonshape</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">polygondf</span>
+</pre></div></p>
+<h2 id="st_intersection_aggr">ST_Intersection_Aggr<a class="headerlink" href="#st_intersection_aggr" title="Permanent link">&para;</a></h2>
+<p>Introduction: Return the polygon intersection of all polygons in A</p>
+<p>Format: <code class="codehilite">ST_Intersection_Aggr (A:geometryColumn)</code></p>
+<p>Since: <code class="codehilite">v1.2.1</code></p>
+<p>Spark SQL example:
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_Intersection_Aggr</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">polygonshape</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="n">polygondf</span>
 </pre></div></p>
                 

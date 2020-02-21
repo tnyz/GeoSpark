@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#v120" tabindex="1" class="md-skip">
+      <a href="#v131" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -304,6 +304,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v131" title="v1.3.1" class="md-nav__link">
+    v1.3.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v130" title="v1.3.0" class="md-nav__link">
+    v1.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v120" title="v1.2.0" class="md-nav__link">
     v1.2.0
   </a>
@@ -507,8 +521,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/rdd/" title="Write an Spatial RDD application" class="md-nav__link">
-      Write an Spatial RDD application
+    <a href="../../tutorial/rdd/" title="Spatial RDD application" class="md-nav__link">
+      Spatial RDD application
     </a>
   </li>
 
@@ -519,8 +533,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/sql/" title="Write an Spatial SQL/DataFrame application" class="md-nav__link">
-      Write an Spatial SQL/DataFrame application
+    <a href="../../tutorial/sql/" title="Spatial SQL application" class="md-nav__link">
+      Spatial SQL application
     </a>
   </li>
 
@@ -531,8 +545,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/viz/" title="Visualize Spatial DataFrame/RDD" class="md-nav__link">
-      Visualize Spatial DataFrame/RDD
+    <a href="../../tutorial/viz/" title="Visualize Spatial DataFrame" class="md-nav__link">
+      Visualize Spatial DataFrame
     </a>
   </li>
 
@@ -543,8 +557,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/zeppelin/" title="Interact with GeoSpark via Zeppelin" class="md-nav__link">
-      Interact with GeoSpark via Zeppelin
+    <a href="../../tutorial/zeppelin/" title="Run GeoSpark via Zeppelin" class="md-nav__link">
+      Run GeoSpark via Zeppelin
     </a>
   </li>
 
@@ -555,8 +569,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../tutorial/geospark-python/" title="Write an GeoSpark Python application" class="md-nav__link">
-      Write an GeoSpark Python application
+    <a href="../../tutorial/geospark-core-python/" title="Spatial RDD in Python" class="md-nav__link">
+      Spatial RDD in Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/geospark-sql-python/" title="Spatial SQL in Python" class="md-nav__link">
+      Spatial SQL in Python
     </a>
   </li>
 
@@ -660,6 +686,18 @@
   <li class="md-nav__item">
     <a href="../../api/GeoSpark-Scala-and-Java-API/" title="Scala/Java doc" class="md-nav__link">
       Scala/Java doc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/GeoSpark-Python-API/" title="Python doc" class="md-nav__link">
+      Python doc
     </a>
   </li>
 
@@ -981,6 +1019,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v131" title="v1.3.1" class="md-nav__link">
+    v1.3.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v130" title="v1.3.0" class="md-nav__link">
+    v1.3.0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#v120" title="v1.2.0" class="md-nav__link">
     v1.2.0
   </a>
@@ -1092,7 +1144,62 @@
                 
                   <h1>Release notes</h1>
                 
-                <h2 id="v120">v1.2.0<a class="headerlink" href="#v120" title="Permanent link">&para;</a></h2>
+                <h2 id="v131">v1.3.1<a class="headerlink" href="#v131" title="Permanent link">&para;</a></h2>
+<p>This version includes the official release of GeoSpark Python wrapper. It also contains a number of bug fixes and new functions. The tutorial section provides some articles to explain the usage of GeoSpark Python wrapper.</p>
+<p><strong>GeoSpark Core</strong></p>
+<p>Bug fix:</p>
+<ul>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/344">344</a> and PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/365">365</a>: GeoJSON reader cannot handle "id"</li>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/420">420</a> and PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/421">421</a>: Cannot handle null value in geojson properties</li>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/422">422</a>: Use HTTPS to resolve dependencies in Maven Build</li>
+</ul>
+<p>New functions:</p>
+<ul>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/399">399</a> and PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/401">401</a>: saveAsWKB</li>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/402">402</a>: saveAsWKT</li>
+</ul>
+<p><strong>GeoSpark SQL</strong></p>
+<p>New functions:</p>
+<ul>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/359">359</a>: ST_NPoints</li>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/373">373</a>: ST_GeometryType</li>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/398">398</a>: ST_SimplifyPreserveTopology</li>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/406">406</a>: ST_MakeValid</li>
+<li>PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/416">416</a>: ST_Intersection_aggr</li>
+</ul>
+<p>Performance:</p>
+<ul>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/345">345</a> and PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/346">346</a>: the performance issue of Adapter.toDF() function</li>
+</ul>
+<p>Bug fix:</p>
+<ul>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/395">395</a> and PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/396">396</a>: Fix the geometry col bug in Adapter</li>
+</ul>
+<p><strong>GeoSpark Viz</strong></p>
+<p>Bug fix:</p>
+<ul>
+<li>Issue #<a href="https://github.com/DataSystemsLab/GeoSpark/issues/378">378</a> and PR #<a href="https://github.com/DataSystemsLab/GeoSpark/pull/379">379</a>: Classpath issue when integrating GeoSparkViz with s3</li>
+</ul>
+<p><strong>GeoSpark Python</strong></p>
+<p>Add new GeoSpark python wrapper for RDD and SQL APIs</p>
+<p><strong>Contributors (12)</strong></p>
+<ul>
+<li>Mariano Gonzalez</li>
+<li>Paweł Kociński</li>
+<li>Semen Komissarov</li>
+<li>Jonathan Leitschuh</li>
+<li>Netanel Malka</li>
+<li>Keivan Shahida</li>
+<li>Sachio Wakai</li>
+<li>Hui Wang</li>
+<li>Wrussia</li>
+<li>Jia Yu</li>
+<li>Harry Zhu</li>
+<li>Ilya Zverev</li>
+</ul>
+<h2 id="v130">v1.3.0<a class="headerlink" href="#v130" title="Permanent link">&para;</a></h2>
+<p>This release has been skipped due to a bug in GeoSpark Python wrapper.</p>
+<h2 id="v120">v1.2.0<a class="headerlink" href="#v120" title="Permanent link">&para;</a></h2>
 <p>This version contains numerous bug fixes, new functions, and new GeoSpark module.</p>
 <p><strong>License change</strong></p>
 <p>From MIT to Apache License 2.0</p>

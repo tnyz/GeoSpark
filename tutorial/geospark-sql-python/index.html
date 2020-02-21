@@ -36,7 +36,7 @@
     
     
       
-        <title>Write an GeoSpark Python application - GeoSpark</title>
+        <title>Spatial SQL in Python - GeoSpark</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#introduction" tabindex="1" class="md-skip">
+      <a href="#spatial-sql-application-in-python" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -119,7 +119,7 @@
                 GeoSpark
               </span>
               <span class="md-header-nav__topic">
-                Write an GeoSpark Python application
+                Spatial SQL in Python
               </span>
             
           
@@ -389,8 +389,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../rdd/" title="Write an Spatial RDD application" class="md-nav__link">
-      Write an Spatial RDD application
+    <a href="../rdd/" title="Spatial RDD application" class="md-nav__link">
+      Spatial RDD application
     </a>
   </li>
 
@@ -401,8 +401,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../sql/" title="Write an Spatial SQL/DataFrame application" class="md-nav__link">
-      Write an Spatial SQL/DataFrame application
+    <a href="../sql/" title="Spatial SQL application" class="md-nav__link">
+      Spatial SQL application
     </a>
   </li>
 
@@ -413,8 +413,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../viz/" title="Visualize Spatial DataFrame/RDD" class="md-nav__link">
-      Visualize Spatial DataFrame/RDD
+    <a href="../viz/" title="Visualize Spatial DataFrame" class="md-nav__link">
+      Visualize Spatial DataFrame
     </a>
   </li>
 
@@ -425,8 +425,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../zeppelin/" title="Interact with GeoSpark via Zeppelin" class="md-nav__link">
-      Interact with GeoSpark via Zeppelin
+    <a href="../zeppelin/" title="Run GeoSpark via Zeppelin" class="md-nav__link">
+      Run GeoSpark via Zeppelin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../geospark-core-python/" title="Spatial RDD in Python" class="md-nav__link">
+      Spatial RDD in Python
     </a>
   </li>
 
@@ -445,9 +457,215 @@
       
     
     
-    <a href="./" title="Write an GeoSpark Python application" class="md-nav__link md-nav__link--active">
-      Write an GeoSpark Python application
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Spatial SQL in Python
+      </label>
+    
+    <a href="./" title="Spatial SQL in Python" class="md-nav__link md-nav__link--active">
+      Spatial SQL in Python
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-from-pypi-repositories" title="Installing from PyPi repositories" class="md-nav__link">
+    Installing from PyPi repositories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-from-wheel-file" title="Installing from wheel file" class="md-nav__link">
+    Installing from wheel file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-from-source" title="Installing from source" class="md-nav__link">
+    Installing from source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-classes-and-methods" title="Core Classes and methods." class="md-nav__link">
+    Core Classes and methods.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-application" title="Writing Application" class="md-nav__link">
+    Writing Application
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geosparksql" title="GeoSparkSQL" class="md-nav__link">
+    GeoSparkSQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-geopandas-and-shapely" title="Integration with GeoPandas and Shapely" class="md-nav__link">
+    Integration with GeoPandas and Shapely
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-spark-dataframe-based-on-shapely-objects" title="Creating Spark DataFrame based on shapely objects" class="md-nav__link">
+    Creating Spark DataFrame based on shapely objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-shapely-objects" title="Supported Shapely objects" class="md-nav__link">
+    Supported Shapely objects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-for-shapely-objects" title="Example usage for Shapely objects" class="md-nav__link">
+    Example usage for Shapely objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point" title="Point" class="md-nav__link">
+    Point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multipoint" title="MultiPoint" class="md-nav__link">
+    MultiPoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linestring" title="LineString" class="md-nav__link">
+    LineString
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polygon" title="Polygon" class="md-nav__link">
+    Polygon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multipolygon" title="MultiPolygon" class="md-nav__link">
+    MultiPolygon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-versions" title="Supported versions" class="md-nav__link">
+    Supported versions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache-spark" title="Apache Spark" class="md-nav__link">
+    Apache Spark
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geosparksql_1" title="GeoSparkSQL" class="md-nav__link">
+    GeoSparkSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -551,6 +769,18 @@
   <li class="md-nav__item">
     <a href="../../api/GeoSpark-Scala-and-Java-API/" title="Scala/Java doc" class="md-nav__link">
       Scala/Java doc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/GeoSpark-Python-API/" title="Python doc" class="md-nav__link">
+      Python doc
     </a>
   </li>
 
@@ -870,6 +1100,199 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-from-pypi-repositories" title="Installing from PyPi repositories" class="md-nav__link">
+    Installing from PyPi repositories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-from-wheel-file" title="Installing from wheel file" class="md-nav__link">
+    Installing from wheel file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-from-source" title="Installing from source" class="md-nav__link">
+    Installing from source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-classes-and-methods" title="Core Classes and methods." class="md-nav__link">
+    Core Classes and methods.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-application" title="Writing Application" class="md-nav__link">
+    Writing Application
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geosparksql" title="GeoSparkSQL" class="md-nav__link">
+    GeoSparkSQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-geopandas-and-shapely" title="Integration with GeoPandas and Shapely" class="md-nav__link">
+    Integration with GeoPandas and Shapely
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-spark-dataframe-based-on-shapely-objects" title="Creating Spark DataFrame based on shapely objects" class="md-nav__link">
+    Creating Spark DataFrame based on shapely objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-shapely-objects" title="Supported Shapely objects" class="md-nav__link">
+    Supported Shapely objects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage-for-shapely-objects" title="Example usage for Shapely objects" class="md-nav__link">
+    Example usage for Shapely objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#point" title="Point" class="md-nav__link">
+    Point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multipoint" title="MultiPoint" class="md-nav__link">
+    MultiPoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linestring" title="LineString" class="md-nav__link">
+    LineString
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polygon" title="Polygon" class="md-nav__link">
+    Polygon
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multipolygon" title="MultiPolygon" class="md-nav__link">
+    MultiPolygon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-versions" title="Supported versions" class="md-nav__link">
+    Supported versions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache-spark" title="Apache Spark" class="md-nav__link">
+    Apache Spark
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geosparksql_1" title="GeoSparkSQL" class="md-nav__link">
+    GeoSparkSQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" title="Python" class="md-nav__link">
+    Python
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -880,29 +1303,34 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/DataSystemsLab/GeoSpark/edit/master/docs/tutorial/geospark-python.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/DataSystemsLab/GeoSpark/edit/master/docs/tutorial/geospark-sql-python.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>Package is a Python wrapper on scala library GeoSparkSQL. Official repository for GeoSpark can be found at <a href="https://github.com/DataSystemsLab/GeoSpark">https://github.com/DataSystemsLab/GeoSpark</a>.</p>
-<p>Package allow to use all GeoSparkSQL functions and transform it to Python Shapely geometry objects. Also it allows to create Spark DataFrame with GeoSpark UDT from Shapely geometry objects. Spark DataFrame can be converted to GeoPandas easily, in addition all fiona drivers for shape file are available to load data from files and convert them to Spark DataFrame. Please look at examples.</p>
-<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>geo_pyspark depnds on Python packages and Scala libraries. To see all dependencies
+                <h1 id="spatial-sql-application-in-python">Spatial SQL Application in Python<a class="headerlink" href="#spatial-sql-application-in-python" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>GeoSPark provides a Python wrapper for its Spatial SQL / DataFrame interface. The official repository for GeoSpark can be found at <a href="https://github.com/DataSystemsLab/GeoSpark">https://github.com/DataSystemsLab/GeoSpark</a>.</p>
+<p>This package allows users to use all GeoSparkSQL functions and transform it to Python Shapely geometry objects. Also it allows to create Spark DataFrame with GeoSpark UDT from Shapely geometry objects. Spark DataFrame can be converted to GeoPandas easily, in addition all fiona drivers for shape file are available to load data from files and convert them to Spark DataFrame. Please look at examples.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>GeoSpark extends pyspark functions which depends on Python packages and Scala libraries. To see all dependencies
 please look at Dependencies section.
 <a href="https://pypi.org/project/pyspark/">https://pypi.org/project/pyspark/</a>.</p>
-<p>Package needs 3 jar files to work properly:</p>
+<p>Package needs 2 jar files to work properly:</p>
 <ul>
-<li>geospark-sql_2.2-1.2.0.jar</li>
-<li>geospark-1.2.0.jar</li>
+<li>geospark.jar</li>
+<li>geospark-sql.jar</li>
 <li>geo_wrapper.jar</li>
 </ul>
-<p>Where 2.2 is a Spark version and 1.2.0 is GeoSpark version. Jar files are placed in geo_pyspark/jars. For newest GeoSpark release jar files are places in subdirectories named as Spark version. Example, jar files for SPARK 2.4 can be found in directory geo_pyspark/jars/2_4.</p>
-<p>For older version please find appropriate jar files in directory geo_pyspark/jars/previous.</p>
-<p>It is possible to automatically add jar files for newest GeoSpark version. Please use code as follows:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since GeoSpark 1.3.0 it is possible also to use maven jars for GeoSparkSQL instead of geospark/jars/../geospark-sql jars files.</p>
+</div>
+<p>This package automatically copies the newest GeoSpark jar files using function, please follow the example below.</p>
+<li> upload_jars </li>
+
 <div class="codehilite"><pre><span></span>  <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
 
-  <span class="kn">from</span> <span class="nn">geo_pyspark.register</span> <span class="kn">import</span> <span class="n">upload_jars</span>
-  <span class="kn">from</span> <span class="nn">geo_pyspark.register</span> <span class="kn">import</span> <span class="n">GeoSparkRegistrator</span>
+  <span class="kn">from</span> <span class="nn">geospark.register</span> <span class="kn">import</span> <span class="n">upload_jars</span>
+  <span class="kn">from</span> <span class="nn">geospark.register</span> <span class="kn">import</span> <span class="n">GeoSparkRegistrator</span>
 
   <span class="n">upload_jars</span><span class="p">()</span>
 
@@ -917,19 +1345,24 @@ please look at Dependencies section.
 </pre></div>
 
 <p>uses findspark Python package to upload jar files to executor and nodes. To avoid copying all the time, jar files can be put in directory SPARK_HOME/jars or any other path specified in Spark config files.</p>
-<h2 id="installing-from-wheel-file">Installing from wheel file<a class="headerlink" href="#installing-from-wheel-file" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>pipenv run python -m pip install dist/geo_pyspark-0.2.0-py3-none-any.whl
+<h3 id="installing-from-pypi-repositories">Installing from PyPi repositories<a class="headerlink" href="#installing-from-pypi-repositories" title="Permanent link">&para;</a></h3>
+<p>Please use command below</p>
+<div class="codehilite"><pre><span></span>pip install geospark
+</pre></div>
+
+<h3 id="installing-from-wheel-file">Installing from wheel file<a class="headerlink" href="#installing-from-wheel-file" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>pipenv run python -m pip install dist/geospark-1.3.1-py3-none-any.whl
 </pre></div>
 
 <p>or</p>
-<div class="codehilite"><pre><span></span>  pip install dist/geo_pyspark-0.2.0-py3-none-any.whl
+<div class="codehilite"><pre><span></span>  pip install dist/geospark-1.3.1-py3-none-any.whl
 </pre></div>
 
-<h2 id="installing-from-source">Installing from source<a class="headerlink" href="#installing-from-source" title="Permanent link">&para;</a></h2>
+<h3 id="installing-from-source">Installing from source<a class="headerlink" href="#installing-from-source" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>  python3 setup.py install
 </pre></div>
 
-<h1 id="core-classes-and-methods">Core Classes and methods.<a class="headerlink" href="#core-classes-and-methods" title="Permanent link">&para;</a></h1>
+<h2 id="core-classes-and-methods">Core Classes and methods.<a class="headerlink" href="#core-classes-and-methods" title="Permanent link">&para;</a></h2>
 <p><code class="codehilite">GeoSparkRegistrator.registerAll(spark: pyspark.sql.SparkSession) -&gt; bool</code></p>
 <p>This is the core of whole package. Class method registers all GeoSparkSQL functions (available for used GeoSparkSQL version).
 To check available functions please look at GeoSparkSQL section.
@@ -942,7 +1375,7 @@ To check available functions please look at GeoSparkSQL section.
 Class property which returns org.apache.spark.serializer.KryoSerializer string, which simplify using GeoSpark Serializers.</p>
 <p><code class="codehilite">GeoSparkKryoRegistrator.getName -&gt; str</code>
 Class property which returns org.datasyslab.geospark.serde.GeoSparkKryoRegistrator string, which simplify using GeoSpark Serializers.</p>
-<h1 id="writing-application">Writing Application<a class="headerlink" href="#writing-application" title="Permanent link">&para;</a></h1>
+<h2 id="writing-application">Writing Application<a class="headerlink" href="#writing-application" title="Permanent link">&para;</a></h2>
 <p>Use KryoSerializer.getName and GeoSparkKryoRegistrator.getName class properties to reduce memory impact, reffering to  <a href="https://datasystemslab.github.io/GeoSpark/tutorial/sql/"> GeoSpark docs </a>. To do that use spark config as follows:</p>
 <div class="codehilite"><pre><span></span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">&quot;spark.serializer&quot;</span><span class="p">,</span> <span class="n">KryoSerializer</span><span class="o">.</span><span class="n">getName</span><span class="p">)</span>
 <span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s2">&quot;spark.kryo.registrator&quot;</span><span class="p">,</span> <span class="n">GeoSparkKryoRegistrator</span><span class="o">.</span><span class="n">getName</span><span class="p">)</span>
@@ -952,8 +1385,8 @@ Class property which returns org.datasyslab.geospark.serde.GeoSparkKryoRegistrat
 <p>To turn on GeoSparkSQL function inside pyspark code use GeoSparkRegistrator.registerAll method on existing pyspark.sql.SparkSession instance ex.</p>
 <p><code class="codehilite">GeoSparkRegistrator.registerAll(spark)</code></p>
 <p>After that all the functions from GeoSparkSQL will be available, moreover using collect or toPandas methods on Spark DataFrame will return Shapely BaseGeometry objects. Based on GeoPandas DataFrame, Pandas DataFrame with shapely objects or Sequence with shapely objects, Spark DataFrame can be created using spark.createDataFrame method. To specify Schema with geometry inside please use <code class="codehilite">GeometryType()</code> instance (look at examples section to see that in practice).</p>
-<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
-<h2 id="geosparksql">GeoSparkSQL<a class="headerlink" href="#geosparksql" title="Permanent link">&para;</a></h2>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<h3 id="geosparksql">GeoSparkSQL<a class="headerlink" href="#geosparksql" title="Permanent link">&para;</a></h3>
 <p>All GeoSparkSQL functions (list depends on GeoSparkSQL version) are available in Python API. For documentation please look at <a href="https://datasystemslab.github.io/GeoSpark/api/sql/GeoSparkSQL-Overview/"> GeoSpark website</a></p>
 <p>For example use GeoSparkSQL for Spatial Join.</p>
 <p><div class="codehilite"><pre><span></span><span class="n">counties</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span>\
@@ -1016,7 +1449,7 @@ Class property which returns org.datasyslab.geospark.serde.GeoSparkKryoRegistrat
 <span class="s s-Atom">+-</span> <span class="nv">RangeJoin</span> <span class="s s-Atom">geometry#</span><span class="mi">240</span><span class="s s-Atom">:</span> <span class="s s-Atom">geometry</span><span class="p">,</span> <span class="s s-Atom">geometry#</span><span class="mi">236</span><span class="s s-Atom">:</span> <span class="s s-Atom">geometry</span><span class="p">,</span> <span class="nf">true</span>
    <span class="o">:-</span> <span class="nv">Scan</span> <span class="nv">ExistingRDD</span><span class="p">[</span><span class="s s-Atom">fclass#</span><span class="mi">239</span><span class="p">,</span><span class="s s-Atom">geometry#</span><span class="mi">240</span><span class="p">]</span>
    <span class="s s-Atom">+-</span> <span class="nv">Project</span> <span class="p">[</span><span class="s s-Atom">county_code#</span><span class="mi">230</span><span class="p">,</span> <span class="nf">st_geomfromwkt</span><span class="p">(</span><span class="s s-Atom">geom#</span><span class="mi">232</span><span class="p">)</span> <span class="nv">AS</span> <span class="s s-Atom">geometry#</span><span class="mi">236</span><span class="p">]</span>
-      <span class="s s-Atom">+-</span> <span class="s s-Atom">*</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="nv">FileScan</span> <span class="s s-Atom">csv</span> <span class="p">[</span><span class="s s-Atom">county_code#</span><span class="mi">230</span><span class="p">,</span><span class="s s-Atom">geom#</span><span class="mi">232</span><span class="p">]</span> <span class="nv">Batched</span><span class="s s-Atom">:</span> <span class="s s-Atom">false</span><span class="p">,</span> <span class="nv">Format</span><span class="s s-Atom">:</span> <span class="nv">CSV</span><span class="p">,</span> <span class="nv">Location</span><span class="s s-Atom">:</span> <span class="nv">InMemoryFileIndex</span><span class="p">[</span><span class="nn">file</span><span class="p">:</span><span class="o">/</span><span class="s s-Atom">home</span><span class="o">/</span><span class="s s-Atom">pkocinski001</span><span class="o">/</span><span class="nv">Desktop</span><span class="o">/</span><span class="s s-Atom">projects</span><span class="o">/</span><span class="s s-Atom">geo_pyspark_installed</span><span class="o">/</span><span class="s s-Atom">counties</span><span class="p">.</span><span class="s s-Atom">csv</span><span class="p">],</span> <span class="nv">PartitionFilters</span><span class="s s-Atom">:</span> <span class="p">[],</span> <span class="nv">PushedFilters</span><span class="s s-Atom">:</span> <span class="p">[],</span> <span class="nv">ReadSchema</span><span class="s s-Atom">:</span> <span class="s s-Atom">struct</span><span class="o">&lt;</span><span class="s s-Atom">county_code:string</span><span class="p">,</span><span class="nn">geom</span><span class="p">:</span><span class="s s-Atom">string</span><span class="o">&gt;</span>
+      <span class="s s-Atom">+-</span> <span class="s s-Atom">*</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="nv">FileScan</span> <span class="s s-Atom">csv</span> <span class="p">[</span><span class="s s-Atom">county_code#</span><span class="mi">230</span><span class="p">,</span><span class="s s-Atom">geom#</span><span class="mi">232</span><span class="p">]</span> <span class="nv">Batched</span><span class="s s-Atom">:</span> <span class="s s-Atom">false</span><span class="p">,</span> <span class="nv">Format</span><span class="s s-Atom">:</span> <span class="nv">CSV</span><span class="p">,</span> <span class="nv">Location</span><span class="s s-Atom">:</span> <span class="nv">InMemoryFileIndex</span><span class="p">[</span><span class="nn">file</span><span class="p">:</span><span class="o">/</span><span class="s s-Atom">projects</span><span class="o">/</span><span class="s s-Atom">geospark</span><span class="o">/</span><span class="s s-Atom">counties</span><span class="p">.</span><span class="s s-Atom">csv</span><span class="p">],</span> <span class="nv">PartitionFilters</span><span class="s s-Atom">:</span> <span class="p">[],</span> <span class="nv">PushedFilters</span><span class="s s-Atom">:</span> <span class="p">[],</span> <span class="nv">ReadSchema</span><span class="s s-Atom">:</span> <span class="s s-Atom">struct</span><span class="o">&lt;</span><span class="s s-Atom">county_code:string</span><span class="p">,</span><span class="nn">geom</span><span class="p">:</span><span class="s s-Atom">string</span><span class="o">&gt;</span>
 </pre></div>
 Calculating Number of Pois within counties per fclass.</p>
 <p><div class="codehilite"><pre><span></span><span class="n">pois_per_county</span> <span class="o">=</span> <span class="n">spatial_join_result</span><span class="o">.</span><span class="n">groupBy</span><span class="p">(</span><span class="s2">&quot;county_code&quot;</span><span class="p">,</span> <span class="s2">&quot;fclass&quot;</span><span class="p">)</span><span class="o">.</span> \
@@ -1035,12 +1468,12 @@ Calculating Number of Pois within counties per fclass.</p>
 +-----------+---------+-----+
 </pre></div></p>
 <h2 id="integration-with-geopandas-and-shapely">Integration with GeoPandas and Shapely<a class="headerlink" href="#integration-with-geopandas-and-shapely" title="Permanent link">&para;</a></h2>
-<p>geo_pyspark has implemented serializers and deserializers which allows to convert GeoSpark Geometry objects into Shapely BaseGeometry objects. Based on that it is possible to load the data with geopandas from file (look at Fiona possible drivers) and create Spark DataFrame based on GeoDataFrame object.</p>
+<p>geospark has implemented serializers and deserializers which allows to convert GeoSpark Geometry objects into Shapely BaseGeometry objects. Based on that it is possible to load the data with geopandas from file (look at Fiona possible drivers) and create Spark DataFrame based on GeoDataFrame object.</p>
 <p>Example, loading the data from shapefile using geopandas read_file method and create Spark DataFrame based on GeoDataFrame:</p>
 <div class="codehilite"><pre><span></span>  <span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
   <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
 
-  <span class="kn">from</span> <span class="nn">geo_pyspark.register</span> <span class="kn">import</span> <span class="n">GeoSparkRegistrator</span>
+  <span class="kn">from</span> <span class="nn">geospark.register</span> <span class="kn">import</span> <span class="n">GeoSparkRegistrator</span>
 
   <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span>\
         <span class="n">getOrCreate</span><span class="p">()</span>
@@ -1070,7 +1503,7 @@ Calculating Number of Pois within counties per fclass.</p>
 <p><div class="codehilite"><pre><span></span>    <span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
     <span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
 
-    <span class="kn">from</span> <span class="nn">geo_pyspark.register</span> <span class="kn">import</span> <span class="n">GeoSparkRegistrator</span>
+    <span class="kn">from</span> <span class="nn">geospark.register</span> <span class="kn">import</span> <span class="n">GeoSparkRegistrator</span>
 
     <span class="n">spark</span> <span class="o">=</span> <span class="n">SparkSession</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span>\
         <span class="n">getOrCreate</span><span class="p">()</span>
@@ -1142,11 +1575,11 @@ Calculating Number of Pois within counties per fclass.</p>
 </tr>
 </tbody>
 </table>
-<p>To create Spark DataFrame based on mentioned Geometry types, please use <b> GeometryType </b> from  <b> geo_pyspark.sql.types </b> module. Converting works for list or tuple with shapely objects.</p>
+<p>To create Spark DataFrame based on mentioned Geometry types, please use <b> GeometryType </b> from  <b> geospark.sql.types </b> module. Converting works for list or tuple with shapely objects.</p>
 <p>Schema for target table with integer id and geometry type can be defined as follow:</p>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql.types</span> <span class="kn">import</span> <span class="n">IntegerType</span><span class="p">,</span> <span class="n">StructField</span><span class="p">,</span> <span class="n">StructType</span>
 
-<span class="kn">from</span> <span class="nn">geo_pyspark.sql.types</span> <span class="kn">import</span> <span class="n">GeometryType</span>
+<span class="kn">from</span> <span class="nn">geospark.sql.types</span> <span class="kn">import</span> <span class="n">GeometryType</span>
 
 <span class="n">schema</span> <span class="o">=</span> <span class="n">StructType</span><span class="p">(</span>
     <span class="p">[</span>
@@ -1157,8 +1590,8 @@ Calculating Number of Pois within counties per fclass.</p>
 </pre></div>
 
 <p>Also Spark DataFrame with geometry type can be converted to list of shapely objects with <b> collect </b> method.</p>
-<h3 id="example-usage-for-shapely-objects">Example usage for Shapely objects<a class="headerlink" href="#example-usage-for-shapely-objects" title="Permanent link">&para;</a></h3>
-<h4 id="point">Point<a class="headerlink" href="#point" title="Permanent link">&para;</a></h4>
+<h2 id="example-usage-for-shapely-objects">Example usage for Shapely objects<a class="headerlink" href="#example-usage-for-shapely-objects" title="Permanent link">&para;</a></h2>
+<h3 id="point">Point<a class="headerlink" href="#point" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
@@ -1193,7 +1626,7 @@ Calculating Number of Pois within counties per fclass.</p>
  |-- geom: geometry (nullable = false)
 </pre></div>
 
-<h4 id="multipoint">MultiPoint<a class="headerlink" href="#multipoint" title="Permanent link">&para;</a></h4>
+<h3 id="multipoint">MultiPoint<a class="headerlink" href="#multipoint" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">MultiPoint</span><span class="p">([[</span><span class="mf">19.511463</span><span class="p">,</span> <span class="mf">51.765158</span><span class="p">],</span> <span class="p">[</span><span class="mf">19.446408</span><span class="p">,</span> <span class="mf">51.779752</span><span class="p">]])]</span>
 <span class="p">]</span>
@@ -1211,7 +1644,7 @@ Calculating Number of Pois within counties per fclass.</p>
 +---+---------------------------------------------------------+
 </pre></div>
 
-<h4 id="linestring">LineString<a class="headerlink" href="#linestring" title="Permanent link">&para;</a></h4>
+<h3 id="linestring">LineString<a class="headerlink" href="#linestring" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="k">import</span> <span class="n">LineString</span>
 
 <span class="n">line</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span>
@@ -1236,7 +1669,7 @@ Calculating Number of Pois within counties per fclass.</p>
 
 <span class="sb">````</span>
 
-<span class="c1">#### MultiLineString</span>
+<span class="c1">### MultiLineString</span>
 
 <span class="sb">``</span><span class="err">`</span><span class="n">python3</span>
 
@@ -1264,7 +1697,7 @@ Calculating Number of Pois within counties per fclass.</p>
 +---+---------------------------------------------------------------------+
 </pre></div>
 
-<h4 id="polygon">Polygon<a class="headerlink" href="#polygon" title="Permanent link">&para;</a></h4>
+<h3 id="polygon">Polygon<a class="headerlink" href="#polygon" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="k">import</span> <span class="n">Polygon</span>
 
 <span class="n">polygon</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">(</span>
@@ -1296,7 +1729,7 @@ Calculating Number of Pois within counties per fclass.</p>
 +---+--------------------------------------------------------------------------------------------------------+
 </pre></div>
 
-<h4 id="multipolygon">MultiPolygon<a class="headerlink" href="#multipolygon" title="Permanent link">&para;</a></h4>
+<h3 id="multipolygon">MultiPolygon<a class="headerlink" href="#multipolygon" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="k">import</span> <span class="n">MultiPolygon</span>
 
 <span class="n">exterior_p1</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
@@ -1329,18 +1762,25 @@ Calculating Number of Pois within counties per fclass.</p>
 </pre></div>
 
 <h2 id="supported-versions">Supported versions<a class="headerlink" href="#supported-versions" title="Permanent link">&para;</a></h2>
+<p>Currently this python wrapper supports the following Spark, GeoSpark and Python versions:</p>
 <h3 id="apache-spark">Apache Spark<a class="headerlink" href="#apache-spark" title="Permanent link">&para;</a></h3>
-<p>Currently package supports spark versions</p>
 <li> 2.2 </li>
 
 <li> 2.3 </li>
 
 <li> 2.4 </li>
 
-<h3 id="geospark">GeoSpark<a class="headerlink" href="#geospark" title="Permanent link">&para;</a></h3>
+<h3 id="geosparksql_1">GeoSparkSQL<a class="headerlink" href="#geosparksql_1" title="Permanent link">&para;</a></h3>
+<li> 1.3.1 </li>
+
 <li> 1.2.0 </li>
 
 <li> 1.1.3 </li>
+
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<li> 3.6 </li>
+
+<li> 3.7 </li>
                 
                   
                 
@@ -1361,7 +1801,7 @@ Calculating Number of Pois within counties per fclass.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../zeppelin/" title="Interact with GeoSpark via Zeppelin" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../geospark-core-python/" title="Spatial RDD in Python" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1370,7 +1810,7 @@ Calculating Number of Pois within counties per fclass.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Interact with GeoSpark via Zeppelin
+                Spatial RDD in Python
               </span>
             </div>
           </a>

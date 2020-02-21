@@ -387,8 +387,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/rdd/" title="Write an Spatial RDD application" class="md-nav__link">
-      Write an Spatial RDD application
+    <a href="../../../tutorial/rdd/" title="Spatial RDD application" class="md-nav__link">
+      Spatial RDD application
     </a>
   </li>
 
@@ -399,8 +399,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/sql/" title="Write an Spatial SQL/DataFrame application" class="md-nav__link">
-      Write an Spatial SQL/DataFrame application
+    <a href="../../../tutorial/sql/" title="Spatial SQL application" class="md-nav__link">
+      Spatial SQL application
     </a>
   </li>
 
@@ -411,8 +411,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/viz/" title="Visualize Spatial DataFrame/RDD" class="md-nav__link">
-      Visualize Spatial DataFrame/RDD
+    <a href="../../../tutorial/viz/" title="Visualize Spatial DataFrame" class="md-nav__link">
+      Visualize Spatial DataFrame
     </a>
   </li>
 
@@ -423,8 +423,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/zeppelin/" title="Interact with GeoSpark via Zeppelin" class="md-nav__link">
-      Interact with GeoSpark via Zeppelin
+    <a href="../../../tutorial/zeppelin/" title="Run GeoSpark via Zeppelin" class="md-nav__link">
+      Run GeoSpark via Zeppelin
     </a>
   </li>
 
@@ -435,8 +435,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../tutorial/geospark-python/" title="Write an GeoSpark Python application" class="md-nav__link">
-      Write an GeoSpark Python application
+    <a href="../../../tutorial/geospark-core-python/" title="Spatial RDD in Python" class="md-nav__link">
+      Spatial RDD in Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/geospark-sql-python/" title="Spatial SQL in Python" class="md-nav__link">
+      Spatial SQL in Python
     </a>
   </li>
 
@@ -542,6 +554,18 @@
   <li class="md-nav__item">
     <a href="../../GeoSpark-Scala-and-Java-API/" title="Scala/Java doc" class="md-nav__link">
       Scala/Java doc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../GeoSpark-Python-API/" title="Python doc" class="md-nav__link">
+      Python doc
     </a>
   </li>
 
@@ -700,6 +724,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#st_makevalid" title="ST_MakeValid" class="md-nav__link">
+    ST_MakeValid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#st_precisionreduce" title="ST_PrecisionReduce" class="md-nav__link">
     ST_PrecisionReduce
   </a>
@@ -730,6 +761,13 @@
         <li class="md-nav__item">
   <a href="#st_npoints" title="ST_NPoints" class="md-nav__link">
     ST_NPoints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_simplifypreservetopology" title="ST_SimplifyPreserveTopology" class="md-nav__link">
+    ST_SimplifyPreserveTopology
   </a>
   
 </li>
@@ -1060,6 +1098,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#st_makevalid" title="ST_MakeValid" class="md-nav__link">
+    ST_MakeValid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#st_precisionreduce" title="ST_PrecisionReduce" class="md-nav__link">
     ST_PrecisionReduce
   </a>
@@ -1090,6 +1135,13 @@
         <li class="md-nav__item">
   <a href="#st_npoints" title="ST_NPoints" class="md-nav__link">
     ST_NPoints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st_simplifypreservetopology" title="ST_SimplifyPreserveTopology" class="md-nav__link">
+    ST_SimplifyPreserveTopology
   </a>
   
 </li>
@@ -1213,6 +1265,26 @@ FROM polygondf
 <span class="k">FROM</span> <span class="n">polygondf</span>
 </pre></div>
 
+<h2 id="st_makevalid">ST_MakeValid<a class="headerlink" href="#st_makevalid" title="Permanent link">&para;</a></h2>
+<p>Introduction: Given an invalid polygon or multipolygon and removeHoles boolean flag,
+ create a valid representation of the geometry.</p>
+<p>Format: <code class="codehilite">ST_MakeValid (A:geometry, removeHoles:Boolean)</code></p>
+<p>Since: <code class="codehilite">v1.2.0</code></p>
+<p>Spark SQL example:</p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">geometryValid</span><span class="p">.</span><span class="n">polygon</span>
+<span class="k">FROM</span> <span class="k">table</span>
+<span class="k">LATERAL</span> <span class="k">VIEW</span> <span class="n">ST_MakeValid</span><span class="p">(</span><span class="n">polygon</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span> <span class="n">geometryValid</span> <span class="k">AS</span> <span class="n">polygon</span>
+</pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Might return multiple polygons from a only one invalid polygon
+That's the reason why we need to use the LATERAL VIEW expression</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Throws an exception if the geometry isn't polygon or multipolygon</p>
+</div>
 <h2 id="st_precisionreduce">ST_PrecisionReduce<a class="headerlink" href="#st_precisionreduce" title="Permanent link">&para;</a></h2>
 <p>Introduction: Reduce the decimals places in the coordinates of the geometry to the given number of decimal places. The last decimal place will be rounded.</p>
 <p>Format: <code class="codehilite">ST_PrecisionReduce (A:geometry, B:int)</code></p>
@@ -1252,6 +1324,15 @@ The new coordinates will only have 9 decimal places.</p>
 <p>Since: <code class="codehilite">v1.2.1</code></p>
 <p>Format: <code class="codehilite">ST_NPoints (A:geometry)</code></p>
 <div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_NPoints</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">polygondf</span>
+</pre></div>
+
+<h2 id="st_simplifypreservetopology">ST_SimplifyPreserveTopology<a class="headerlink" href="#st_simplifypreservetopology" title="Permanent link">&para;</a></h2>
+<p>Introduction: Simplifies a geometry and ensures that the result is a valid geometry having the same dimension and number of components as the input,
+              and with the components having the same topological relationship.</p>
+<p>Since: <code class="codehilite">v1.2.1</code></p>
+<p>Format: <code class="codehilite">ST_SimplifyPreserveTopology (A:geometry, distanceTolerance: Double)</code></p>
+<div class="codehilite"><pre><span></span><span class="k">SELECT</span> <span class="n">ST_SimplifyPreserveTopology</span><span class="p">(</span><span class="n">polygondf</span><span class="p">.</span><span class="n">countyshape</span><span class="p">,</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="n">polygondf</span>
 </pre></div>
 
