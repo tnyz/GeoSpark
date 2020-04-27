@@ -29,11 +29,11 @@ import org.datasyslab.geospark.formatMapper.FormatMapper
 import org.datasyslab.geosparksql.utils.GeometrySerializer
 
 /**
-  * Return a point from a string. The string must be plain string and each coordinate must be separated by a delimiter.
-  *
-  * @param inputExpressions This function takes 2 parameters. The first parameter is the input geometry
-  *                         string, the second parameter is the delimiter. String format should be similar to CSV/TSV
-  */
+ * Return a point from a string. The string must be plain string and each coordinate must be separated by a delimiter.
+ *
+ * @param inputExpressions This function takes 2 parameters. The first parameter is the input geometry
+ *                         string, the second parameter is the delimiter. String format should be similar to CSV/TSV
+ */
 case class ST_PointFromText(inputExpressions: Seq[Expression])
   extends Expression with CodegenFallback with UserDataGeneratator {
   override def nullable: Boolean = false
@@ -55,10 +55,10 @@ case class ST_PointFromText(inputExpressions: Seq[Expression])
 }
 
 /**
-  * Return a polygon from a string. The string must be plain string and each coordinate must be separated by a delimiter.
-  *
-  * @param inputExpressions
-  */
+ * Return a polygon from a string. The string must be plain string and each coordinate must be separated by a delimiter.
+ *
+ * @param inputExpressions
+ */
 case class ST_PolygonFromText(inputExpressions: Seq[Expression])
   extends Expression with CodegenFallback with UserDataGeneratator {
   override def nullable: Boolean = false
@@ -81,10 +81,10 @@ case class ST_PolygonFromText(inputExpressions: Seq[Expression])
 }
 
 /**
-  * Return a linestring from a string. The string must be plain string and each coordinate must be separated by a delimiter.
-  *
-  * @param inputExpressions
-  */
+ * Return a linestring from a string. The string must be plain string and each coordinate must be separated by a delimiter.
+ *
+ * @param inputExpressions
+ */
 case class ST_LineStringFromText(inputExpressions: Seq[Expression])
   extends Expression with CodegenFallback with UserDataGeneratator {
   override def nullable: Boolean = false
@@ -110,10 +110,10 @@ case class ST_LineStringFromText(inputExpressions: Seq[Expression])
 
 
 /**
-  * Return a Geometry from a WKT string
-  *
-  * @param inputExpressions This function takes 1 parameter which is the geometry string. The string format must be WKT.
-  */
+ * Return a Geometry from a WKT string
+ *
+ * @param inputExpressions This function takes 1 parameter which is the geometry string. The string format must be WKT.
+ */
 case class ST_GeomFromWKT(inputExpressions: Seq[Expression])
   extends Expression with CodegenFallback with UserDataGeneratator {
   override def nullable: Boolean = false
@@ -135,10 +135,10 @@ case class ST_GeomFromWKT(inputExpressions: Seq[Expression])
 
 
 /**
-  * Return a Geometry from a WKT string
-  *
-  * @param inputExpressions This function takes 1 parameter which is the geometry string. The string format must be WKT.
-  */
+ * Return a Geometry from a WKT string
+ *
+ * @param inputExpressions This function takes 1 parameter which is the geometry string. The string format must be WKT.
+ */
 case class ST_GeomFromText(inputExpressions: Seq[Expression])
   extends Expression with CodegenFallback with UserDataGeneratator {
   override def nullable: Boolean = false
@@ -160,10 +160,10 @@ case class ST_GeomFromText(inputExpressions: Seq[Expression])
 
 
 /**
-  * Return a Geometry from a WKB string
-  *
-  * @param inputExpressions This function takes 1 parameter which is the geometry string. The string format must be WKB.
-  */
+ * Return a Geometry from a WKB string
+ *
+ * @param inputExpressions This function takes 1 parameter which is the geometry string. The string format must be WKB.
+ */
 case class ST_GeomFromWKB(inputExpressions: Seq[Expression])
   extends Expression with CodegenFallback with UserDataGeneratator {
   override def nullable: Boolean = false
@@ -184,10 +184,10 @@ case class ST_GeomFromWKB(inputExpressions: Seq[Expression])
 }
 
 /**
-  * Return a Geometry from a GeoJSON string
-  *
-  * @param inputExpressions This function takes 1 parameter which is the geometry string. The string format must be GeoJson.
-  */
+ * Return a Geometry from a GeoJSON string
+ *
+ * @param inputExpressions This function takes 1 parameter which is the geometry string. The string format must be GeoJson.
+ */
 case class ST_GeomFromGeoJSON(inputExpressions: Seq[Expression])
   extends Expression with CodegenFallback with UserDataGeneratator {
   override def nullable: Boolean = false
@@ -215,24 +215,18 @@ case class ST_GeomFromGeoJSON(inputExpressions: Seq[Expression])
 }
 
 /**
-  * Return a Point from X and Y
-  *
-  * @param inputExpressions This function takes 2 parameter which are point x and y.
-  */
+ * Return a Point from X and Y
+ *
+ * @param inputExpressions This function takes 2 parameter which are point x and y.
+ */
 case class ST_Point(inputExpressions: Seq[Expression])
-  extends Expression with CodegenFallback with UserDataGeneratator {
+  extends Expression with CodegenFallback with UserDataGeneratator with ToDouble {
   override def nullable: Boolean = false
 
   override def eval(inputRow: InternalRow): Any = {
     assert(inputExpressions.length == 2)
-    val x = inputExpressions(0).eval(inputRow) match {
-      case a:Double => a
-      case b:Decimal => b.toDouble
-    }
-    val y = inputExpressions(1).eval(inputRow) match {
-      case a:Double => a
-      case b:Decimal => b.toDouble
-    }
+    val x = mapToDouble(inputExpressions(0).eval(inputRow))
+    val y = mapToDouble(inputExpressions(1).eval(inputRow))
 
     var geometryFactory = new GeometryFactory()
     var geometry = geometryFactory.createPoint(new Coordinate(x, y))
@@ -246,35 +240,21 @@ case class ST_Point(inputExpressions: Seq[Expression])
 
 
 /**
-  * Return a polygon given minX,minY,maxX,maxY
-  *
-  * @param inputExpressions
-  */
-case class ST_PolygonFromEnvelope(inputExpressions: Seq[Expression]) extends Expression with CodegenFallback with UserDataGeneratator {
+ * Return a polygon given minX,minY,maxX,maxY
+ *
+ * @param inputExpressions
+ */
+case class ST_PolygonFromEnvelope(inputExpressions: Seq[Expression]) extends Expression
+  with CodegenFallback with UserDataGeneratator with ToDouble {
   override def nullable: Boolean = false
 
   override def eval(input: InternalRow): Any = {
     assert(inputExpressions.length == 4)
 
-    val minX = inputExpressions(0).eval(input) match {
-      case a:Double => a
-      case b:Decimal => b.toDouble
-    }
-
-    val minY = inputExpressions(1).eval(input) match {
-      case a:Double => a
-      case b:Decimal => b.toDouble
-    }
-
-    val maxX = inputExpressions(2).eval(input) match {
-      case a:Double => a
-      case b:Decimal => b.toDouble
-    }
-
-    val maxY = inputExpressions(3).eval(input) match {
-      case a:Double => a
-      case b:Decimal => b.toDouble
-    }
+    val minX = mapToDouble(inputExpressions(0).eval(input))
+    val minY = mapToDouble(inputExpressions(1).eval(input))
+    val maxX = mapToDouble(inputExpressions(2).eval(input))
+    val maxY = mapToDouble(inputExpressions(3).eval(input))
 
     var coordinates = new Array[Coordinate](5)
     coordinates(0) = new Coordinate(minX, minY)
@@ -292,11 +272,20 @@ case class ST_PolygonFromEnvelope(inputExpressions: Seq[Expression]) extends Exp
   override def children: Seq[Expression] = inputExpressions
 }
 
+trait ToDouble {
+  def mapToDouble(x: Any): Double = {
+    x match {
+      case decimal: Decimal => decimal.toDouble
+      case double: Double => double
+    }
+  }
+}
+
 trait UserDataGeneratator {
   def generateUserData(minInputLength: Integer, inputExpressions: Seq[Expression], inputRow: InternalRow): String = {
     var userData = inputExpressions(minInputLength).eval(inputRow).asInstanceOf[UTF8String].toString
 
-    for (i <- minInputLength + 1 to inputExpressions.length - 1) {
+    for (i <- minInputLength + 1 until inputExpressions.length) {
       userData = userData + "\t" + inputExpressions(i).eval(inputRow).asInstanceOf[UTF8String].toString
     }
     return userData
